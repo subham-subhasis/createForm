@@ -1,0 +1,52 @@
+version: "3.2"
+
+networks:
+  onboarding_net:
+
+services:
+  
+  onboarding-postgres:
+    image: postgres:9.6.14
+    container_name: onboarding-postgres
+    restart: always
+    networks:
+      - ${onboarding_net:-onboarding_net}
+    ports:
+      - "9001:5432"
+    environment:
+      - POSTGRES_PASSWORD=onboarding
+      - POSTGRES_USERNAME=onboarding
+      - POSTGRES_MULTIPLE_DATABASES=onboarding
+    volumes:
+      - onboarding-pgsql:/var/lib/onboarding-pgsql/data
+      - ./scripts/postgres:/docker-entrypoint-initdb.d
+
+  onboarding-service:
+    image: ${DOCKER_IMAGE_REGISTRY_IP:-10.113.56.67}/ngp-${PROJECT:-develop}/onboarding-service:${TAG}
+    container_name: onboarding-service
+    restart: always
+    networks:
+      - ${onboarding_net:-onboarding_net}
+    environment:
+      JAVA_OPTIONS: "-Xmx512m "
+      SERVICE_PRECONDITION: "onboarding-postgres:5432"
+    volumes:
+      - ./conf/service/application.properties:/deployments/config/application.properties
+    ports:
+      - "9002:8080"
+
+  onboarding-ui:
+    image: ${DOCKER_IMAGE_REGISTRY_IP:-10.113.56.67}/ngp-${PROJECT:-develop}/onboarding-ui:${TAG}
+    container_name: onboarding-ui
+    restart: always
+    networks:
+      - ${onboarding_net:-onboarding_net}
+    environment:
+      SERVICE_PRECONDITION: "onboarding-service:8080"
+    volumes:
+      - ./conf/ui/api.config.json:/usr/share/nginx/html/assets/conf/api.config.json
+    ports:
+      - "9003:80"
+
+volumes:
+  onboarding-pgsql:

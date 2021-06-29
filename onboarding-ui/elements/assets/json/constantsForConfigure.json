@@ -1,0 +1,3950 @@
+[
+    {
+        "isPanelDataIntegration": false,
+        "isBLockchainIntegration": false,
+        "configure": {
+            "accountDeatils": "Account Details",
+            "basicDetails": "Basic Details",
+            "businessTypes": [
+                {
+                    "businessTypeName": "App Store Partner",
+                    "businessTypeValue": "App Store Partner"
+                },
+                {
+                    "businessTypeName": "Ecommerce Partner",
+                    "businessTypeValue": "Ecommerce Partner"
+                },
+                {
+                    "businessTypeName": "Enterprise Partner",
+                    "businessTypeValue": "Enterprise Partner"
+                },
+                {
+                    "businessTypeName": "Voice",
+                    "businessTypeValue": "Voice"
+                },
+                {
+                    "businessTypeName": "Content",
+                    "businessTypeValue": "Content"
+                },
+                {
+                    "businessTypeName": "IoT",
+                    "businessTypeValue": "IoT"
+                },
+                {
+                    "businessTypeName": "MVNO - Network Slicing",
+                    "businessTypeValue": "MVNO - Network Slicing"
+                }
+            ],
+            "userDefinedType": [
+                {
+                    "id": 1,
+                    "value": "input",
+                    "name": "Input"
+                },
+                {
+                    "id": 2,
+                    "value": "number",
+                    "name": "Number"
+                },
+                {
+                    "id": 3,
+                    "value": "select",
+                    "name": "Drop Down"
+                },
+                {
+                    "id": 4,
+                    "value": "date",
+                    "name": "Date"
+                },
+                {
+                    "id": 5,
+                    "value": "file",
+                    "name": "File Upload"
+                },
+                {
+                    "id": 6,
+                    "value": "multiselect",
+                    "name": "Multi Select"
+                },
+                {
+                    "id": 8,
+                    "value": "textarea",
+                    "name": "Comment Box"
+                },
+                {
+                    "id": 9,
+                    "value": "grid",
+                    "name": "Grid"
+                }
+            ],
+            "userDefinedTypeValidation": [
+                {
+                    "value": "required",
+                    "name": "Mandatory",
+                    "includeArr": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        8,
+                        9
+                    ],
+                    "defaultlength": "",
+                    "defaultMessage": "This is a required field."
+                },
+                {
+                    "value": "min",
+                    "name": "Minimum Value",
+                    "includeArr": [
+                        2
+                    ],
+                    "defaultlength": "1",
+                    "defaultMessage": "Minimum value should be 1."
+                },
+                {
+                    "value": "max",
+                    "name": "Maximum Value",
+                    "includeArr": [
+                        2
+                    ],
+                    "defaultlength": "100",
+                    "defaultMessage": "Maximum value should be 100."
+                },
+                {
+                    "value": "minlength",
+                    "name": "Minimum Length",
+                    "includeArr": [
+                        1
+                    ],
+                    "defaultlength": "1",
+                    "defaultMessage": "Minimum length should be 1."
+                },
+                {
+                    "value": "maxlength",
+                    "name": "Maximum Length",
+                    "includeArr": [
+                        1
+                    ],
+                    "defaultlength": "255",
+                    "defaultMessage": "Maximum length should be 255."
+                },
+                {
+                    "value": "email",
+                    "name": "Email",
+                    "includeArr": [
+                        1
+                    ],
+                    "defaultlength": "",
+                    "defaultMessage": "Please Enter valid email address."
+                },
+                {
+                    "value": "pattern",
+                    "name": "Pattern",
+                    "includeArr": [
+                        1,
+                        8
+                    ],
+                    "defaultlength": "",
+                    "defaultMessage": "Please Enter valid pattern."
+                }
+            ],
+            "teamDetails": [
+                {
+                    "teamName": "Finance",
+                    "teamValue": "finance"
+                },
+                {
+                    "teamName": "Legal",
+                    "teamValue": "legal"
+                },
+                {
+                    "teamName": "Accounts",
+                    "teamValue": "accounts"
+                },
+                {
+                    "teamName": "Business",
+                    "teamValue": "business"
+                }
+            ],
+            "actionTypes": [
+                {
+                    "actionTypeName": "Publish",
+                    "actionTypeValue": "publish"
+                },
+                {
+                    "actionTypeName": "Score",
+                    "actionTypeValue": "score"
+                },
+                {
+                    "actionTypeName": "Publish & Score",
+                    "actionTypeValue": "publish-score"
+                },
+                {
+                    "actionTypeName": "Internal",
+                    "actionTypeValue": "internal"
+                }
+            ],
+            "basicDetailsGroupData": [
+                {
+                    "groupOrder": 1,
+                    "collapse": false,
+                    "fieldGroup": {
+                        "fieldGrpId": 1,
+                        "fieldGrpName": "Basic Details"
+                    },
+                    "definitions": [
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Salutation",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Salutation is a mandatory field",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "select",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "fieldOptions": "Mr, Mrs, Ms., Dr. or Rev.",
+                            "weightages": [],
+                            "validations": [
+                                {
+                                    "validationName": "required",
+                                    "validationMsg": "This Field is Mandatory",
+                                    "value": null
+                                }
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "First Name",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter First Name",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "input",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                                {
+                                    "validationName": "required",
+                                    "validationMsg": "This Field is Mandatory",
+                                    "value": null
+                                },
+                                {
+                                    "validationName": "minlength",
+                                    "validationMsg": "Length must be at least 1 characters",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Last Name",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Last Name",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "input",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                                {
+                                    "validationName": "required",
+                                    "validationMsg": "This Field is Mandatory",
+                                    "value": null
+                                },
+                                {
+                                    "validationName": "minlength",
+                                    "validationMsg": "Length must be at least 1 characters",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Company Name",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Company Name",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "input",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                                {
+                                    "validationName": "required",
+                                    "validationMsg": "This Field is Mandatory",
+                                    "value": null
+                                },
+                                {
+                                    "validationName": "minlength",
+                                    "validationMsg": "Length must be at least 2 characters",
+                                    "value": 2
+                                }
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Email",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Email",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "input",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                                {
+                                    "validationName": "required",
+                                    "validationMsg": "This Field is Mandatory",
+                                    "value": null
+                                },
+                                {
+                                    "validationName": "minlength",
+                                    "validationMsg": "Length must be at least 6 characters",
+                                    "value": 6
+                                },
+                                {
+                                    "validationName": "email",
+                                    "validationMsg": "Enter valid email address.",
+                                    "value": null
+                                }
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Confirm Email",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Confirm Email",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "input",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                                {
+                                    "validationName": "required",
+                                    "validationMsg": "This Field is Mandatory",
+                                    "value": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "groupOrder": 2,
+                    "collapse": false,
+                    "fieldGroup": {
+                        "fieldGrpId": 2,
+                        "fieldGrpName": "Account Details"
+                    },
+                    "definitions": [
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Account Type",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Account Type is a mandatory field",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "select",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "fieldOptions": "Wholesale",
+                            "weightages": [],
+                            "validations": [
+                                
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Customer Type",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Customer Type is a mandatory field",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "select",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "fieldOptions": "Customer,Customer Vendor",
+                            "weightages": [],
+                            "validations": [
+                                
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Managing Agent",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Managing Agent is a mandatory field",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "select",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "fieldOptions": "BTAgen (BTAgen)",
+                            "weightages": [],
+                            "validations": [
+                                
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Credit Rating",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Credit Rating",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "select",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "fieldOptions": "1, 2, 3",
+                            "weightages": [],
+                            "validations": [
+                               
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Classification",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Classification is a mandatory field",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "select",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "fieldOptions": "Default",
+                            "weightages": [],
+                            "validations": [
+                               
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Payment Type",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Payment Type is a mandatory field",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "select",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "fieldOptions": "PostPaid",
+                            "weightages": [],
+                            "validations": [
+                                
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Sales Region",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Sales Region is a mandatory field",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "select",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "fieldOptions": "APAC",
+                            "weightages": [],
+                            "validations": [
+                                
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Franchise",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Franchise is a mandatory field",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "select",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "fieldOptions": "CBILL",
+                            "weightages": [],
+                            "validations": [
+                                {
+                                    "validationName": "required",
+                                    "validationMsg": "This Field is Mandatory",
+                                    "value": null
+                                }
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Account Reference",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Account Reference",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "input",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                               
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Address Type",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Address Type is a mandatory field",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "select",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "fieldOptions": "Agent",
+                            "weightages": [],
+                            "validations": [
+                                {
+                                    "validationName": "required",
+                                    "validationMsg": "This Field is Mandatory",
+                                    "value": null
+                                }
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Address Name",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Address Name",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "input",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                                {
+                                    "validationName": "required",
+                                    "validationMsg": "This Field is Mandatory",
+                                    "value": null
+                                }
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Addressed To",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Addressed To",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "input",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                               
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Company Reg Number",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Company Reg Number",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "input",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                                
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Registration Type",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Registration Type",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "input",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                               
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Years Trading",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Years Trading",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "number",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                               
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Building",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Building",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "input",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                                
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Registration City",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Registration City",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "input",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                               
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Postal Code",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Postal Code",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "number",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                                
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Street",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Street",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "input",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                                
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Town",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Town",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "input",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                                
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Country",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Country is a mandatory field.",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "grid",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "validations": [
+                                {
+                                    "validationName": "required",
+                                    "validationMsg": "Country is a mandatory field.",
+                                    "value": null
+                                }
+                            ],
+                            "weightages": [
+                                {
+                                    "type": "Afghanistan",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Azerbaijan",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Bahamas",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Bahrain",
+                                    "weightageVal": 5,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Bangladesh",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Barbados ",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Belarus",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Belgium",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Belize",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Benin",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Bhutan",
+                                    "weightageVal": 7,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Bissau",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Bolivia",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Bosnia",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Botswana",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Brazil",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "British",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Brunei",
+                                    "weightageVal": 5,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Bulgaria",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Burkina",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Burma",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Burundi",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Cambodia",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Cameroon",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Canada",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Cape Verde",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Central African Republic",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Chad",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Chile",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "China",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Colombia",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Comoros",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Congo",
+                                    "weightageVal": 10,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Costa Rica",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "country debt",
+                                    "weightageVal": 5,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Croatia",
+                                    "weightageVal": 7,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Cuba",
+                                    "weightageVal": 5,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Cyprus",
+                                    "weightageVal": 10,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Czech",
+                                    "weightageVal": 7,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Denmark",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Djibouti",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Dominica",
+                                    "weightageVal": 7,
+                                    "id": null
+                                },
+                                {
+                                    "type": "East Timor",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Ecuador",
+                                    "weightageVal": 7,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Egypt",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "El Salvador",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Emirate",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "England",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Eritrea",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Estonia",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Ethiopia",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Fiji",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Finland",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "France",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Gabon",
+                                    "weightageVal": 5,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Gambia",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Georgia",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Germany",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Ghana",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Great Britain",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Greece",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Grenada",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Grenadines",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Guatemala",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Guinea",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Guyana",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Haiti",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Herzegovina",
+                                    "weightageVal": 5,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Honduras",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Hungary",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Iceland",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "India",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Indonesia",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Iran",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Iraq",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Ireland",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Israel",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Italy",
+                                    "weightageVal": 7,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Ivory Coast",
+                                    "weightageVal": 10,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Jamaica",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Japan",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Jordan",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Kazakhstan",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Kenya",
+                                    "weightageVal": 7,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Kiribati",
+                                    "weightageVal": 5,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Korea",
+                                    "weightageVal": 10,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Kosovo",
+                                    "weightageVal": 7,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Kuwait",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Kyrgyzstan",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Laos",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Latvia",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Lebanon",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Lesotho",
+                                    "weightageVal": 7,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Liberia",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Libya",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Liechtenstein",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Lithuania",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Luxembourg",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Macedonia",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Madagascar",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Malawi",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Malaysia",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Maldives",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Mali",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Malta",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Marshall",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Mauritania",
+                                    "weightageVal": 10,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Mauritius",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Mexico",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Micronesia",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Moldova",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Monaco",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Mongolia",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Montenegro",
+                                    "weightageVal": 10,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Morocco",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Mozambique",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Myanmar",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Namibia",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Nauru",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Nepal",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Netherlands",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "New Zealand",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Nicaragua",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Niger",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Nigeria",
+                                    "weightageVal": 7,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Norway",
+                                    "weightageVal": 5,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Oman",
+                                    "weightageVal": 5,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Pakistan",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Palau",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Panama",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Papua",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Paraguay",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Peru",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Philippines",
+                                    "weightageVal": 5,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Poland",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Portugal",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Qatar",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Romania",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Russia",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Rwanda",
+                                    "weightageVal": 5,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Samoa",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "San Marino",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Sao Tome",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Saudi Arabia",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Scotland",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Senegal",
+                                    "weightageVal": 7,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Serbia",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Seychelles",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Sierra Leone",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Singapore",
+                                    "weightageVal": 10,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Slovakia",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Slovenia",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Solomon",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Somalia",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "South Africa",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "South Sudan",
+                                    "weightageVal": 7,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Spain",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Sri Lanka",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "St. Kitts",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "St. Lucia",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "St Kitts",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "St Lucia",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Saint Kitts",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Santa Lucia",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Sudan",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Suriname",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Swaziland",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Sweden",
+                                    "weightageVal": 7,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Switzerland",
+                                    "weightageVal": 5,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Syria",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Taiwan",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Tajikistan",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Tanzania",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Thailand",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Tobago",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Togo",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Tonga",
+                                    "weightageVal": 6,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Trinidad",
+                                    "weightageVal": 1,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Tunisia",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Turkey",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Turkmenistan",
+                                    "weightageVal": 5,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Tuvalu",
+                                    "weightageVal": 5,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Uganda",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Ukraine",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "United Kingdom",
+                                    "weightageVal": 5,
+                                    "id": null
+                                },
+                                {
+                                    "type": "United States",
+                                    "weightageVal": 3,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Uruguay",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "USA",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Uzbekistan",
+                                    "weightageVal": 9,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Vanuatu",
+                                    "weightageVal": 5,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Vatican",
+                                    "weightageVal": 2,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Venezuela",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Vietnam",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Wales",
+                                    "weightageVal": 8,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Yemen",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Zambia",
+                                    "weightageVal": 4,
+                                    "id": null
+                                },
+                                {
+                                    "type": "Zimbabwe",
+                                    "weightageVal": 6,
+                                    "id": null
+                                }
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Bank Name",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Bank Name is a mandatory field",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "select",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "fieldOptions": "Axis",
+                            "weightages": [],
+                            "validations": [
+                                {
+                                    "validationName": "required",
+                                    "validationMsg": "This Field is Mandatory",
+                                    "value": null
+                                }
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Bank AC Number",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Bank AC Number",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "number",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                                {
+                                    "validationName": "required",
+                                    "validationMsg": "This Field is Mandatory",
+                                    "value": null
+                                }
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Fax",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Contact Fax",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "number",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                               
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Home Number",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Home Number",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "number",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                                
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Mobile Number",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Mobile Number",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "number",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                                
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Contact Name",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Contact Name",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "input",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                                {
+                                    "validationName": "required",
+                                    "validationMsg": "This Field is Mandatory",
+                                    "value": null
+                                }
+                            ]
+                        },
+                        {
+                            "dfnId": null,
+                            "panelOpenState": false,
+                            "dfnName": "Office Number",
+                            "dfnCategory": "U",
+                            "isMandatory": true,
+                            "mandatoryMsg": "Please enter Office Number",
+                            "isWebScrap": false,
+                            "action": "publish",
+                            "dfnOrder": -1,
+                            "fieldType": "number",
+                            "profileName": "",
+                            "maxWeightage": 10,
+                            "weightages": [],
+                            "validations": [
+                                
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "kpiDefinationsPreDefined": [
+                {
+                    "name": "Debt and Equity ratio",
+                    "value": "Debt and Equity ratio",
+                    "webScrapFlag": false,
+                    "maxKPIScore": 10,
+                    "weighatgeValues": [
+                        {
+                            "type": "0-0.4",
+                            "weightageVal": 9.1
+                        },
+                        {
+                            "type": "0.5-0.7",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "0.8-1",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "more than 1",
+                            "weightageVal": 1.000000
+                        }
+                    ]
+                },
+                {
+                    "name": "External Factors",
+                    "value": "External Factors",
+                    "webScrapFlag": false,
+                    "maxKPIScore": 10,
+                    "weighatgeValues": [
+                        {
+                            "type": "EarthQuake",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Riots",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Economy crisis",
+                            "weightageVal": 1.000000
+                        }
+                    ]
+                },
+                {
+                    "name": "Base Location",
+                    "value": "Base Location",
+                    "webScrapFlag": false,
+                    "maxKPIScore": 10,
+                    "weighatgeValues": [
+                        {
+                            "type": "Afghanistan",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Azerbaijan",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Bahamas",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Bahrain",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Bangladesh",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Barbados ",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Belarus",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Belgium",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Belize",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Benin",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Bhutan",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Bissau",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Bolivia",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Bosnia",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Botswana",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Brazil",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "British",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Brunei",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Bulgaria",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Burkina",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Burma",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Burundi",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Cambodia",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Cameroon",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Canada",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Cape Verde",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Central African Republic",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Chad",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Chile",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "China",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Colombia",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Comoros",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Congo",
+                            "weightageVal": 10.000000
+                        },
+                        {
+                            "type": "Costa Rica",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "country debt",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Croatia",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Cuba",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Cyprus",
+                            "weightageVal": 10.000000
+                        },
+                        {
+                            "type": "Czech",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Denmark",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Djibouti",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Dominica",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "East Timor",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Ecuador",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Egypt",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "El Salvador",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Emirate",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "England",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Eritrea",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Estonia",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Ethiopia",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Fiji",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Finland",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "France",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Gabon",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Gambia",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Georgia",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Germany",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Ghana",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Great Britain",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Greece",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Grenada",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Grenadines",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Guatemala",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Guinea",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Guyana",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Haiti",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Herzegovina",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Honduras",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Hungary",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Iceland",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "India",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Indonesia",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Iran",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Iraq",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Ireland",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Israel",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Italy",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Ivory Coast",
+                            "weightageVal": 10.000000
+                        },
+                        {
+                            "type": "Jamaica",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Japan",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Jordan",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Kazakhstan",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Kenya",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Kiribati",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Korea",
+                            "weightageVal": 10.000000
+                        },
+                        {
+                            "type": "Kosovo",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Kuwait",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Kyrgyzstan",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Laos",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Latvia",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Lebanon",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Lesotho",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Liberia",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Libya",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Liechtenstein",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Lithuania",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Luxembourg",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Macedonia",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Madagascar",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Malawi",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Malaysia",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Maldives",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Mali",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Malta",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Marshall",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Mauritania",
+                            "weightageVal": 10.000000
+                        },
+                        {
+                            "type": "Mauritius",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Mexico",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Micronesia",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Moldova",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Monaco",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Mongolia",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Montenegro",
+                            "weightageVal": 10.000000
+                        },
+                        {
+                            "type": "Morocco",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Mozambique",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Myanmar",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Namibia",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Nauru",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Nepal",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Netherlands",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "New Zealand",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Nicaragua",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Niger",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Nigeria",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Norway",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Oman",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Pakistan",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Palau",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Panama",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Papua",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Paraguay",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Peru",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Philippines",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Poland",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Portugal",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Qatar",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Romania",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Russia",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Rwanda",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Samoa",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "San Marino",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Sao Tome",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Saudi Arabia",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Scotland",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Senegal",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Serbia",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Seychelles",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Sierra Leone",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Singapore",
+                            "weightageVal": 10.000000
+                        },
+                        {
+                            "type": "Slovakia",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Slovenia",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Solomon",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Somalia",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "South Africa",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "South Sudan",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Spain",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Sri Lanka",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "St. Kitts",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "St. Lucia",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "St Kitts",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "St Lucia",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Saint Kitts",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Santa Lucia",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Sudan",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Suriname",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Swaziland",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Sweden",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Switzerland",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Syria",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Taiwan",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Tajikistan",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Tanzania",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Thailand",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Tobago",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Togo",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Tonga",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Trinidad",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Tunisia",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Turkey",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Turkmenistan",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Tuvalu",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Uganda",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Ukraine",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "United Kingdom",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "United States",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Uruguay",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "USA",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Uzbekistan",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Vanuatu",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Vatican",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Venezuela",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Vietnam",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Wales",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Yemen",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Zambia",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Zimbabwe",
+                            "weightageVal": 6.000000
+                        }
+                    ]
+                },
+                {
+                    "name": "Applicant Location",
+                    "value": "Applicant Location",
+                    "webScrapFlag": false,
+                    "maxKPIScore": 10,
+                    "weighatgeValues": [
+                        {
+                            "type": "Afghanistan",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Azerbaijan",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Bahamas",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Bahrain",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Bangladesh",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Barbados ",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Belarus",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Belgium",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Belize",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Benin",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Bhutan",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Bissau",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Bolivia",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Bosnia",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Botswana",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Brazil",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "British",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Brunei",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Bulgaria",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Burkina",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Burma",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Burundi",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Cambodia",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Cameroon",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Canada",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Cape Verde",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Central African Republic",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Chad",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Chile",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "China",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Colombia",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Comoros",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Congo",
+                            "weightageVal": 10.000000
+                        },
+                        {
+                            "type": "Costa Rica",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "country debt",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Croatia",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Cuba",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Cyprus",
+                            "weightageVal": 10.000000
+                        },
+                        {
+                            "type": "Czech",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Denmark",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Djibouti",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Dominica",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "East Timor",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Ecuador",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Egypt",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "El Salvador",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Emirate",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "England",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Eritrea",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Estonia",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Ethiopia",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Fiji",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Finland",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "France",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Gabon",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Gambia",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Georgia",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Germany",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Ghana",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Great Britain",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Greece",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Grenada",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Grenadines",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Guatemala",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Guinea",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Guyana",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Haiti",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Herzegovina",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Honduras",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Hungary",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Iceland",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "India",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Indonesia",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Iran",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Iraq",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Ireland",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Israel",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Italy",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Ivory Coast",
+                            "weightageVal": 10.000000
+                        },
+                        {
+                            "type": "Jamaica",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Japan",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Jordan",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Kazakhstan",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Kenya",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Kiribati",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Korea",
+                            "weightageVal": 10.000000
+                        },
+                        {
+                            "type": "Kosovo",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Kuwait",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Kyrgyzstan",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Laos",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Latvia",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Lebanon",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Lesotho",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Liberia",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Libya",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Liechtenstein",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Lithuania",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Luxembourg",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Macedonia",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Madagascar",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Malawi",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Malaysia",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Maldives",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Mali",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Malta",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Marshall",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Mauritania",
+                            "weightageVal": 10.000000
+                        },
+                        {
+                            "type": "Mauritius",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Mexico",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Micronesia",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Moldova",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Monaco",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Mongolia",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Montenegro",
+                            "weightageVal": 10.000000
+                        },
+                        {
+                            "type": "Morocco",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Mozambique",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Myanmar",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Namibia",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Nauru",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Nepal",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Netherlands",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "New Zealand",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Nicaragua",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Niger",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Nigeria",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Norway",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Oman",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Pakistan",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Palau",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Panama",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Papua",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Paraguay",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Peru",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Philippines",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Poland",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Portugal",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Qatar",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Romania",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Russia",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Rwanda",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Samoa",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "San Marino",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Sao Tome",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Saudi Arabia",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Scotland",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Senegal",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Serbia",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Seychelles",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Sierra Leone",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Singapore",
+                            "weightageVal": 10.000000
+                        },
+                        {
+                            "type": "Slovakia",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Slovenia",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Solomon",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Somalia",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "South Africa",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "South Sudan",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Spain",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Sri Lanka",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "St. Kitts",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "St. Lucia",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "St Kitts",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "St Lucia",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Saint Kitts",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Santa Lucia",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Sudan",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Suriname",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Swaziland",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Sweden",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Switzerland",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Syria",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Taiwan",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Tajikistan",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Tanzania",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Thailand",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Tobago",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Togo",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Tonga",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": "Trinidad",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Tunisia",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Turkey",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Turkmenistan",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Tuvalu",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Uganda",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Ukraine",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "United Kingdom",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "United States",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Uruguay",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "USA",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Uzbekistan",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Vanuatu",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "Vatican",
+                            "weightageVal": 2.000000
+                        },
+                        {
+                            "type": "Venezuela",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Vietnam",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Wales",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": "Yemen",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Zambia",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Zimbabwe",
+                            "weightageVal": 6.000000
+                        }
+                    ]
+                },
+                {
+                    "name": "Nature of Organization",
+                    "value": "Nature of Organization",
+                    "webScrapFlag": false,
+                    "maxKPIScore": 10,
+                    "weighatgeValues": [
+                        {
+                            "type": "Startup",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "Medium Size( 250+ employees)",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Large( 500+ employees)",
+                            "weightageVal": 9.000000
+                        }
+                    ]
+                },
+                {
+                    "name": "Offer Proposition",
+                    "value": "Offer Proposition",
+                    "webScrapFlag": false,
+                    "maxKPIScore": 10,
+                    "weighatgeValues": [
+                        {
+                            "type": "Very Innovative",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Innovative",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": "General",
+                            "weightageVal": 2.000000
+                        }
+                    ]
+                },
+                {
+                    "name": "Referencible partner",
+                    "value": "Referencible partner",
+                    "webScrapFlag": false,
+                    "maxKPIScore": 10,
+                    "weighatgeValues": [
+                        {
+                            "type": "ATT",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "BT",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Telenor",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "Telia",
+                            "weightageVal": 9.000000
+                        },
+                        {
+                            "type": "None",
+                            "weightageVal": 1.000000
+                        }
+                    ]
+                },
+                {
+                    "name": "Third-party Score",
+                    "value": "Third-party Score",
+                    "webScrapFlag": false,
+                    "maxKPIScore": 10,
+                    "weighatgeValues": [
+                        {
+                            "type": "Score 1 to 4",
+                            "weightageVal": 1.000000
+                        },
+                        {
+                            "type": "Score 5 - 6",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "Score 6-8",
+                            "weightageVal": 7.000000
+                        },
+                        {
+                            "type": "Score 9 to 10",
+                            "weightageVal": 9.000000
+                        }
+                    ]
+                },
+                {
+                    "name": "Years of Existence",
+                    "value": "Years of Existance",
+                    "webScrapFlag": false,
+                    "maxKPIScore": 10,
+                    "weighatgeValues": [
+                        {
+                            "type": "more than 1 year",
+                            "weightageVal": 3.000000
+                        },
+                        {
+                            "type": "more than 5 years",
+                            "weightageVal": 5.000000
+                        },
+                        {
+                            "type": "more than 10 years",
+                            "weightageVal": 8.000000
+                        }
+                    ]
+                },
+                {
+                    "name": "Number of Employees",
+                    "value": "Number of Employees",
+                    "webScrapFlag": false,
+                    "maxKPIScore": 10,
+                    "weighatgeValues": [
+                        {
+                            "type": ">4000",
+                            "weightageVal": 10.000000
+                        },
+                        {
+                            "type": ">3000",
+                            "weightageVal": 8.000000
+                        },
+                        {
+                            "type": ">2000",
+                            "weightageVal": 6.000000
+                        },
+                        {
+                            "type": ">1000",
+                            "weightageVal": 4.000000
+                        },
+                        {
+                            "type": ">500",
+                            "weightageVal": 2.000000
+                        }
+                    ]
+                },
+                {
+                    "name": "Plans",
+                    "value": "Plans",
+                    "webScrapFlag": false,
+                    "maxKPIScore": 10,
+                    "weighatgeValues": [
+                        {
+                            "type": "Fixed Plan for App Store",
+                            "weightageVal": 0.000000
+                        },
+                        {
+                            "type": "Definition based Plan for Media App",
+                            "weightageVal": 0.000000
+                        },
+                        {
+                            "type": "Fixed Plan for Mobile Handset",
+                            "weightageVal": 0.000000
+                        },
+                        {
+                            "type": "Mobile Handset Order based Plan",
+                            "weightageVal": 0.000000
+                        },
+                        {
+                            "type": "Enterprise Office Fixed Plan",
+                            "weightageVal": 0.000000
+                        },
+                        {
+                            "type": "Enterprise Office Order based Plan",
+                            "weightageVal": 0.000000
+                        },
+                        {
+                            "type": "CT - High Bandwidth",
+                            "weightageVal": 0.000000
+                        },
+                        {
+                            "type": "CT VideoIn",
+                            "weightageVal": 0.000000
+                        },
+                        {
+                            "type": "CT - 360 AR",
+                            "weightageVal": 0.000000
+                        }
+                    ]
+                }
+            ]
+        },
+        "partnerSearch": {
+            "status": [
+                {
+                    "statusId": "preactive",
+                    "statusName": "Registered",
+                    "statusToShow": [
+                        {
+                            "statusId": "preactive",
+                            "statusName": "Registered"
+                        },
+                        {
+                            "statusId": "underconsideration",
+                            "statusName": "Under Review"
+                        },
+                        {
+                            "statusId": "active",
+                            "statusName": "Active"
+                        },
+                        {
+                            "statusId": "rejected",
+                            "statusName": "Rejected"
+                        }
+                    ]
+                },
+                {
+                    "statusId": "underconsideration",
+                    "statusName": "Under Review",
+                    "statusToShow": [
+                        {
+                            "statusId": "underconsideration",
+                            "statusName": "Under Review"
+                        },
+                        {
+                            "statusId": "active",
+                            "statusName": "Active"
+                        },
+                        {
+                            "statusId": "rejected",
+                            "statusName": "Rejected"
+                        }
+                    ]
+                },
+                {
+                    "statusId": "active",
+                    "statusName": "Active",
+                    "statusToShow": [
+                        {
+                            "statusId": "active",
+                            "statusName": "Active"
+                        },
+                        {
+                            "statusId": "rejected",
+                            "statusName": "Rejected"
+                        }
+                    ]
+                },
+                {
+                    "statusId": "rejected",
+                    "statusName": "Rejected",
+                    "statusToShow": [
+                        {
+                            "statusId": "rejected",
+                            "statusName": "Rejected"
+                        }
+                    ]
+                }
+            ]
+        },
+        "workflow": {
+            "teams": [
+                {
+                    "teamName": "PM Admin",
+                    "sequence": [
+                        {
+                            "position": "0",
+                            "teamName": "My Bucket",
+                            "workStepTeam": "PM Admin",
+                            "statusInWorkStepTeam": "inprogress",
+                            "dragDropText": "Drag & drop here for processing.",
+                            "canMove": true
+                        },
+                        {
+                            "position": "1",
+                            "teamName": "Partner Candidate",
+                            "workStepTeam": "PM Admin",
+                            "statusInWorkStepTeam": "onhold",
+                            "dragDropText": "Drag & drop here for more information from partner.",
+                            "canMove": true
+                        },
+                        {
+                            "position": "2",
+                            "teamName": "Finance",
+                            "workStepTeam": "Finance",
+                            "statusInWorkStepTeam": "inprogress",
+                            "dragDropText": "Drag & drop here to approve for next step.",
+                            "canMove": false
+                        }
+                    ]
+                },
+                {
+                    "teamName": "Finance",
+                    "sequence": [
+                        {
+                            "position": "0",
+                            "teamName": "PM Admin",
+                            "workStepTeam": "PM Admin",
+                            "statusInWorkStepTeam": "inprogress",
+                            "dragDropText": "Drag & drop here to move back.",
+                            "canMove": false
+                        },
+                        {
+                            "position": "1",
+                            "teamName": "My Bucket",
+                            "workStepTeam": "Finance",
+                            "statusInWorkStepTeam": "inprogress",
+                            "dragDropText": "Drag & drop here for processing.",
+                            "canMove": true
+                        },
+                        {
+                            "position": "2",
+                            "teamName": "Partner Candidate",
+                            "workStepTeam": "Finance",
+                            "statusInWorkStepTeam": "onhold",
+                            "dragDropText": "Drag & drop here for more information from partner.",
+                            "canMove": true
+                        },
+                        {
+                            "position": "3",
+                            "teamName": "Sales",
+                            "workStepTeam": "Sales",
+                            "statusInWorkStepTeam": "inprogress",
+                            "dragDropText": "Drag & drop here to approve for next step.",
+                            "canMove": false
+                        }
+                    ]
+                },
+                {
+                    "teamName": "Sales",
+                    "sequence": [
+                        {
+                            "position": "0",
+                            "teamName": "Finance",
+                            "workStepTeam": "Finance",
+                            "statusInWorkStepTeam": "inprogress",
+                            "dragDropText": "Drag & drop here for processing.",
+                            "canMove": false
+                        },
+                        {
+                            "position": "1",
+                            "teamName": "My Bucket",
+                            "workStepTeam": "Sales",
+                            "statusInWorkStepTeam": "inprogress",
+                            "dragDropText": "Drag & drop here for more information from partner.",
+                            "canMove": true
+                        },
+                        {
+                            "position": "2",
+                            "teamName": "Partner Candidate",
+                            "workStepTeam": "Sales",
+                            "statusInWorkStepTeam": "onhold",
+                            "dragDropText": "Drag & drop here to approve partner.",
+                            "canMove": true
+                        }
+                    ]
+                }
+            ],
+            "onApproveEmailBody": "You have received a partner form to process. "
+        },
+        "workflowCheckList": {
+            "PM Admin": [
+                {
+                    "displayName": "checklist11",
+                    "value": "checklist11",
+                    "valueChecked": false
+                },
+                {
+                    "displayName": "checklist2",
+                    "value": "checklist2",
+                    "valueChecked": false
+                },
+                {
+                    "displayName": "checklist13",
+                    "value": "checklist13",
+                    "valueChecked": false
+                },
+                {
+                    "displayName": "checklist14",
+                    "value": "checklist14",
+                    "valueChecked": false
+                }
+            ],
+            "Finance": [
+                {
+                    "displayName": "checklist11",
+                    "value": "checklist11",
+                    "valueChecked": false
+                },
+                {
+                    "displayName": "checklist12",
+                    "value": "checklist12",
+                    "valueChecked": false
+                },
+                {
+                    "displayName": "checklist13",
+                    "value": "checklist13",
+                    "valueChecked": false
+                },
+                {
+                    "displayName": "checklist14",
+                    "value": "checklist14",
+                    "valueChecked": false
+                }
+            ],
+            "Sales": [
+                {
+                    "displayName": "checklist1",
+                    "value": "dhimkana",
+                    "valueChecked": false
+                }
+            ]
+        },
+        "panelData": {
+            "source_alias_names": {
+                "cbscraper": "Corporate Profiler 1",
+                "gdscraper": "Employee Sentiment Profiler",
+                "zoomscraper": "Corporate Profiler 2",
+                "secgovscraper": "Financial Profiler"
+            }
+        }
+    }
+]

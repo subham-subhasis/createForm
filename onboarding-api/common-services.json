@@ -1,0 +1,584 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "common-services-template",
+    "version": "1.0.0",
+    "description": "Common Services Template"
+  },
+  "servers": [
+    {
+      "url": "http://common-services-app:8080"
+    }
+  ],
+  "paths": {
+    "/register": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+              "$ref": "#/components/schemas/RegisterModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Register"
+        ],
+        "x-privileges": [
+          "register_application"
+        ],
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdStringModel"
+                }
+              }
+          },
+          "description": "Reponse when application is registered successfully"
+        }
+      },
+      "operationId": "register",
+      "summary": "API for registering an application.",
+      "description": "Registers an application/service with keycloak as a client and maps the privileges to the roles"
+      }
+    },
+    "/configuration": {
+      "get": {
+        "tags": [
+          "Configuration"
+        ],
+        "x-privileges": [
+            "configuration_view"
+        ],
+        "parameters": [
+          {
+            "name": "pageIndex",
+            "description": "Index of page to be fetched",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "pageSize",
+            "description": "Number of records to be fetched per page",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConfigurationModel"
+                  }
+                }
+              }
+            },
+            "description": "Return the list of config properties"
+          }
+        },
+        "operationId": "getConfigurations",
+        "summary": "Api for fetching all the configuration properties",
+        "description": "Api for fetching all the configuration properties"
+      },
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfigurationModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Configuration"
+        ],
+        "x-privileges": [
+            "configuration_create"
+        ],
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AbstractResponseModel"
+                }
+              }
+            },
+            "description": "Return the status of saving config property"
+          }
+        },
+        "operationId": "saveConfiguration",
+        "summary": "Api for saving the config property",
+        "description": "Api for saving the config property"
+      }
+    },
+    "/configuration/{key}": {
+      "get": {
+        "tags": [
+          "Configuration"
+        ],
+        "x-privileges": [
+            "configuration_view"
+        ],
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Config Property Key",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConfigurationModel"
+                }
+              }
+            },
+            "description": "Return the config property"
+          }
+        },
+        "operationId": "getConfiguration",
+        "summary": "Api for getting a config property based on key",
+        "description": "Api for getting a config property based on key"
+      },
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfigurationModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Configuration"
+        ],
+        "x-privileges": [
+            "configuration_edit"
+        ],
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Config Property Key",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AbstractResponseModel"
+                }
+              }
+            },
+            "description": "Return the status of updating Config Property"
+          }
+        },
+        "operationId": "updateConfiguration",
+        "summary": "Api for updating an existing config property",
+        "description": "Api for updating an existing config property"
+      },
+      "delete": {
+        "tags": [
+          "Configuration"
+        ],
+        "x-privileges": [
+            "configuration_delete"
+        ],
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Config Property Key",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AbstractResponseModel"
+                }
+              }
+            },
+            "description": "Return the status of deletion of config property"
+          }
+        },
+        "operationId": "deleteConfiguration",
+        "summary": "Api for deleting the config property based on key",
+        "description": "Api for deleting the config property based on key"
+      },
+      "patch": {
+        "requestBody": {
+          "description": "Value to be updated with",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfigurationValueModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Configuration"
+        ],
+        "x-privileges": [
+            "configuration_edit"
+        ],
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Config Property Key",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AbstractResponseModel"
+                }
+              }
+            },
+            "description": "Returns status of patching config property"
+          }
+        },
+        "operationId": "patchConfiguration",
+        "summary": "Api for patching an existing config property value",
+        "description": "Api for patching an existing config property value"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AbstractResponseModel": {
+        "description": "Model for status of the operation",
+        "required": [
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "description": "Status of the api call",
+            "type": "string"
+          }
+        },
+        "example": {
+          "status": "success"
+        }
+      },
+      "IdStringModel": {
+        "description": "Model for returning ID as reponse",
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "id of the entity created",
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": "0dd4b34d-012a-4937-8d75-39e1466ff808"
+        }
+      },
+      "RegisterModel": {
+        "description": "Model used to register an application with NGP",
+        "required": [
+          "application",
+          "force_delete"
+        ],
+        "type": "object",
+        "properties": {
+          "application": {
+            "$ref": "#/components/schemas/ApplicationModel",
+            "description": "The application",
+            "type": "object"
+          },
+          "force_delete": {
+            "description": "Force deletion and re-registration of the application",
+            "type": "boolean"
+          }
+        }
+      },
+      "ApplicationModel": {
+        "description": "Application Model with Previliges",
+        "required": [
+          "id",
+          "name",
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "ID of the application",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the application",
+            "type": "string"
+          },
+          "url": {
+            "description": "Front-end URL of the application",
+            "type": "string"
+          },
+          "description": {
+            "description": "A short summary of the application",
+            "type": "string"
+          },
+          "public_client": {
+            "description": "A public client is accessed by web applications",
+            "type": "boolean"
+          },
+          "default_users": {
+            "description": "Default users to be created - for testing purposes only",
+            "type": "array",
+            "items": {
+             "$ref": "#/components/schemas/DefaultUserModel"
+            }
+          },
+          "modules": {
+            "description": "Modules provided by the application",
+            "type": "array",
+            "items": {
+             "$ref": "#/components/schemas/ModuleModel"
+            }
+          }
+        }
+      },
+      "DefaultUserModel": {
+        "description": "Default user created when registering an application. If a user with the name exists, the roles are added to that user. Giving empty array of roles assigns all roles to the user.",
+        "required": [
+          "id",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Login ID of the user",
+            "type": "string"
+          },
+          "password": {
+            "description": "Password for the user",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the user",
+            "type": "string"
+          },
+          "roles": {
+            "description": "Roles assigned to the user. NULL means all.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ModuleModel": {
+        "description": "A privilege provided by an application",
+        "required": [
+          "name",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Name of the privilege - unique within the service/application",
+            "type": "string"
+          },
+          "description": {
+            "description": "Name of the privilige - Human readable text",
+            "type": "string"
+          },
+          "privileges": {
+            "description": "Priviliges provided by a module",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PrivilegeModel"
+            }
+          }
+        }
+      },
+      "PrivilegeModel": {
+        "description": "A privilege provided by an application",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Name of the privilege - unique within the service/application",
+            "type": "string"
+          },
+          "application_id": {
+            "description": "ID of the application this privilege is provided by. If given, description is ignored.",
+            "type": "string"
+          },
+          "description": {
+            "description": "Name of the privilige - Human readable text",
+            "type": "string"
+          },
+          "children": {
+            "description": "Child priviliges",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PrivilegeModel"
+            }
+          }
+        }
+      },
+      "ConfigurationModel": {
+        "description": "Model for unit config property",
+        "required": [
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "description": "Key of the config property",
+            "type": "string"
+          },
+          "value": {
+            "description": "Value of the config property",
+            "type": "string"
+          },
+          "type": {
+            "description": "Type of the property",
+            "type": "string"
+          },
+          "tags": {
+            "description": "Tags associated with the config store",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "example": {
+          "key": "dataingest.datasource.url",
+          "value": "jdbc:postgresql://localhost:5432/dataingest",
+          "type": "string",
+          "tags": [
+            "dataingest",
+            "ngp"
+          ]
+        }
+      },
+      "ConfigurationValueModel": {
+        "description": "Model for value",
+        "type": "object",
+        "properties": {
+          "value": {
+            "description": "Value of the config property",
+            "type": "string"
+          }
+        },
+        "example": {
+          "value": "postgres"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Configuration",
+      "description": "Configuration Services"
+    },
+    {
+      "name": "Register",
+      "description": "Application Registry Services"
+    }
+  ],
+  "x-modules": [
+    {
+      "id": "register_application",
+      "name": "Register an Application",
+      "description": "Service for registering an application/service with roles"
+    },
+    {
+      "id": "configuration",
+      "name": "Configuration",
+      "description": "All operations on configuration entries",
+      "privileges": [
+        {
+          "id": "configuration_create",
+          "name": "Create",
+          "description": "Create a new configuration entry",
+          "parent": "configuration"
+        },
+        {
+          "id": "configuration_view",
+          "name": "View",
+          "description": "View a configuration entry",
+          "parent": "configuration"
+        },
+        {
+          "id": "configuration_edit",
+          "name": "Edit",
+          "description": "Edit a configuration entry",
+          "parent": "configuration"
+        },
+        {
+            "id": "configuration_delete",
+            "name": "Delete",
+            "description": "Delete a new configuration entry",
+            "parent": "configuration"
+        }
+      ]
+    }
+  ],
+  "x-default-users": [
+      {
+          "id": "ngp-admin",
+          "name": "NGP Administrator",
+          "password": "Pa55w0rd"
+      },
+      {
+          "id": "ngp-user",
+          "name": "NGP User",
+          "password": "Pa55w0rd",
+          "description": "User for the service. Some roles only.",
+          "roles": [ "configuration_view" ]
+      }
+  ]
+}

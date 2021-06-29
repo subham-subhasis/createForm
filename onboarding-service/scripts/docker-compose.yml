@@ -1,0 +1,42 @@
+version: "3.2"
+services:
+
+    ngp-postgres:
+        container_name: ngp-postgres
+        image: postgres:9.6.14
+        restart: always
+        ports:
+            - "9001:5432"
+        environment:
+            - POSTGRES_USERNAME=postgres
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_MULTIPLE_DATABASES=keycloak
+        volumes:
+            - ngp-postgres:/var/lib/postgresql/data
+            - ./postgres-create-db:/docker-entrypoint-initdb.d
+
+    ngp-keycloak:
+        container_name: ngp-keycloak
+        image: quay.io/keycloak/keycloak:9.0.3
+        environment:
+            DB_VENDOR: POSTGRES
+            DB_ADDR: ngp-postgres
+            DB_DATABASE: keycloak
+            DB_USER: keycloak
+            DB_PASSWORD: keycloak
+            DB_SCHEMA: public
+            KEYCLOAK_USER: admin
+            KEYCLOAK_PASSWORD: Pa55w0rd
+        ports:
+            - 8090:8080
+        depends_on:
+            - ngp-postgres
+
+volumes:
+    ngp-postgres:
+        external: true
+
+networks:
+    default:
+        external:
+            name: ngp-dev

@@ -1,0 +1,66 @@
+#!/bin/bash
+function help() {
+    echo "Usage:"
+    echo "    $0 d[evelop]]"
+    echo "        OR"
+    echo "    $0 r[elease]"
+    echo "        OR"
+    echo "    $0 m[aster] [version]"
+    echo "        OR"
+    echo "    $0 f[eature] feature-name"
+    echo "    $0 s[top]"
+    echo "    $0 [h[elp]]"
+    exit 0
+}
+
+[ $# = 0 ] && help
+
+[ "$1" = "h" -o "$1" = "help" ] && help
+
+case "$1" in
+    d | develop)
+        PROJECT=develop
+        TAG=latest
+        ;;
+    r | release)
+        PROJECT=release
+        TAG=latest
+        ;;
+    m | master)
+        PROJECT=master
+        TAG=${2:-latest}
+        ;;
+    f | feature)
+        PROJECT=feature
+        [ $# != 2 ] && help
+        TAG=$2
+        ;;
+    s | stop)
+        set -- stop
+        PROJECT=develop
+        TAG=latest
+        ;;
+    *)
+        help
+        ;;
+esac
+export DOCKER_IMAGE_REGISTRY_IP=${DOCKER_IMAGE_REGISTRY_IP:-10.113.56.67}
+export PROJECT TAG
+
+if [ "$1" = stop ]
+then
+    if docker-compose exec onboarding-service echo hello >/dev/null 2>&1
+    then
+        docker-compose down
+        exit 0
+    else
+        echo "Docker containers are not running..."
+        exit 1
+    fi
+else
+    docker-compose exec onboarding-service echo hello >/dev/null 2>&1 && \
+        echo "Docker containers are running. Use '$0 stop' to bring the services down" && \
+        exit 0
+    echo "Starting docker-containers using $PROJECT with $TAG"
+    docker-compose up -d
+fi

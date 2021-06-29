@@ -1,0 +1,31 @@
+SCRIPT_FOLDER=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
+cd ${SCRIPT_FOLDER}
+if ! ./kcadm get realms/master > /dev/null 2>&1
+then
+    echo
+    echo -n Waiting for keycloak .
+    while ! ./kcadm get realms/master > /dev/null 2>&1
+    do
+        echo -n .
+    done
+    echo "done"
+fi
+
+if [ "$1" != "-f" ]
+then
+    if ./kcadm get realms/ngp >/dev/null 2>&1
+    then
+        echo Reusing existing realm.. use "create-realm -f" to force initialize.
+        exit 0
+    fi
+fi
+
+if ./kcadm get realms/master > /dev/null 2>&1
+then
+    echo Deleting realm ngp
+    ./kcadm delete realms/ngp
+fi
+
+echo "Creating ngp realm" && \
+    ./kcadm create realms -s realm=ngp -s enabled=true -s displayName="Next Generation Platform" >/dev/null 2>&1
+

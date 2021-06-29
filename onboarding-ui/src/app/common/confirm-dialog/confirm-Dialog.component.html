@@ -1,0 +1,10 @@
+<div id="confirmModal" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="fireEvent('close')">&times;</span>
+    <div class="FS14 PL20">{{message}}</div>
+    <div class="disp-flex jc-flex-end PT-REM2">
+      <button *ngIf="showButton" class="btn PL10 PR10 PT7 PB7 yes-btn  pointer" (click)="fireEvent('yes')">Yes</button>
+      <button *ngIf="showButton" class="btn PL10 PR10 PT7 PB7 cancel-btn ML10 pointer" (click)="fireEvent('close')">Cancel</button>
+    </div>
+  </div>
+</div>

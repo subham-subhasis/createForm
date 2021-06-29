@@ -1,0 +1,3 @@
+include 'onboarding-service'
+
+rootProject.name = "onboarding-service"

@@ -1,0 +1,210 @@
+2021-04-16 12:55:08.180  INFO 22944 --- [restartedMain] com.subex.onboarding.OpenAPI2SpringBoot  : Starting OpenAPI2SpringBoot on 4181L11 with PID 22944 (C:\Users\subham.panda\Desktop\DemoTemplate\onboarding\onboarding-service\bin\main started by subham.panda in C:\Users\subham.panda\Desktop\DemoTemplate\onboarding\onboarding-service)
+2021-04-16 12:55:08.186  INFO 22944 --- [restartedMain] com.subex.onboarding.OpenAPI2SpringBoot  : No active profile set, falling back to default profiles: default
+2021-04-16 12:55:08.230  INFO 22944 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\subham.panda\.gradle\caches\modules-2\files-2.1\com.oracle.ojdbc\ojdbc8\19.3.0.0\967c0b1a2d5b1435324de34a9b8018d294f8f47b\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/subham.panda/.gradle/caches/modules-2/files-2.1/com.oracle.ojdbc/ojdbc8/19.3.0.0/967c0b1a2d5b1435324de34a9b8018d294f8f47b/oraclepki.jar
+2021-04-16 12:55:08.231  INFO 22944 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\subham.panda\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\19.3.0.0\967c0b1a2d5b1435324de34a9b8018d294f8f47b\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/subham.panda/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/19.3.0.0/967c0b1a2d5b1435324de34a9b8018d294f8f47b/oraclepki.jar
+2021-04-16 12:55:08.231  INFO 22944 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\subham.panda\.gradle\caches\modules-2\files-2.1\org.glassfish.jaxb\jaxb-runtime\2.3.2\5528bc882ea499a09d720b42af11785c4fc6be2a\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/subham.panda/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/subham.panda/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/txw2-2.3.2.jar,file:/C:/Users/subham.panda/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/istack-commons-runtime-3.0.8.jar,file:/C:/Users/subham.panda/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/stax-ex-1.8.1.jar,file:/C:/Users/subham.panda/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/FastInfoset-1.2.16.jar,file:/C:/Users/subham.panda/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/jakarta.activation-api-1.2.1.jar
+2021-04-16 12:55:08.231  INFO 22944 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\subham.panda\.gradle\caches\modules-2\files-2.1\com.oracle.ojdbc\oraclepki\19.3.0.0\e52a34f271c6c62ee1a73b71cc19da5459b709f\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/subham.panda/.gradle/caches/modules-2/files-2.1/com.oracle.ojdbc/oraclepki/19.3.0.0/e52a34f271c6c62ee1a73b71cc19da5459b709f/osdt_core.jar,file:/C:/Users/subham.panda/.gradle/caches/modules-2/files-2.1/com.oracle.ojdbc/oraclepki/19.3.0.0/e52a34f271c6c62ee1a73b71cc19da5459b709f/osdt_cert.jar,file:/C:/Users/subham.panda/.gradle/caches/modules-2/files-2.1/com.oracle.ojdbc/oraclepki/19.3.0.0/oracle.osdt/osdt_core.jar,file:/C:/Users/subham.panda/.gradle/caches/modules-2/files-2.1/com.oracle.ojdbc/oraclepki/19.3.0.0/oracle.osdt/osdt_cert.jar
+2021-04-16 12:55:08.231  INFO 22944 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\subham.panda\.gradle\caches\modules-2\files-2.1\com.oracle.database.security\oraclepki\19.3.0.0\e52a34f271c6c62ee1a73b71cc19da5459b709f\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/subham.panda/.gradle/caches/modules-2/files-2.1/com.oracle.database.security/oraclepki/19.3.0.0/e52a34f271c6c62ee1a73b71cc19da5459b709f/osdt_core.jar,file:/C:/Users/subham.panda/.gradle/caches/modules-2/files-2.1/com.oracle.database.security/oraclepki/19.3.0.0/e52a34f271c6c62ee1a73b71cc19da5459b709f/osdt_cert.jar,file:/C:/Users/subham.panda/.gradle/caches/modules-2/files-2.1/com.oracle.database.security/oraclepki/19.3.0.0/oracle.osdt/osdt_core.jar,file:/C:/Users/subham.panda/.gradle/caches/modules-2/files-2.1/com.oracle.database.security/oraclepki/19.3.0.0/oracle.osdt/osdt_cert.jar
+2021-04-16 12:55:08.231  INFO 22944 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-16 12:55:08.232  INFO 22944 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-16 12:55:10.012  INFO 22944 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-16 12:55:10.165  INFO 22944 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 143ms. Found 7 JPA repository interfaces.
+2021-04-16 12:55:10.567  INFO 22944 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$6a88893e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-16 12:55:10.614  INFO 22944 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-16 12:55:11.330  INFO 22944 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2021-04-16 12:55:11.340  INFO 22944 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-16 12:55:11.340  INFO 22944 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-04-16 12:55:11.682  INFO 22944 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-16 12:55:11.683 DEBUG 22944 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2021-04-16 12:55:11.683  INFO 22944 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3451 ms
+2021-04-16 12:55:11.891  INFO 22944 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-16 12:55:12.112  INFO 22944 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-16 12:55:12.119  INFO 22944 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://127.0.0.1:5432/accountManagement'
+2021-04-16 12:55:12.477  INFO 22944 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-16 12:55:12.580  INFO 22944 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2021-04-16 12:55:12.765  INFO 22944 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-04-16 12:55:12.912  INFO 22944 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-04-16 12:55:14.471  INFO 22944 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-16 12:55:14.479  INFO 22944 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-16 12:55:14.531  INFO 22944 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-16 12:55:14.582  INFO 22944 --- [restartedMain] org.dozer.config.GlobalSettings          : Trying to find Dozer configuration file: dozer.properties
+2021-04-16 12:55:14.587  WARN 22944 --- [restartedMain] org.dozer.config.GlobalSettings          : Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+2021-04-16 12:55:14.589  INFO 22944 --- [restartedMain] org.dozer.DozerInitializer               : Initializing Dozer. Version: 5.5.0, Thread Name: restartedMain
+2021-04-16 12:55:14.592  INFO 22944 --- [restartedMain] org.dozer.jmx.JMXPlatformImpl            : Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+2021-04-16 12:55:14.593  INFO 22944 --- [restartedMain] org.dozer.jmx.JMXPlatformImpl            : Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+2021-04-16 12:55:14.594  INFO 22944 --- [restartedMain] org.dozer.DozerBeanMapper                : Initializing a new instance of dozer bean mapper.
+2021-04-16 12:55:15.194  INFO 22944 --- [restartedMain] org.dozer.DozerBeanMapper                : Initializing a new instance of dozer bean mapper.
+2021-04-16 12:55:15.712  INFO 22944 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2021-04-16 12:55:15.779  INFO 22944 --- [restartedMain] org.dozer.DozerBeanMapper                : Initializing a new instance of dozer bean mapper.
+2021-04-16 12:55:15.850  INFO 22944 --- [restartedMain] org.dozer.DozerBeanMapper                : Initializing a new instance of dozer bean mapper.
+2021-04-16 12:55:16.118  WARN 22944 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-16 12:55:16.202 DEBUG 22944 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 16 mappings in 'requestMappingHandlerMapping'
+2021-04-16 12:55:16.257  INFO 22944 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-16 12:55:16.393  INFO 22944 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 52411f8a-3725-4aae-bfb7-06b960eb298c
+
+2021-04-16 12:55:16.506 DEBUG 22944 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui.html, /webjars/**] in 'resourceHandlerMapping'
+2021-04-16 12:55:16.525  INFO 22944 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-16 12:55:16.529  INFO 22944 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@cd7c598, org.springframework.security.web.context.SecurityContextPersistenceFilter@1044cc45, org.springframework.security.web.header.HeaderWriterFilter@3a5d9c2c, org.springframework.web.filter.CorsFilter@40b729f3, org.springframework.security.web.authentication.logout.LogoutFilter@9e81d66, com.subex.onboarding.JWTAuthorizationFilter@7fdbe23d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d337c8c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1b04693c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c00e97e, org.springframework.security.web.session.SessionManagementFilter@19c3978f, org.springframework.security.web.access.ExceptionTranslationFilter@2393b6f6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@ad551ca]
+2021-04-16 12:55:16.596 DEBUG 22944 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-04-16 12:55:16.627 DEBUG 22944 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-04-16 12:55:17.411  INFO 22944 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-04-16 12:55:17.425  INFO 22944 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-04-16 12:55:17.476  INFO 22944 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-04-16 12:55:17.708  INFO 22944 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2021-04-16 12:55:17.712  INFO 22944 --- [restartedMain] com.subex.onboarding.OpenAPI2SpringBoot  : Started OpenAPI2SpringBoot in 9.882 seconds (JVM running for 11.473)
+2021-04-16 12:55:17.797  WARN 22944 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23505
+2021-04-16 12:55:17.797 ERROR 22944 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: duplicate key value violates unique constraint "uk_qubii929ubf30itpf9x3jcsgh"
+  Detail: Key (field_grp_name)=(Basic Details) already exists.
+2021-04-16 12:57:17.037  INFO 22944 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-16 12:57:17.043  INFO 22944 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-16 12:57:17.048  INFO 22944 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-16 12:57:17.659  INFO 22944 --- [restartedMain] com.subex.onboarding.OpenAPI2SpringBoot  : Starting OpenAPI2SpringBoot on 4181L11 with PID 22944 (C:\Users\subham.panda\Desktop\DemoTemplate\onboarding\onboarding-service\bin\main started by subham.panda in C:\Users\subham.panda\Desktop\DemoTemplate\onboarding\onboarding-service)
+2021-04-16 12:57:17.659  INFO 22944 --- [restartedMain] com.subex.onboarding.OpenAPI2SpringBoot  : No active profile set, falling back to default profiles: default
+2021-04-16 12:57:18.600  INFO 22944 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-16 12:57:18.704  INFO 22944 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103ms. Found 7 JPA repository interfaces.
+2021-04-16 12:57:18.815  INFO 22944 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$6a88893e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-16 12:57:18.817  INFO 22944 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-16 12:57:19.514  INFO 22944 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2021-04-16 12:57:19.515  INFO 22944 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-16 12:57:19.515  INFO 22944 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-04-16 12:57:19.552  INFO 22944 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-16 12:57:19.553 DEBUG 22944 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2021-04-16 12:57:19.553  INFO 22944 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1885 ms
+2021-04-16 12:57:19.631  INFO 22944 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-04-16 12:57:19.805  INFO 22944 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-04-16 12:57:19.805  INFO 22944 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://127.0.0.1:5432/accountManagement'
+2021-04-16 12:57:20.009  INFO 22944 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-16 12:57:20.026  INFO 22944 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-04-16 12:57:20.677  INFO 22944 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-16 12:57:20.677  INFO 22944 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-16 12:57:20.707  INFO 22944 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-16 12:57:20.724  INFO 22944 --- [restartedMain] org.dozer.DozerBeanMapper                : Initializing a new instance of dozer bean mapper.
+2021-04-16 12:57:20.833  INFO 22944 --- [restartedMain] org.dozer.DozerBeanMapper                : Initializing a new instance of dozer bean mapper.
+2021-04-16 12:57:21.041  INFO 22944 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2021-04-16 12:57:21.058  INFO 22944 --- [restartedMain] org.dozer.DozerBeanMapper                : Initializing a new instance of dozer bean mapper.
+2021-04-16 12:57:21.128  INFO 22944 --- [restartedMain] org.dozer.DozerBeanMapper                : Initializing a new instance of dozer bean mapper.
+2021-04-16 12:57:21.260  WARN 22944 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-16 12:57:21.303 DEBUG 22944 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 16 mappings in 'requestMappingHandlerMapping'
+2021-04-16 12:57:21.340  INFO 22944 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-16 12:57:21.422  INFO 22944 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: a59d2df0-2a6d-437d-8152-e01e47f61364
+
+2021-04-16 12:57:21.458 DEBUG 22944 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui.html, /webjars/**] in 'resourceHandlerMapping'
+2021-04-16 12:57:21.470  INFO 22944 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-16 12:57:21.473  INFO 22944 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a7d2e66, org.springframework.security.web.context.SecurityContextPersistenceFilter@35e6fe3b, org.springframework.security.web.header.HeaderWriterFilter@56f8c0c8, org.springframework.web.filter.CorsFilter@4f22fb3, org.springframework.security.web.authentication.logout.LogoutFilter@2f858651, com.subex.onboarding.JWTAuthorizationFilter@2949d535, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@27141d26, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@37fa678c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30c48c94, org.springframework.security.web.session.SessionManagementFilter@5469c32e, org.springframework.security.web.access.ExceptionTranslationFilter@5bc93534, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@338eaf59]
+2021-04-16 12:57:21.500 DEBUG 22944 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-04-16 12:57:21.514 DEBUG 22944 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-04-16 12:57:21.814  INFO 22944 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-04-16 12:57:21.815  INFO 22944 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-04-16 12:57:21.827  INFO 22944 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-04-16 12:57:21.895  INFO 22944 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2021-04-16 12:57:21.897  INFO 22944 --- [restartedMain] com.subex.onboarding.OpenAPI2SpringBoot  : Started OpenAPI2SpringBoot in 4.307 seconds (JVM running for 135.658)
+2021-04-16 12:57:21.923  WARN 22944 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23505
+2021-04-16 12:57:21.925 ERROR 22944 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: duplicate key value violates unique constraint "uk_qubii929ubf30itpf9x3jcsgh"
+  Detail: Key (field_grp_name)=(Basic Details) already exists.
+2021-04-16 12:57:21.931  INFO 22944 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-16 12:58:39.314  INFO 22944 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-16 12:58:39.315  INFO 22944 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-16 12:58:39.316 DEBUG 22944 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2021-04-16 12:58:39.338 DEBUG 22944 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-04-16 12:58:39.339  INFO 22944 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 23 ms
+2021-04-16 12:58:39.369 DEBUG 22944 --- [http-nio-8083-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.subex.onboarding.api.ProfilesApiController#getprofiles()
+2021-04-16 12:58:39.425 DEBUG 22944 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/profiles", parameters={}
+2021-04-16 12:58:39.426 DEBUG 22944 --- [http-nio-8083-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.subex.onboarding.api.ProfilesApiController#getprofiles()
+2021-04-16 12:58:39.595  INFO 22944 --- [http-nio-8083-exec-1] com.subex.onboarding.helper.AuditAspect  : audit_logged_in_user :: NULL || audit_path :: http://localhost:8083/api/profiles || audit_date :: Fri Apr 16 12:58:39 IST 2021 || audit_api_name :: /api/profiles || audit_service :: onboarding-service || audit_api_method_name :: getprofiles || audit_remote_address :: 0:0:0:0:0:0:0:1 || audit_parameter_list :: {} || audit_locale :: en_US || audit_log_type :: API Log
+2021-04-16 12:58:43.394  INFO 22944 --- [http-nio-8083-exec-1] c.s.ngp.audit.trail.lib.AuditEventModel  : audit_logged_in_user :: null ||  audit_date :: Fri Apr 16 12:58:43 IST 2021 || audit_service :: null || audit_entity :: PROFILE-FIELD-GROUP-ENTITY || audit_action :: Fetch ALL Profile ||  audit_message :: Fetching all profiles. || audit_status :: success || audit_log_type :: Event Log
+2021-04-16 12:58:43.406 DEBUG 22944 --- [http-nio-8083-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-04-16 12:58:43.415 DEBUG 22944 --- [http-nio-8083-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[class Profile {
+    profileName: Ecommerce Partner
+}]]
+2021-04-16 12:58:43.448 DEBUG 22944 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-04-16 12:58:43.481 DEBUG 22944 --- [http-nio-8083-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.subex.onboarding.api.ProfileinfosApiController#getprofileinfos(String)
+2021-04-16 12:58:43.482 DEBUG 22944 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/profileinfos?profileName=Ecommerce%20Partner", parameters={masked}
+2021-04-16 12:58:43.483 DEBUG 22944 --- [http-nio-8083-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.subex.onboarding.api.ProfileinfosApiController#getprofileinfos(String)
+2021-04-16 12:58:43.527  INFO 22944 --- [http-nio-8083-exec-2] com.subex.onboarding.helper.AuditAspect  : audit_logged_in_user :: NULL || audit_path :: http://localhost:8083/api/profileinfos || audit_date :: Fri Apr 16 12:58:43 IST 2021 || audit_api_name :: /api/profileinfos || audit_service :: onboarding-service || audit_api_method_name :: getprofileinfos || audit_remote_address :: 0:0:0:0:0:0:0:1 || audit_parameter_list :: {profileName = Ecommerce Partner} || audit_locale :: en_US || audit_log_type :: API Log
+2021-04-16 12:58:43.792 DEBUG 22944 --- [http-nio-8083-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-04-16 12:58:43.797 DEBUG 22944 --- [http-nio-8083-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[class ProfileInfo {
+    profileName: Ecommerce Partner
+    profileData: [class FormFieldGroup {
+    (truncated)...]
+2021-04-16 12:58:43.815 DEBUG 22944 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-04-16 13:05:10.013  INFO 22944 --- [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-16 13:05:10.015  INFO 22944 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-04-16 13:05:10.025  INFO 22944 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-04-16 13:05:10.753  INFO 22944 --- [restartedMain] com.subex.onboarding.OpenAPI2SpringBoot  : Starting OpenAPI2SpringBoot on 4181L11 with PID 22944 (C:\Users\subham.panda\Desktop\DemoTemplate\onboarding\onboarding-service\bin\main started by subham.panda in C:\Users\subham.panda\Desktop\DemoTemplate\onboarding\onboarding-service)
+2021-04-16 13:05:10.753  INFO 22944 --- [restartedMain] com.subex.onboarding.OpenAPI2SpringBoot  : No active profile set, falling back to default profiles: default
+2021-04-16 13:05:11.627  INFO 22944 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-16 13:05:11.726  INFO 22944 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98ms. Found 7 JPA repository interfaces.
+2021-04-16 13:05:11.816  INFO 22944 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$6a88893e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-16 13:05:11.818  INFO 22944 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-16 13:05:12.265  INFO 22944 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2021-04-16 13:05:12.266  INFO 22944 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-16 13:05:12.266  INFO 22944 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-04-16 13:05:12.305  INFO 22944 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-16 13:05:12.305 DEBUG 22944 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2021-04-16 13:05:12.305  INFO 22944 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1547 ms
+2021-04-16 13:05:12.378  INFO 22944 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-04-16 13:05:12.547  INFO 22944 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2021-04-16 13:05:12.548  INFO 22944 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://127.0.0.1:5432/accountManagement'
+2021-04-16 13:05:12.752  INFO 22944 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-16 13:05:12.763  INFO 22944 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-04-16 13:05:13.372  INFO 22944 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-16 13:05:13.372  INFO 22944 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-16 13:05:13.401  INFO 22944 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-16 13:05:13.418  INFO 22944 --- [restartedMain] org.dozer.DozerBeanMapper                : Initializing a new instance of dozer bean mapper.
+2021-04-16 13:05:13.503  INFO 22944 --- [restartedMain] org.dozer.DozerBeanMapper                : Initializing a new instance of dozer bean mapper.
+2021-04-16 13:05:13.730  INFO 22944 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2021-04-16 13:05:13.747  INFO 22944 --- [restartedMain] org.dozer.DozerBeanMapper                : Initializing a new instance of dozer bean mapper.
+2021-04-16 13:05:13.816  INFO 22944 --- [restartedMain] org.dozer.DozerBeanMapper                : Initializing a new instance of dozer bean mapper.
+2021-04-16 13:05:13.945  WARN 22944 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-16 13:05:13.989 DEBUG 22944 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 16 mappings in 'requestMappingHandlerMapping'
+2021-04-16 13:05:14.024  INFO 22944 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-16 13:05:14.098  INFO 22944 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 726b2d97-8f99-4aef-b326-c501358bdc22
+
+2021-04-16 13:05:14.137 DEBUG 22944 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui.html, /webjars/**] in 'resourceHandlerMapping'
+2021-04-16 13:05:14.149  INFO 22944 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-16 13:05:14.153  INFO 22944 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56624b8f, org.springframework.security.web.context.SecurityContextPersistenceFilter@4a0c2bf5, org.springframework.security.web.header.HeaderWriterFilter@58ce81c1, org.springframework.web.filter.CorsFilter@fdeb096, org.springframework.security.web.authentication.logout.LogoutFilter@11523dc8, com.subex.onboarding.JWTAuthorizationFilter@6db8b026, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d690293, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51054476, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@56f48a48, org.springframework.security.web.session.SessionManagementFilter@5f06884d, org.springframework.security.web.access.ExceptionTranslationFilter@3180da55, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@41768d6f]
+2021-04-16 13:05:14.181 DEBUG 22944 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-04-16 13:05:14.194 DEBUG 22944 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-04-16 13:05:14.483  INFO 22944 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-04-16 13:05:14.484  INFO 22944 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-04-16 13:05:14.497  INFO 22944 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-04-16 13:05:14.556  INFO 22944 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2021-04-16 13:05:14.557  INFO 22944 --- [restartedMain] com.subex.onboarding.OpenAPI2SpringBoot  : Started OpenAPI2SpringBoot in 3.857 seconds (JVM running for 608.302)
+2021-04-16 13:05:14.581  WARN 22944 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23505
+2021-04-16 13:05:14.582 ERROR 22944 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: duplicate key value violates unique constraint "uk_qubii929ubf30itpf9x3jcsgh"
+  Detail: Key (field_grp_name)=(Basic Details) already exists.
+2021-04-16 13:05:14.598  INFO 22944 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-16 13:05:24.006  INFO 22944 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-16 13:05:24.007  INFO 22944 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-16 13:05:24.007 DEBUG 22944 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2021-04-16 13:05:24.018 DEBUG 22944 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-04-16 13:05:24.018  INFO 22944 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2021-04-16 13:05:24.020 DEBUG 22944 --- [http-nio-8083-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.subex.onboarding.api.ProfilesApiController#getprofiles()
+2021-04-16 13:05:24.022 DEBUG 22944 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/profiles", parameters={}
+2021-04-16 13:05:24.023 DEBUG 22944 --- [http-nio-8083-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.subex.onboarding.api.ProfilesApiController#getprofiles()
+2021-04-16 13:05:24.041  INFO 22944 --- [http-nio-8083-exec-1] com.subex.onboarding.helper.AuditAspect  : audit_logged_in_user :: NULL || audit_path :: http://localhost:8083/api/profiles || audit_date :: Fri Apr 16 13:05:24 IST 2021 || audit_api_name :: /api/profiles || audit_service :: onboarding-service || audit_api_method_name :: getprofiles || audit_remote_address :: 0:0:0:0:0:0:0:1 || audit_parameter_list :: {} || audit_locale :: en_US || audit_log_type :: API Log
+2021-04-16 13:05:24.048  INFO 22944 --- [http-nio-8083-exec-1] c.s.ngp.audit.trail.lib.AuditEventModel  : audit_logged_in_user :: null ||  audit_date :: Fri Apr 16 13:05:24 IST 2021 || audit_service :: null || audit_entity :: PROFILE-FIELD-GROUP-ENTITY || audit_action :: Fetch ALL Profile ||  audit_message :: Fetching all profiles. || audit_status :: success || audit_log_type :: Event Log
+2021-04-16 13:05:24.049 DEBUG 22944 --- [http-nio-8083-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-04-16 13:05:24.050 DEBUG 22944 --- [http-nio-8083-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[class Profile {
+    profileName: Ecommerce Partner
+}]]
+2021-04-16 13:05:24.053 DEBUG 22944 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-04-16 13:05:24.063 DEBUG 22944 --- [http-nio-8083-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.subex.onboarding.api.ProfileinfosApiController#getprofileinfos(String)
+2021-04-16 13:05:24.064 DEBUG 22944 --- [http-nio-8083-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/profileinfos?profileName=Ecommerce%20Partner", parameters={masked}
+2021-04-16 13:05:24.065 DEBUG 22944 --- [http-nio-8083-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.subex.onboarding.api.ProfileinfosApiController#getprofileinfos(String)
+2021-04-16 13:05:24.081  INFO 22944 --- [http-nio-8083-exec-3] com.subex.onboarding.helper.AuditAspect  : audit_logged_in_user :: NULL || audit_path :: http://localhost:8083/api/profileinfos || audit_date :: Fri Apr 16 13:05:24 IST 2021 || audit_api_name :: /api/profileinfos || audit_service :: onboarding-service || audit_api_method_name :: getprofileinfos || audit_remote_address :: 0:0:0:0:0:0:0:1 || audit_parameter_list :: {profileName = Ecommerce Partner} || audit_locale :: en_US || audit_log_type :: API Log
+2021-04-16 13:05:24.231 DEBUG 22944 --- [http-nio-8083-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-04-16 13:05:24.236 DEBUG 22944 --- [http-nio-8083-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[class ProfileInfo {
+    profileName: Ecommerce Partner
+    profileData: [class FormFieldGroup {
+    (truncated)...]
+2021-04-16 13:05:24.245 DEBUG 22944 --- [http-nio-8083-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-04-16 13:35:46.637  INFO 22944 --- [Thread-25] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-16 13:35:46.639  INFO 22944 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2021-04-16 13:35:46.650  INFO 22944 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.

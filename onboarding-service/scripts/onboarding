@@ -1,0 +1,113 @@
+#!/bin/bash
+
+[ "$(hostname)" != 'ngp-dev-env' ] && \
+    echo "Expected to run from ngp-dev-env container..." && \
+    exit 0
+
+function help_msg() {
+    echo "Usage:"
+    echo "onboarding [help|start|stop] [ --only-keycloak] [-re] [-se] [-u]  arguments..."
+    echo
+    echo '      only-keycloak - Start only keycloak and postgres'
+    echo
+    echo '  All other arguments are passed to application JAR. Using --<property> convention you can override'
+    echo '  settings from application.properties.'
+    echo '  Some useful settings: '
+	echo '      ngp.register.enabled - enables registering application through common-services. default: true shortcut: -re to set to false'
+	echo '      ngp.security.enabled - enables authentication/authorization through keycloak. default: true shortcut -se to set to false'
+    echo '      ngp.register.force.delete - deletes the keycloak entry for the application and recreates applications. default: false shortcut: -u to set to true'
+    echo '      ngp.register.service.create.default.users - creates default user entries from api.json. default: false'
+    echo '      server.port - The port to use for starting the server. default: 8080'
+    echo '      logging.level.root - Root logging level default: INFO'
+    echo '      logging.level.<package> - logging level for a package'
+}
+
+case "$1" in
+    start|stop)
+    COMMAND="$1"
+    shift
+    ;;
+    help|*)
+    help_msg
+    exit 0
+esac
+
+SCRIPT_FOLDER=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
+BUILD_FOLDER=$(dirname $SCRIPT_FOLDER)/build
+
+if [ "$COMMAND" = 'stop' ]
+then
+    docker-compose -f ${SCRIPT_FOLDER}/docker-compose.yml down
+    exit 0
+fi
+
+# Argument Processing
+POSITIONAL=()
+ONLY_KEYCLOAK=false
+while [[ $# -gt 0 ]]
+do
+key="$1"
+
+case $key in
+    --only-keycloak)
+    ONLY_KEYCLOAK=true
+    shift
+    ;;
+    -re)
+    POSITIONAL+=("--ngp.register.enabled=false")
+    shift
+    ;;
+    -u)
+    POSITIONAL+=("--ngp.register.service.create.default.users=true")
+    shift
+    ;;
+    -se)
+    POSITIONAL+=("--ngp.security.enabled=false")
+    shift
+    ;;
+    *)
+    POSITIONAL+=("$1") # save it in an array for later
+    shift # past argument
+    ;;
+esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
+hostip=$(ip route show | grep default | awk '{print $3}')
+
+if ! grep "$hostip ngp-postgres ngp-keycloak" /etc/hosts >/dev/null 2>&1
+then
+    echo -n "Adding to /etc/hosts: "
+    echo "$hostip ngp-postgres ngp-keycloak" | sudo tee -a /etc/hosts
+fi
+
+if ! grep "$hostip onboarding-service onboarding-apiservice onboarding-app" /etc/hosts >/dev/null 2>&1
+then
+    echo -n "Adding to /etc/hosts: "
+    echo "$hostip onboarding-service onboarding-apiservice onboarding-app" | sudo tee -a /etc/hosts
+fi
+
+docker volume list --filter name=ngp-postgres | grep ngp-postgres >/dev/null 2>&1 || \
+    ( echo Creating docker volume ngp-postgres && docker volume create ngp-postgres >/dev/null 2>&1 )
+
+if docker-compose -f ${SCRIPT_FOLDER}/docker-compose.yml exec ngp-postgres echo hello >/dev/null 2>&1
+then
+    echo "Reusing docker containers for postgres and keycloak..."
+else
+    echo "Starting docker containers for postgres and keycloak..."
+    docker-compose -f ${SCRIPT_FOLDER}/docker-compose.yml up -d >/dev/null 2>&1
+    ${SCRIPT_FOLDER}/create-realm
+fi
+
+docker-compose -f ${SCRIPT_FOLDER}/docker-compose.yml exec -T ngp-postgres psql -U onboarding -c "" >/dev/null 2>&1 || \
+    ( echo "Creating database onboarding..." && \
+    docker-compose -f ${SCRIPT_FOLDER}/docker-compose.yml exec -T -e POSTGRES_MULTIPLE_DATABASES=onboarding,onboardingtest \
+                    ngp-postgres bash /docker-entrypoint-initdb.d/create-multiple-postgresql-databases.sh )
+
+if [ "$ONLY_KEYCLOAK" != "true" ]
+then
+    echo java -jar ${BUILD_FOLDER}/libs/onboarding-service*.jar $*
+    java -jar ${BUILD_FOLDER}/libs/onboarding-service*.jar $*
+fi
+
+exit 0

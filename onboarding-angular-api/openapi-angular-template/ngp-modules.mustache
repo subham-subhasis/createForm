@@ -1,0 +1,13 @@
+{{#lambda.indented}}
+export enum {{baseName}}Roles {
+{{#vendorExtensions}}
+{{#x-modules}}
+{{ >ngp-enum }}
+{{#privileges}}
+{{ >ngp-privilege }}
+{{/privileges}}
+{{/x-modules}}
+{{/vendorExtensions}}
+{{/lambda.indented}}
+
+}

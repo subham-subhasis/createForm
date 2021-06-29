@@ -1,0 +1,5 @@
+new com.subex.ngp.commonservices.model.ModuleModel().name("{{id}}").description("{{name}}")
+{{#privileges}}
+.addPrivilegesItem({{ >ngp-privilege }})
+{{/privileges}}
+{{^-last}},{{/-last}}

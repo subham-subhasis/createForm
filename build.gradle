@@ -1,0 +1,156 @@
+defaultTasks 'clean', 'build'
+
+import org.apache.tools.ant.DirectoryScanner
+
+import java.io.ByteArrayOutputStream
+import java.util.regex.Pattern
+
+task getFileList() {
+    def files = new ByteArrayOutputStream().withStream { outputStream ->
+      project.exec {
+        commandLine("git", "ls-files")
+        standardOutput = outputStream
+      }
+      outputStream.toString().split("\n")
+    }
+    getFileList.ext.files = files
+}
+
+def derivePackageName(applicationName) {
+    return 'com.subex.' + applicationName.replaceAll('-', '.')
+}
+
+def deriveClassPrefix(applicationName) {
+    def parts = applicationName.split("-")
+    return parts.collect{ it.capitalize() }.join('')
+}
+
+def deriveCapitalizedApplicationName(applicationName) {
+    def parts = applicationName.split("-")
+    return parts.collect{ it.capitalize() }.join('-')
+}
+
+def mapPut(map, name, src, dest) {
+    println "${name}: ${src} ${dest}"
+    map.put(src, dest)
+}
+
+task generateReplacements {
+    if( !project.hasProperty('applicationName') )
+        return
+    def ourApplicationName = 'onboarding'
+    def applicationName = project.applicationName
+    def ourPackageName = project.hasProperty('ourPackageName') ? project.ourPackageName : derivePackageName(ourApplicationName)
+    def packageName = project.hasProperty('packageName') ? project.packageName : derivePackageName(applicationName)
+    def ourPackageFolder = ourPackageName.replace('.', '/')
+    def packageFolder = packageName.replace('.', '/')
+    def ourClassPrefix = deriveClassPrefix(ourApplicationName)
+    def classPrefix = project.hasProperty('classPrefix') ? project.classPrefix : deriveClassPrefix(applicationName)
+    def ourVariablePrefix = ourClassPrefix.uncapitalize()
+    def variablePrefix = classPrefix.uncapitalize()
+    def ourDbCredentials = ourClassPrefix.toLowerCase()
+    def dbCredentials = classPrefix.toLowerCase()
+    def ourCapitalizedApplicationName = deriveCapitalizedApplicationName(ourApplicationName)
+    def capitalizedApplicationName = deriveCapitalizedApplicationName(applicationName)
+    def ourDescription = ourCapitalizedApplicationName.replace('-', ' ')
+    def description = capitalizedApplicationName.replace('-', ' ')
+    def ourUnderscoredName = ourApplicationName.replace('-', '_')
+    def underscoredName = applicationName.replace('-', '_')
+    Map<String, String> paths = new HashMap<>()
+    paths.put(ourApplicationName, applicationName)
+    paths.put(ourPackageFolder, packageFolder)
+    paths.put(ourClassPrefix, classPrefix)
+    ext.paths = paths ;
+    Map<String, String> content = new HashMap<>()
+    content.put( ourApplicationName, applicationName)
+    content.put( ourClassPrefix, classPrefix)
+    content.put( ourPackageName, packageName)
+    content.put( ourPackageFolder, packageFolder)
+    content.put( ourDbCredentials, dbCredentials)
+    content.put( ourCapitalizedApplicationName, capitalizedApplicationName)
+    content.put( ourDescription, description)
+    content.put( ourVariablePrefix, variablePrefix)
+    content.put( ourUnderscoredName, underscoredName)
+    ext.content = content
+    if( project.hasProperty('printReplacements') ) {
+        println "Path Replacements: "
+        println "${paths}"
+        println "Content Replacements: "
+        println "${content}"
+    }
+}
+
+task copyBinaryFiles(type: Copy) {
+    if( !project.hasProperty('applicationName') || project.hasProperty('printReplacements') )
+        return
+    doFirst {
+        DirectoryScanner.removeDefaultExclude("**/.gitignore")
+    }
+    doLast {
+        DirectoryScanner.resetDefaultExcludes()
+    }
+    def outputFolder = "../" + applicationName
+    if( project.hasProperty('output') ) {
+        outputFolder = project.output
+    }
+    from('.') {
+        include '**/gradle*'
+        include '**/src/**/*.png'
+        exclude 'gradle.properties'
+    }
+    eachFile {
+        generateReplacements.paths.each { k, v ->
+            it.path = it.path.replaceAll(Pattern.quote(k), v)
+        }
+    }
+    into "${outputFolder}"
+
+    includeEmptyDirs = false
+}
+
+task createApplication(type: Copy) {
+    doFirst {
+        DirectoryScanner.removeDefaultExclude("**/.gitignore")
+    }
+    doLast {
+        DirectoryScanner.resetDefaultExcludes()
+    }
+    if( !project.hasProperty('applicationName') || project.hasProperty('printReplacements') )
+        return
+    def outputFolder = "../" + applicationName
+    if( project.hasProperty('output') ) {
+        outputFolder = project.output
+    }
+
+    from('.')
+    include getFileList.files
+    include '**/gradle.properties'
+    exclude '**/gradle/**'
+    exclude '**/gradlew'
+    exclude '**/*.png'
+    into "${outputFolder}"
+    eachFile {
+        generateReplacements.paths.each { k, v ->
+            it.path = it.path.replaceAll(Pattern.quote(k), v)
+        }
+    }
+    filter { line ->
+        generateReplacements.content.each { k, v ->
+            line = line.replaceAll(Pattern.quote(k), v)
+        }
+        return line
+    }
+
+    includeEmptyDirs = false
+}
+createApplication.dependsOn getFileList
+createApplication.dependsOn copyBinaryFiles
+
+gradle.taskGraph.whenReady { taskGraph ->
+    if (!(taskGraph.hasTask(createApplication) || taskGraph.hasTask(copyBinaryFiles)) && project.hasProperty('applicationName')) {
+       throw new GradleException("Error: applicationName property is set without task createApplication.\nUsage: ./gradlew createApplication -PapplicationName=application-name [-PpackageName=package.name] [-PclassPrefix=ClassPrefix] [-Poutput=output-folder]")
+    }
+    if (taskGraph.hasTask(createApplication) && !project.hasProperty('applicationName')) {
+       throw new GradleException("Error: applicationName property is not set.\nUsage: ./gradlew createApplication -PapplicationName=application-name [-PpackageName=package.name] [-PclassPrefix=ClassPrefix] [-Poutput=output-folder]")
+    }
+}

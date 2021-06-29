@@ -1,0 +1,3 @@
+include 'onboarding-angular-api', 'onboarding-ui', 'onboarding-service'
+
+rootProject.name = "Onboarding"

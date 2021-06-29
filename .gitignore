@@ -1,0 +1,9 @@
+.gradle/
+.project
+.settings/
+.idea
+docker-compose/.env
+**/gradle/*
+onboarding-service/gradlew
+onboarding-service/gradlew.bat
+onboarding-angular-api/build.gradle

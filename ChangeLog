@@ -1,0 +1,198 @@
+Release 1.4.0
+=============
+
+fix: Added keycloak initOptions to show login screen even before toolbar
+fix(build): Added proper dependencies to gradle tasks
+feat(status): Added status endpoint to simplify removing configuration endpoint
+feat: Overriding common-services url through application.properties
+fix: DummySession variable referring to common-services. Changed to onboarding
+chore: CommonServices ApplicationModel changed Privileges and ChildPrivileges to Module and Privilege
+refact: Changed x-roles to x-modules and x-privileges
+fix: Changed datamodel for ApplicationModel and Privileges
+refact: Renamed start-service to common-services and added stop command
+
+commit 127e06ce6e5e137930350782f4533c64e02ebb56
+Author: Dakshinamurthy Karra <dakshinamurthy.karra@subex.com>
+Date:   Fri May 15 19:19:31 2020 +0000
+
+    feat(application-registration): NGP Starter application includes code for registering with common-services
+    
+    * Scripts have been modified to use a common ngp-postgres and ngp-keycloak docker sessions.
+    * Added oauth2 springboot client to connect to common-services server.
+    * Added new reference roles and fixed spelling
+    * Added PRIVILEGES generation from openAPI spec to ApiUtil
+    * Added common-services.json - Common Services API
+    * Added ApplicationRegisterEntry and ApplicationRegisterClient to connect to common servies using oauth2.
+    * Added application start time registration to OpenAPI2SpringBoot
+    * gradle createApplication override ourpackage name
+
+commit 142c72e5c8e9551feaf3a8ddac1ea9a422e65325
+Author: Dakshinamurthy Karra <dakshinamurthy.karra@subex.com>
+Date:   Tue May 12 09:44:22 2020 +0000
+
+    fix(createApplication): Binary files being copied as it is.
+
+commit 8824e741a3b9bd68f909f0dde2ab6734a37369ba
+Author: Dakshinamurthy Karra <dakshinamurthy.karra@subex.com>
+Date:   Sun May 10 12:37:48 2020 +0000
+
+    feat(audit): Added AbstractAuditEntity. Derive from this class and set[Created|Modified]By with session#getUserId()
+    
+    * Added AbstractAuditEntity. Sets the created_at/modified_at fields automatically.
+    * Derive ConfigurationEntity from AbstractAuditEntity and did required modifications
+    * flyway - db migration used to create tables and sequences
+    * Tests modified to add ngp.security.enabled=false to ignore keycloak
+
+commit c825ef56a6442e62ee12cd13fb9aebb50394172a
+Author: Dakshinamurthy Karra <dakshinamurthy.karra@subex.com>
+Date:   Sat May 9 18:48:27 2020 +0000
+
+    feat(session): Added support for an AutoWired Session to access userId.
+    
+    * Added Session to provide information from access token
+    * Added DummySession to be used when keycloak is not enabled
+    * UT Fix: for KeycloakService#loadUserConfig
+
+commit 2b3ce2fee230c7aa2c636ec74530d370c91d3642
+Author: Dakshinamurthy Karra <dakshinamurthy.karra@subex.com>
+Date:   Sat May 9 13:10:55 2020 +0000
+
+    feat(username): Display firstname + lastname if given.
+
+commit d8f8458ca24ec6f72d446d9b578d7114ef632c8c
+Author: Dakshinamurthy Karra <dakshinamurthy.karra@subex.com>
+Date:   Sat May 9 13:09:56 2020 +0000
+
+    chore: Made running with keycloak default. Turnoff keycloak using nokeycloak option.
+
+commit defe4fa333ba82ff91071a992267feff046d8bf7
+Merge: b71bc42 c0a31e6
+Author: Dakshinamurthy Karra <dakshinamurthy.karra@subex.com>
+Date:   Sat May 9 10:17:13 2020 +0000
+
+    Merge branch 'feature/applying-ngp-theme' into develop
+
+commit c0a31e6f40965aa99984b2f1f38ddd1fdc524ae6
+Author: Dakshinamurthy Karra <dakshinamurthy.karra@subex.com>
+Date:   Sat May 9 09:12:11 2020 +0000
+
+    * Added ngp-theme and theme switcher to toolbar
+
+commit 04303b0010c06ed126ca3c23b3378c176ef0b267
+Author: Dakshinamurthy Karra <dakshinamurthy.karra@subex.com>
+Date:   Sat May 9 05:56:36 2020 +0000
+
+    * Added ngp-theme and toolbar
+
+commit b71bc42ace00e6da4dc20b4acf59b4f750266c0c
+Author: Dakshinamurthy Karra <dakshinamurthy.karra@subex.com>
+Date:   Fri May 8 16:27:51 2020 +0000
+
+    chores(cleanup): Some cleanup and using local copy of prettier for formatting
+
+commit 62d6b04dfa7de1b19384945ca4b2764d88354b8f
+Author: Dakshinamurthy Karra <dakshinamurthy.karra@subex.com>
+Date:   Sat May 2 07:09:05 2020 +0000
+
+    feat(security): Added ngp.security.enabled flag (defaults to true) to disable keycloak authorization.
+
+commit 7913b5013ab53a193604d8854cedde55dd66f228
+Author: Dakshinamurthy Karra <dakshinamurthy.karra@subex.com>
+Date:   Fri May 1 08:29:39 2020 +0000
+
+    feat(springboot-roles): Added support for keycloak role based authentication to springboot server.
+    
+    * Added individual roles to openAPI paths using x-roles
+    * Added keycloak section to application.properties
+    * Added enableBearerInterceptor to KeycloakService#init to passon access token
+
+commit 021f651b62871082742be6484af5683be4940360
+Author: Dakshinamurthy Karra <dakshinamurthy.karra@subex.com>
+Date:   Thu Apr 30 17:50:59 2020 +0000
+
+    feat(angular-roles): Added support for generation of RolesEnum from openAPI specification
+    
+    * Override angular-typescript template
+    * Added a mustache partial - api.service.roles.ts to generate
+    * Updated openAPI spec to add vendor extension 'x-roles'
+    * Note: Problem with recursive mustache templates, so need to flatten the x-roles structure
+
+commit 5a250997c5119582518f022bcb2977252087363e
+Author: santosh.m <santosh.m@subex.com>
+Date:   Thu Apr 30 00:02:19 2020 +0530
+
+    chore(coding-standards): Added a pointer in angular coding standard md file
+
+commit 2c01dbeb25ab10e0edb3ca722d9fb7f82d96caac
+Author: Dakshinamurthy Karra <dakshinamurthy.karra@subex.com>
+Date:   Thu Apr 23 10:50:18 2020 +0000
+
+    feat(keycloak): Support for keycloak role based authentication to UI
+    
+    * Added docker-compose and start-service script to start both postgres and keycloak
+    * added keycloak configuration and authguard to UI
+    * Added application name (to bootstrap.properties)
+    * Added roles directive to support roled based render/enable/disable/show/hide of components.
+    * Added roles to the configuration main screen. (demo)
+    * Added keycloak flag to environment and update `npm run` options
+      Default: dev - no keycloak.
+      prod: With keycloak.
+      keycloak: dev with keycloak.
+    * Removed browsers so that google-chrome is not launched by ng test
+
+commit 0f76153ae99296c5674e32b4ae9d44307a427bec
+Merge: 81ad02f 99c3024
+Author: Dakshinamurthy Karra <dakshinamurthy.karra@subex.com>
+Date:   Tue Apr 21 17:29:46 2020 +0000
+
+    Merge tag '1.3.0' into develop
+    
+    Release 1.3.0
+Release 1.3.0
+=============
+
+feat(spring): Actuator added to build dependencies
+
+* Added '$*' to start-service script to pass through parameters to bootJar
+
+fix(UI_Unit_Test_Case): Fixed issue in UI unit test cases.
+chore(ui_unit_testing): Added support for running UI unit test cases in headless chrome
+
+Release 1.2.0
+=============
+feat(dev): Running development environment without modifying locally
+
+* Added onboarding-net as a variable in docker-compose.yml
+* Removed unused .gitlab-ci.yml and Dockerfile
+* build.gradle - add printReplacements option to createApplication
+* added start-db and start-service scripts
+* api.config.json - use localhost as server IP
+* Updated README.md
+
+docs(workflow): Updated workflow.md with detailed working time best practices
+chore(renames): Renamed docker-compose to at-setup and script is named after the application
+chore(git): Added git-init helper method
+fix(build.gradle): createApplication not overriding classPrefix and packageName
+docs(ngp-developer-git-workflow.md): Added developer workflow document
+
+Release 1.1.0
+=============
+
+update(angular): Angular updated to 9.1.1
+fix(gradle): Renaming root project
+fix(script): Show error when tag not found for master branch
+fix(build): Copying gradle files
+refactor(build): CreateApplication refactored
+feat(scripts): Added start-container.sh for starting test setup
+chore(format): Removed usage of tabs from build.sh
+chore: Correcting spelling mistakes
+fix: Excutable Permission to scripts and changed service name and volume of postgres
+chore(format): Formatted createApplication
+fix(script): Error in build.sh
+feat(build): Script modified to push to different projects depending on the git branch
+fix: Postgres user was not getting set as project name, fixed same.
+
+Release 1.0.0
+=============
+
+Initial Release

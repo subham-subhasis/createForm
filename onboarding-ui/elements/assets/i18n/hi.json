@@ -1,0 +1,20 @@
+{
+  "SAVE": "",
+  "COMMENTS": "",
+  "FROM": "",
+  "TO": "",
+  "SEARCH": "खोज",
+  "CLEAR": "साफ",
+  "COUNT": "गिनती",
+  "AMOUNT": "राशि",
+  "DOWNLOAD": "",
+  "EMPTY_LIST": " ",
+  "GREETING": {
+    "MORNING": "शुभ प्रभात",
+    "AFTERNOON": "शुभ दोपहर",
+    "EVENING": "शुभ शाम"
+  },
+  "NO_DATA_AVAILABLE": "कोई डेटा उपलब्ध नहीं है",
+  "NO_PREVIEW_MESSAGE": "पूर्वावलोकन अनुपलब्ध",
+  "NO_BILLS_FOUND": "कोई बिल नहीं मिला"
+}

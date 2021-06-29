@@ -1,0 +1,11 @@
+    static org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer<org.springframework.security.config.annotation.web.builders.HttpSecurity>.ExpressionInterceptUrlRegistry addAuthorizations(
+			org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer<org.springframework.security.config.annotation.web.builders.HttpSecurity>.ExpressionInterceptUrlRegistry authorizeRequests) {
+		return authorizeRequests
+{{#operation}}
+{{#vendorExtensions.x-privileges}}
+            .antMatchers(org.springframework.http.HttpMethod.{{httpMethod}}, "{{path}}".replaceAll("\\{[^}]*\\}", "\\*")).hasAnyRole("{{this}}"{{^-last}},{{/-last}})
+{{/vendorExtensions.x-privileges}}
+{{/operation}}
+            ;
+    }
+

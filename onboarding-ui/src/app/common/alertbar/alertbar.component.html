@@ -1,0 +1,19 @@
+<div class="flex-center-align md-flex-center" *ngIf="statusObj.success">
+    <span class="FS8 MR10 tick-background P2"><mat-icon class="B">check</mat-icon></span>
+    <span class="FS12">{{message}}</span>
+    <button md-button class="md-simple-snackbar-action"
+            *ngIf="hasAction" (click)="dismiss()">{{action}}</button>
+</div>
+<div class="flex-center-align md-flex-center" *ngIf="statusObj.error">
+    <span class="FS13 MR10"><mat-icon>error</mat-icon></span>
+    <span class="FS12">{{message}}</span>
+    <button md-button class="md-simple-snackbar-action"
+            *ngIf="hasAction" (click)="dismiss()">{{action}}</button>
+</div>
+<div class="flex-center-align md-flex-center" *ngIf="statusObj.warn">
+    <span class="FS13 MR10"><mat-icon>warning</mat-icon></span>
+    <span class="FS12">{{message}}</span>
+    <button md-button class="md-simple-snackbar-action"
+            *ngIf="hasAction" (click)="dismiss()">{{action}}</button>
+</div>
+

@@ -1,0 +1,553 @@
+<app-element-confirmdialog *ngIf="formAction.confirmDialog" [showButton]="true" [message]="formData.confirmMessgae" (fireModalEvent)="onModalClick($event)"></app-element-confirmdialog>
+<section class="content">
+    <div class="disp-flex md-flex-wrap wrap-conf">
+        <div class="flex-5 conf-left-area">
+            <app-progress-loader *ngIf="loader"></app-progress-loader>
+            <div class="flex-col PT-REM2 PB-REM3 PL-REM2 PR-REM3">
+                <div class="PR-REM2">
+                    <div class="conf-left-first-cb" [ngClass]="{'add-padding-bottom': formData?.editFlag}">
+                        <div class="conf-left-card-header">{{'CONFIGURE.TYPEOFBUSINESS' | translate}}</div>
+                        <mat-form-field class="wid-60 PL3"
+                        [ngClass]="{ 'mat-form-field-invalid': formAction?.leftFormSubmit && formData.businessType.length == 0 }">
+                            <mat-label>{{'CONFIGURE.SELECTBUSINESSTYPE' | translate}}</mat-label>
+                            <mat-select [disableOptionCentering]="true" id="typeOfBusiness" [(ngModel)]="formData.businessType"
+                                (selectionChange)="changeTypeOfBusniess($event.value)"
+                                [ngClass]="{'mat-select-invalid': formAction?.leftFormSubmit && formData.businessType.length == 0 }"
+                                required>
+                                <mat-option *ngFor="let type of jsonData.businessTypes" [value]="type.businessTypeValue">
+                                    {{type.businessTypeName}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-hint align="start" *ngIf="formData?.editFlag"><span class="FS12">{{'CONFIGURE.DATAFETCHEDFROMHINT' | translate}}</span>
+                            </mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="PT-REM2 PR-REM2">
+                    <mat-card class="">
+                        <mat-card-header class="PB5">
+                            <div class="conf-left-card-header">{{'CONFIGURE.NEWGROUP' | translate}}</div>
+                        </mat-card-header>
+                        <mat-card-content class="flex-row md-flex-wrap">
+                            <form class="WD-PC100" autocomplete="off"  #groupForm="ngForm" (submit)="formAction.groupCreateFromSubmit = true;createGroup(formData.groupName)">
+                                <div class="flex-row md-flex-wrap jc-space-bw">
+                                    <div class="flex-1">
+                                        <mat-form-field class="WD-PC60">
+                                            <mat-label>Group Name</mat-label>
+                                            <input matInput placeholder="Ex. Basic Details..." name="groupToAdd" [(ngModel)]="formData.groupName"
+                                            [required]="formAction.groupCreateFromSubmit && formData.groupName.length == 0">
+                                            <mat-hint align="start"><span class="FS12">{{'CONFIGURE.GROUPCREATEHINT' | translate}}</span>
+                                            </mat-hint>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="flex-1 disp-flex jc-flex-end align-self-center">
+                                        <button type="submit" class="global-transparent-btn MR8" *ngIf="screenActions?.create">
+                                            <mat-icon class="va-middle MR5 MT-4">add</mat-icon>{{'CREATE' | translate}}</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="PT-REM2  PR-REM2">
+                    <mat-card class="conf-left-third-card">
+                        <mat-card-header class="flex-col PB10">
+                            <div class="conf-left-card-header" *ngIf="!formData.editKPIFlag">{{'CONFIGURE.ADDNEWKPI' | translate}}</div>
+                            <div class="conf-left-card-header" *ngIf="formData.editKPIFlag">{{'CONFIGURE.EDITKPI' | translate}}</div>
+                            <div class="disp-flex md-flex-center" style="margin-top: 16px !important; margin-bottom: 20px !important;">
+                                <div [class.left-mat-card-header-title]="!formData.switchFormUserDefined"
+                                    class="FS14 MR10">
+                                    {{'CONFIGURE.PREDEFINED' | translate}}
+                                </div>
+                                <div class="jc-center align-center">
+                                    <ui-switch size="small" defaultBgColor="#9696a6"
+                                        [(ngModel)]="formData.switchFormUserDefined"
+                                        (change)="manualSwitchChange($event)">
+                                    </ui-switch>
+                                </div>
+                                <div class="FS14 ML10"
+                                    [class.left-mat-card-header-title]="formData.switchFormUserDefined">
+                                    {{'CONFIGURE.USERDEFINED' | translate}}
+                                </div>
+                                <div class="disp-flex ML32 FS14" *ngIf="formData.switchFormUserDefined && formData?.isPanelDataIntegration">
+                                    <mat-checkbox class="mandatory-text"
+                                    [(ngModel)]="formData.useProfileProspecting" [checked]="formData.useProfileProspecting" (change)="onChangeProfileProspect()">
+                                    {{'CONFIGURE.USEPROSPECTPROFILE' | translate}}</mat-checkbox>
+                                </div>
+                            </div>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div class="" *ngIf="!formData.switchFormUserDefined">
+                                <form class="conf-left-predefined-form" autocomplete="off" #preDefinedformRef="ngForm"
+                                [formGroup]="preDefinedform" (submit)="addKPItoGroup('preDefined', preDefinedformRef.form.valid)">
+                                <div class="flex-1 disp-flex jc-flex-end MT-70">
+                                    <span *ngIf="formData.editKPIFlag" type="button" class="global-cancel-btn" (click)="cancelEditKPI('preDefined')">{{'CANCEL' | translate}}</span>
+                                    <button type="submit" class="global-transparent-btn MR8">
+                                        <mat-icon class="va-middle MR5 MT-4">add</mat-icon>
+                                        <span *ngIf="!formData.editKPIFlag">{{'ADD' | translate}}</span>
+                                        <span *ngIf="formData.editKPIFlag">{{'UPDATE' | translate}}</span>
+                                    </button>
+                                </div>    
+                                <div class="flex-row md-flex-wrap MT16" [@inOutAnimation]>
+                                        <div class="flex-row md-flex-wrap">
+                                            <div class="PR-REM2">
+                                                <mat-form-field class="">
+                                                    <mat-select [disableOptionCentering]="true" class="" placeholder="{{'CONFIGURE.DEFINITION' | translate}}"
+                                                    formControlName="dfnName"
+                                                    (selectionChange)="changeDefinitionPredefined($event.value)" required>
+                                                        <mat-option *ngFor="let val of jsonData?.kpiDefinationsPreDefined"
+                                                            [value]="val.value">
+                                                            {{ val.name }}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="PR-REM2">
+                                                <mat-form-field class="">
+                                                    <mat-select [disableOptionCentering]="true" class="" placeholder="{{'CONFIGURE.GROUPNAME' | translate}}" formControlName="groupId" required>
+                                                        <mat-option *ngFor="let grp of apiQueryData?.groupDetails" [value]="grp.fieldGrpId">{{grp.fieldGrpName}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                            <!-- <div class="PR-REM2">
+                                                <mat-form-field class="">
+                                                    <mat-select [disableOptionCentering]="true" class="" placeholder="Team" formControlName="teamName" required>
+                                                        <mat-option *ngFor="let team of jsonData?.teams"
+                                                        [value]="team.teamValue">{{ team.teamName }}</mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div> -->
+                                            <div class="PR-REM2">
+                                                <mat-form-field class="">
+                                                    <mat-select [disableOptionCentering]="true" class="" placeholder="{{'CONFIGURE.ACTION' | translate}}" 
+                                                    (selectionChange)="changeAction('preDefined',$event)" formControlName="actionToView" required>
+                                                        <mat-option *ngFor="let action of jsonData?.actions"
+                                                        [value]="action.actionTypeValue">{{ action.actionTypeName }}</mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="PR-REM2">
+                                                <mat-form-field class="" [ngClass]="{'form-control-disabled-manual': true}">
+                                                    <mat-label>{{'CONFIGURE.WEIGHTAGESCALE' | translate}}</mat-label>
+                                                    <input matInput placeholder="Ex. 10 or 100" formControlName="maxWeightageScoringInput">
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="PR-REM2 flex-center-align" *ngIf="false">
+                                                <mat-slide-toggle class="conf-mat-slider" formControlName="webScrap">
+                                                    <span class="conf-left-card-text FS13">{{'CONFIGURE.WEBSCRAP' | translate}}</span>
+                                                </mat-slide-toggle>
+                                            </div>
+                                            <div class="PR-REM3 flex-1 flex-center-align jc-flex-start">
+                                                <mat-checkbox class="conf-left-predefined-cb"
+                                                    formControlName="mandatory"><span class="mandatory-text">{{'CONFIGURE.SETASMANDATORY' | translate}}</span></mat-checkbox>
+                                            </div>
+                                            <div class="PR-REM2 flex-3">
+                                                <mat-form-field class="conf-left-predefined-error-message WD-PC90">
+                                                    <mat-label>{{'CONFIGURE.ERRORMESSAGE' | translate}}</mat-label>
+                                                    <input matInput formControlName="mandatoryMessage" [required]="preDefinedform.get('mandatory').value"
+                                                        placeholder="e.g: It is a mandatory filed.">
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="flex-row md-flex-wrap flex-1 MB8">
+                                            <div class="PR-REM3 flex-1 flex-center-align jc-flex-start">
+                                                <mat-checkbox class="conf-left-predefined-cb"
+                                                    formControlName="mandatory"><span class="mandatory-text">Set
+                                                        as Mandatory</span></mat-checkbox>
+                                            </div>
+                                            <div class="PR-REM2 flex-3">
+                                                <mat-form-field class="conf-left-predefined-error-message">
+                                                    <mat-label>Enter Error Message</mat-label>
+                                                    <input matInput formControlName="mandatoryMessage" [required]="preDefinedform.get('mandatory').value"
+                                                        placeholder="e.g: It is a mandatory filed.">
+                                                </mat-form-field>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div *ngIf="preDefinedform.get('dfnName').value?.length > 0" class="flex-1" [@inOutAnimation] class="conf-left-mat-table">
+                                        <mat-table #tablePD [dataSource]="dataSourceFortable?.preDefinedDataSouce">
+                                            <ng-container matColumnDef="position">
+                                                <mat-header-cell *matHeaderCellDef class="flex-1"> {{'CONFIGURE.NO' | translate}} </mat-header-cell>
+                                                <mat-cell class="flex-1" *matCellDef="let element; let i=index;" class="flex-1"> {{i+1}} </mat-cell>
+                                            </ng-container>
+                                            <ng-container matColumnDef="type">
+                                                <mat-header-cell *matHeaderCellDef class="flex-2">{{'CONFIGURE.TYPE' | translate}}</mat-header-cell>
+                                                <mat-cell class="flex-2" *matCellDef="let element; let i=index;"> {{element.type}} </mat-cell>
+                                            </ng-container>
+                                            <ng-container matColumnDef="weightageVal">
+                                                <mat-header-cell *matHeaderCellDef class="flex-1"> {{'CONFIGURE.WEIGHT' | translate}} </mat-header-cell>
+                                                <mat-cell class="flex-1" *matCellDef="let element"> {{element.weightageVal}} </mat-cell>
+                                            </ng-container>
+                                            <ng-container matColumnDef="symbol">
+                                                <mat-header-cell *matHeaderCellDef class="flex-1"> </mat-header-cell>
+                                                <mat-cell class="flex-1" *matCellDef="let element; let i=index;" class="jc-flex-end md-flex-center">
+                                                    <span (click)="removeRowToExsisitngTable('preDefined', i)"><img class="pointer img-responsive"
+                                                            src="./assets/images/delete.svg" /></span> </mat-cell>
+                                            </ng-container>
+                                            <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true" class="disp-flex">
+                                            </mat-header-row>
+                                            <mat-row *matRowDef="let row; columns: displayedColumns;" class="disp-flex"></mat-row>
+                                        </mat-table>
+                                        <div class="disp-flex flex-center-align md-flex-center conf-left-table-no-data-div" *ngIf="formData?.preDefinfedTable?.weightageTableData.length == 0">{{'CONFIGURE.NODATAFOUND' | translate}}</div>
+                                        
+                                    </div>
+                                    <div *ngIf="preDefinedform.get('dfnName').value?.length > 0" class="flex-1" [@inOutAnimation] class="conf-left-mat-table-form">
+                                        <form class="conf-left-mat-table-add-data-form" autocomplete="off" #addTopRedefinedTableForm="ngForm" (ngSubmit)="formAction.predefinedAddtoTableSubmit = true;addTopRedefinedTableForm.form.valid && !(checkValLesser(formData.preDefinfedTable.valueInput)) && addRowToExsisitngTable('preDefined',formData.preDefinfedTable.typeInput, formData.preDefinfedTable.valueInput, addTopRedefinedTableForm)" >
+                                            <div class="flex-row md-flex-wrap flex-1 conf-left-table-input-field-div">
+                                            <div class="flex-1"></div>
+                                            <div class="form-group flex-2 flex-center-align">
+                                                <input class="conf-left-table-input-field form-control" name="typeIP" #typeIP="ngModel" [(ngModel)]="formData.preDefinfedTable.typeInput"
+                                                [matTooltip]="'CONFIGURE.ENTERRANGEHERE' | translate" placeholder="{{'CONFIGURE.ENTERRANGEHERE' | translate}}"  [ngClass]="{ 'is-invalid': formAction.predefinedAddtoTableSubmit && typeIP.invalid }" required />
+                                            </div>
+                                            <div class="form-group flex-1 flex-center-align">
+                                                <input type="number" class="conf-left-table-input-field form-control" name="valueIP" #valueIP="ngModel" [(ngModel)]="formData.preDefinfedTable.valueInput"
+                                                [matTooltip]="'CONFIGURE.ENTERVALUEHERE' | translate" placeholder="{{'CONFIGURE.ENTERVALUEHERE' | translate}}" [ngClass]="{ 'is-invalid': formAction.predefinedAddtoTableSubmit && valueIP.invalid }" [pattern]="patterns.maxNumberten"  required />
+                                                    <div *ngIf="formAction.predefinedAddtoTableSubmit &&  valueIP?.errors?.pattern" class="red FS9 PL5 flex-center-align">{{'CONFIGURE.ACCEPTNUMERIC' | translate}}</div>
+                                                    <div *ngIf="formAction.predefinedAddtoTableSubmit &&  checkValLesser(formData.preDefinfedTable.valueInput)" class="red FS9 PL5 flex-center-align">{{'CONFIGURE.MAXVALTEN' | translate}}</div>
+                                            </div>
+                                            <div
+                                                class="flex-1 flex-center-align jc-flex-end md-flex-center PR15 FS13">
+                                                <button type="submit" mat-button color="primary" class="conf-left-table-add-text pointer">{{'ADDVALUE' | translate}} </button>
+                                            </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                            <div class="" *ngIf="formData.switchFormUserDefined">
+                                <form class="conf-left-userdefined-form" autocomplete="off" #userDefinedformRef="ngForm"
+                                    [formGroup]="userDefinedform" (submit)="addKPItoGroup('userDefined', userDefinedformRef.form.valid)">
+                                    <div class="flex-1 disp-flex jc-flex-end MT-70">
+                                        <span *ngIf="formData.editKPIFlag" type="button" class="global-cancel-btn" (click)="cancelEditKPI('userDefined')">{{'CANCEL' | translate}}</span>
+                                        <button type="submit" class="global-transparent-btn MR8">
+                                            <mat-icon class="va-middle MR5 MT-4">add</mat-icon>
+                                            <span *ngIf="!formData.editKPIFlag">{{'ADD' | translate}}</span>
+                                            <span *ngIf="formData.editKPIFlag">{{'UPDATE' | translate}}</span></button>
+                                    </div>
+                                    <div class="flex-row md-flex-wrap" [@inOutAnimation]>
+                                        <div class="flex-row md-flex-wrap MT16">
+                                            <div class="PR-REM2">
+                                                <mat-form-field class="" *ngIf="!formData.useProfileProspecting">
+                                                    <mat-label>{{'CONFIGURE.DEFINITION' | translate}}</mat-label>
+                                                    <input matInput placeholder="Ex. First Name, Last Name..." formControlName="dfnName" required>
+                                                </mat-form-field>
+                                                <!-- newly added -->
+                                                <mat-form-field class="" *ngIf="formData.useProfileProspecting">
+                                                    <mat-select [disableOptionCentering]="true" class="" placeholder="{{'CONFIGURE.DEFINITION' | translate}}"
+                                                    formControlName="dfnName" required>
+                                                        <mat-option *ngFor="let val of apiQueryData?.prospectProfileDetails"
+                                                            [value]="val.kpi_name">
+                                                            {{ val.kpi_name }}
+                                                           <!-- {{this.formatKPIName(val.kpi_name) }} {{ val.kpi_name | titlecase }} -->
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="PR-REM2">
+                                                <mat-form-field class="" >
+                                                    <mat-select [disableOptionCentering]="true" class="" placeholder="Group Name" formControlName="groupId" required>
+                                                        <mat-option *ngFor="let grp of apiQueryData?.groupDetails" [value]="grp.fieldGrpId">{{grp.fieldGrpName}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="PR-REM2">
+                                                <mat-form-field class="" [ngClass]="{'form-control-disabled-manual': formData.useProfileProspecting}">
+                                                    <mat-select [disableOptionCentering]="true" class="" placeholder="{{'CONFIGURE.ACTION' | translate}}"
+                                                     (selectionChange)="changeAction('userDefined',$event)" 
+                                                     formControlName="actionToView" required>
+                                                        <mat-option *ngFor="let action of jsonData?.actions"
+                                                        [value]="action.actionTypeValue">{{ action.actionTypeName }}</mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="PR-REM2">
+                                                <mat-form-field [ngClass]="{'form-control-disabled-manual': true}">
+                                                    <mat-label>{{'CONFIGURE.WEIGHTAGESCALE' | translate}}</mat-label>
+                                                    <input matInput #maxWeightageScoringInput placeholder="Ex. 10 or 100" formControlName="maxWeightageScoringInput">
+                                                 </mat-form-field>
+                                            </div>
+
+                                            <div class="PR-REM2">
+                                                <mat-form-field class="" [ngClass]="{'form-control-disabled-manual': formData.useProfileProspecting}">
+                                                    <mat-select [disableOptionCentering]="true" class="" placeholder="{{'CONFIGURE.TYPE' | translate}}" (selectionChange)="changeUserDefinedType($event.value)"
+                                                    formControlName="componentType" required>
+                                                        <mat-option *ngFor="let val of jsonData?.userDefinedTypes"
+                                                    [value]="val.value">{{ val.name }}</mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="PR-REM2" *ngIf="!formData.useProfileProspecting">
+                                                <mat-form-field>
+                                                    <mat-select panelClass="conf-left-userdefined-form-multiselect" [disableOptionCentering]="true" placeholder="{{'CONFIGURE.VALIDATION' | translate}}" 
+                                                    formControlName="validations" #validationsMultiple
+                                                    (openedChange)="changeUserDefinedValidation($event, formData.editKPIFlag)"  multiple>
+                                                    <mat-option *ngFor="let val of jsonData?.userDefinedValiationsWithFilter"
+                                                    [value]="val.value">{{ val.name }}</mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                            <!-- <div class="PR-REM2">
+                                                <mat-form-field class="">
+                                                    <mat-select [disableOptionCentering]="true" class="" placeholder="Team" formControlName="teamName" required>
+                                                        <mat-option *ngFor="let team of jsonData?.teams"
+                                                        [value]="team.teamValue">{{ team.teamName }}</mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div> -->
+                                        </div>
+                                        <div class="flex-row md-flex-wrap">
+                                            
+                                            
+                                            <ng-template [ngIf]="validationMessageView?.errMandateFlag">
+                                                <div class="PR-REM2">
+                                                    <mat-form-field>
+                                                        <mat-label>{{'CONFIGURE.ERRORMESSAGEMANDATORY' | translate}}</mat-label>
+                                                        <input matInput #manadtoryMessage placeholder="Ex. This is a required field." formControlName="manadtoryMessage" [matTooltip]="manadtoryMessage.value">
+                                                     </mat-form-field>
+                                                </div>
+                                            </ng-template>
+                                            <ng-template [ngIf]="validationMessageView?.minValueFlag">
+                                                <div class="PR-REM2">
+                                                    <mat-form-field>
+                                                        <mat-label>{{'CONFIGURE.MINIMUMLENGTH' | translate}}</mat-label>
+                                                        <input matInput placeholder="Ex. 5,6" #ipMinimumLength formControlName="ipMinimumLength" [matTooltip]="ipMinimumLength.value">
+                                                     </mat-form-field>
+                                                </div>
+                                            </ng-template>
+                                            <ng-template [ngIf]="validationMessageView?.errMinValueFlag">
+                                                <div class="PR-REM2">
+                                                    <mat-form-field>
+                                                        <mat-label>{{'CONFIGURE.ERRORMESSAGEMINIMUMVALUE' | translate}}</mat-label>
+                                                        <input matInput placeholder="Ex. Minimum value should be 20." #minimumLengthNumberErrorMessage formControlName="minimumLengthNumberErrorMessage" [matTooltip]="minimumLengthNumberErrorMessage.value">
+                                                     </mat-form-field>
+                                                </div>
+                                            </ng-template>
+                                            <ng-template [ngIf]="validationMessageView?.maxValueFlag">
+                                                <div class="PR-REM2">
+                                                    <mat-form-field>
+                                                        <mat-label>{{'CONFIGURE.MAXIMUMLENGTH' | translate}}</mat-label>
+                                                        <input matInput placeholder="Ex. 20,25" #ipMaximumLength formControlName="ipMaximumLength" [matTooltip]="ipMaximumLength.value">
+                                                     </mat-form-field>
+                                                </div>
+                                            </ng-template>
+                                            <ng-template [ngIf]="validationMessageView?.errMaxValueFlag">
+                                                <div class="PR-REM2">
+                                                    <mat-form-field>
+                                                        <mat-label>{{'CONFIGURE.ERRORMESSAGEMAXIMUMVALUE' | translate}}</mat-label>
+                                                        <input matInput placeholder="Ex. Maximum value should be 200." #maximumLengthNumberErrorMessage formControlName="maximumLengthNumberErrorMessage" [matTooltip]="maximumLengthNumberErrorMessage.value">
+                                                     </mat-form-field>
+                                                </div>
+                                            </ng-template>
+                                            <ng-template [ngIf]="validationMessageView?.errMinLengthFlag">
+                                                <div class="PR-REM2">
+                                                    <mat-form-field>
+                                                        <mat-label>{{'CONFIGURE.ERRORMESSAGEMINIMUMLENGTH' | translate}}</mat-label>
+                                                        <input matInput placeholder="Ex. Minimum 10 characters allowed." #minimumLengthStringErrorMessage formControlName="minimumLengthStringErrorMessage" [matTooltip]="minimumLengthStringErrorMessage.value">
+                                                     </mat-form-field>
+                                                </div>
+                                            </ng-template>
+                                            <ng-template [ngIf]="validationMessageView?.errMaxLengthFlag">
+                                                <div class="PR-REM2">
+                                                    <mat-form-field>
+                                                        <mat-label>{{'CONFIGURE.ERRORMESSAGEMAXIMUMLENGTH' | translate}}</mat-label>
+                                                        <input matInput placeholder="Ex. Maximum 40 characters allowed." #maximumLengthStringErrorMessage formControlName="maximumLengthStringErrorMessage" [matTooltip]="maximumLengthStringErrorMessage.value">
+                                                     </mat-form-field>
+                                                </div>
+                                            </ng-template>
+                                            <ng-template [ngIf]="validationMessageView?.errEmailFlag">
+                                                <div class="PR-REM2">
+                                                    <mat-form-field>
+                                                        <mat-label>{{'CONFIGURE.ERRORMESSAGEEMAIL' | translate}}</mat-label>
+                                                        <input matInput placeholder="Ex. Entr valid email address." #emailErrorMessage formControlName="emailErrorMessage" [matTooltip]="emailErrorMessage.value">
+                                                     </mat-form-field>
+                                                </div>
+                                            </ng-template>
+                                            <ng-template [ngIf]="validationMessageView?.ipPatternFlag">
+                                                <div class="PR-REM2">
+                                                    <mat-form-field>
+                                                        <mat-label>{{'CONFIGURE.ENTERPATTERN' | translate}}</mat-label>
+                                                        <input matInput placeholder="Ex. [+-]?([0-9]*[.])?[0-9]+" #ipPattern formControlName="ipPattern" [matTooltip]="ipPattern.value">
+                                                     </mat-form-field>
+                                                </div>
+                                            </ng-template>
+                                            <ng-template [ngIf]="validationMessageView?.errPatternFlag">
+                                                <div class="PR-REM2">
+                                                    <mat-form-field>
+                                                        <mat-label>{{'CONFIGURE.ERRORMESSAGEPATTERN' | translate}}</mat-label>
+                                                        <input matInput placeholder="Ex. Enter a valid pattern." #patternErrorMessage formControlName="patternErrorMessage" [matTooltip]="patternErrorMessage.value">
+                                                     </mat-form-field>
+                                                </div>
+                                            </ng-template>
+                                        </div>
+                                    </div>
+                                    <div class="flex-row md-flex-wrap flex-1 WD-PC90" [@inOutAnimation] *ngIf="formData?.userDefinedformData?.chipFlag">
+                                        <mat-form-field class="">
+                                            <mat-label>{{'CONFIGURE.ADDVALUESFORDROPDOWN' | translate}}</mat-label>
+                                            <mat-chip-list #chipList aria-label="Value Selection" required>
+                                                <mat-chip *ngFor="let val of formData.userDefinedformData.chipData; let i = index"
+                                                    [selectable]="matchipconfig.selectable" [removable]="matchipconfig.removable"
+                                                    (removed)="removeValueFromChipData(val)">
+                                                    {{val}}
+                                                    <mat-icon matChipRemove *ngIf="matchipconfig.removable">cancel
+                                                    </mat-icon>
+                                                </mat-chip>
+                                                <input placeholder="Add values with ' , '(comma) separated or Press Enter Key. eg: Mr., Ms., *"
+                                                    formControlName="chipValueAdded" [matChipInputFor]="chipList"
+                                                    [matChipInputSeparatorKeyCodes]="matchipconfig.separatorKeysCodes"
+                                                    [matChipInputAddOnBlur]="matchipconfig.addOnBlur"
+                                                    (matChipInputTokenEnd)="addValuesToChipData($event)">
+                                            </mat-chip-list>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="flex-1" [@inOutAnimation] class="conf-left-mat-table" *ngIf="formData?.userDefinedformData?.gridFlag">
+                                        <mat-table #tableUD [dataSource]="dataSourceFortable?.userDefinedDataSouce">
+                                            <ng-container matColumnDef="position">
+                                                <mat-header-cell *matHeaderCellDef class="flex-1"> {{'CONFIGURE.NO' | translate}} </mat-header-cell>
+                                                <mat-cell class="flex-1" *matCellDef="let element; let i=index;"> {{i+1}} </mat-cell>
+                                            </ng-container>
+                                            <ng-container matColumnDef="type">
+                                                <mat-header-cell *matHeaderCellDef class="flex-2"> {{'CONFIGURE.TYPE' | translate}} </mat-header-cell>
+                                                <mat-cell class="flex-2" *matCellDef="let element; let i=index;"> {{element.type}} </mat-cell>
+                                            </ng-container>
+                                            <ng-container matColumnDef="weightageVal">
+                                                <mat-header-cell *matHeaderCellDef class="flex-1"> {{'CONFIGURE.WEIGHT' | translate}} </mat-header-cell>
+                                                <mat-cell class="flex-1" *matCellDef="let element"> {{element.weightageVal}} </mat-cell>
+                                            </ng-container>
+                                            <ng-container matColumnDef="symbol">
+                                                <mat-header-cell class="flex-1" *matHeaderCellDef> </mat-header-cell>
+                                                <mat-cell class="flex-1" *matCellDef="let element; let i=index;" class="jc-flex-end md-flex-center">
+                                                    <span (click)="removeRowToExsisitngTable('userDefined', i)"><img class="pointer img-responsive"
+                                                            src="./assets/images/delete.svg" /></span> </mat-cell>
+                                            </ng-container>
+                                            <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true" class="disp-flex">
+                                            </mat-header-row>
+                                            <mat-row *matRowDef="let row; columns: displayedColumns;" class="disp-flex"></mat-row>
+                                        </mat-table>
+                                        <div class="disp-flex flex-center-align md-flex-center conf-left-table-no-data-div" *ngIf="formData?.userDefinfedTable?.weightageTableData.length == 0">{{'CONFIGURE.NODATAFOUND' | translate}}</div>
+                                        
+                                    </div>
+                                    <div class="flex-1" [@inOutAnimation] class="conf-left-mat-table-form" *ngIf="formData?.userDefinedformData?.gridFlag">
+                                        <form class="conf-left-mat-table-add-data-form" autocomplete="off" #addToUserdefinedTableForm="ngForm" (ngSubmit)="formAction.userdefinedAddtoTableSubmit = true;addToUserdefinedTableForm.form.valid && !(checkValLesser(formData.userDefinfedTable.valueInput)) && addRowToExsisitngTable('userDefined',formData.userDefinfedTable.typeInput, formData.userDefinfedTable.valueInput, addToUserdefinedTableForm)" >
+                                            <div class="flex-row md-flex-wrap flex-1 conf-left-table-input-field-div">
+                                            <div class="flex-1"></div>
+                                            <div class="form-group flex-2 flex-center-align">
+                                                <input class="conf-left-table-input-field form-control" name="typeIP" #typeIP="ngModel" [(ngModel)]="formData.userDefinfedTable.typeInput"
+                                                    placeholder="{{'CONFIGURE.ENTERRANGEHERE' | translate}}" [ngClass]="{ 'is-invalid': formAction.userdefinedAddtoTableSubmit && typeIP.invalid }" required />
+                                            </div>
+                                            <div class="form-group flex-1 flex-center-align">
+                                                <input type="number" class="conf-left-table-input-field form-control" name="valueIP" #valueIP="ngModel" [(ngModel)]="formData.userDefinfedTable.valueInput"
+                                                    placeholder="{{'CONFIGURE.ENTERVALUEHERE' | translate}}" [ngClass]="{ 'is-invalid': formAction.userdefinedAddtoTableSubmit && valueIP.invalid }" [pattern]="patterns.decimal" required />
+                                                    <div *ngIf="formAction.userdefinedAddtoTableSubmit &&  valueIP?.errors?.pattern" class="red FS9 PL5 flex-center-align">{{'CONFIGURE.ACCEPTNUMERIC' | translate}}</div>
+                                                    <div *ngIf="formAction.userdefinedAddtoTableSubmit &&  checkValLesser(formData.userDefinfedTable.valueInput)" class="red FS9 PL5 flex-center-align">{{'CONFIGURE.MAXVALTEN' | translate}}</div>
+                                            </div>
+                                            <div
+                                                class="flex-1 flex-center-align jc-flex-end md-flex-center PR15 FS13">
+                                                <button type="submit" mat-button color="primary" class="conf-left-table-add-text pointer">{{'ADDVALUE' | translate}} </button>
+                                            </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+        <div class="flex-3 conf-right-area">
+            <div class="flex-col P-REM1">
+                <div class="">
+                    <div class="flex-1 disp-flex jc-flex-end align-self-center">
+                        <button  class="global-transparent-btn MR16" (click)="onPreview()" *ngIf="screenActions?.create">
+                            <mat-icon class="va-middle FS18 MT3 MR5">visibility</mat-icon>{{'PREVIEW' | translate}}</button>
+                        <button color="primary" class="global-opaque-btn MR10" 
+                        (click)="submitConfiguredForm()" *ngIf="screenActions?.create">
+                        <!--[ngClass]="{'global-form-control-disabled-manual': screenActions?.create ? false: true }-->
+                            <img class="MR5 MT-3 va-middle" alt="Apply" height="15" src="./assets/images/correct.svg" title="Apply" width="15">
+                            {{'SAVE' | translate}}</button>
+                    </div>
+                </div>
+                <div class="PR-REM1 PL-REM1" cdkDropList  (cdkDropListDropped)="dragdropGroup($event)">
+                    <mat-card class=" MT15 conf-right-mat-cards"
+                    *ngFor="let group of submitForm | filterOrder:{ property: 'groupOrder', descending: false };let col = index;" cdkDrag>
+                        <mat-card-header class="disp-flex md-flex-center WD-PC100">
+                            <mat-icon class="grabbing conf-left-card-text FS22">drag_indicator</mat-icon>
+                            <div class="disp-flex WD-PC100 jc-space-bw md-flex-center">
+                                <div class="conf-left-card-header">{{group?.fieldGroup?.fieldGrpName}}</div>
+                                <div class="disp-flex jc-flex-end md-flex-center">
+                                    <span *ngIf="screenActions?.delete" class="" (click)="deleteGroupModal(group.fieldGroup.fieldGrpId)" ><img class="pointer img-responsive"
+                                        src="./assets/images/delete.svg" /></span>
+                                    <mat-icon *ngIf="!group.collapse" class="PL-REM1 PR-REM1 pointer FS25 conf-left-card-text" (click)="group.collapse = !group.collapse; minimizeGroup(group);">remove</mat-icon>
+                                    <mat-icon *ngIf="group.collapse" class="PL-REM1 PR-REM1 pointer FS25 conf-left-card-text" (click)="group.collapse = !group.collapse; minimizeGroup(group);">add</mat-icon>
+                                </div>
+                            </div>
+                        </mat-card-header>
+                        <mat-card-content class="" *ngIf="!group.collapse">
+                            <mat-accordion multi="true" cdkDropList (cdkDropListDropped)="dragdropKPI($event, group?.definitions)">
+                                <mat-expansion-panel class="conf-right-mat-expansion-panel" [@.disabled]="true" *ngFor="let kpi of group?.definitions | filterOrder:{ property: 'dfnOrder', descending: false };let i = index;" [ngClass]="{ 'padding-top-5': i == 0}"
+                                    (opened)="kpi.panelOpenState = true" (closed)="kpi.panelOpenState = false" hideToggle="true" cdkDrag>
+                                    <mat-expansion-panel-header #panel (click)="panel._toggle()">
+                                        <mat-icon class="disp-flex align-self-center" (click)="panel._toggle()">
+                                            {{kpi.panelOpenState ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}</mat-icon>
+                                        <div class="flex-row md-flex-wrap flex-1">
+                                            <div class="flex-3 normal-header-color M5 disp-flex jc-flex-start md-flex-center text-ellipsis" [title]="kpi?.dfnName">{{kpi?.dfnName}}
+                                            </div>
+                                            <div class="flex-2 light-header-color M5 disp-flex jc-flex-start md-flex-center">{{findFieldTypeName(kpi?.fieldType) | titlecase}}
+                                            </div>
+                                            <div class="flex-2 light-header-color M5 disp-flex jc-flex-start md-flex-center">{{kpi?.action | titlecase}}
+                                            </div>
+                                            <div class="flex-1 disp-flex md-flex-center jc-flex-end md-flex-center">
+                                                <span class="PR-REM1 pointer FS13 blue-header-color" (click)="editKpiFromRightGrid(kpi, group.definitions, group.fieldGroup, formData.editKPIFlag)" *ngIf="screenActions?.edit">Edit</span>
+                                                <mat-icon class="pointer FS16 light-grey-header-color disp-flex md-flex-center" (click)="deleteKpiFromRightGrid(kpi, group.definitions, formData.editKPIFlag, false)" *ngIf="screenActions?.delete">close</mat-icon>
+                                            </div>
+                                        </div>
+                                    </mat-expansion-panel-header>
+                                    <div class="accordion-item-content M0">
+                                        <div class="conf-right-mat-table-content-wrapper conf-right-mat-table">
+                                            <mat-table #rightGridTable [dataSource]="kpi?.weightageForMatTable"
+                                                *ngIf="kpi?.weightageForMatTable; else divData">
+                                                <ng-container matColumnDef="type">
+                                                    <mat-header-cell *matHeaderCellDef class="flex-2"> Type </mat-header-cell>
+                                                    <mat-cell *matCellDef="let element; let i=index;" class="flex-2"> {{element.type}} </mat-cell>
+                                                </ng-container>
+                                                <ng-container matColumnDef="weightageVal">
+                                                    <mat-header-cell *matHeaderCellDef class="flex-1"> Weight </mat-header-cell>
+                                                    <mat-cell *matCellDef="let element" class="flex-1"> {{element.weightageVal}} </mat-cell>
+                                                </ng-container>
+                                                <mat-header-row *matHeaderRowDef="displayedColumnsViewOnly; sticky: true" class="disp-flex">
+                                                </mat-header-row>
+                                                <mat-row *matRowDef="let row; columns: displayedColumnsViewOnly;" class="disp-flex"></mat-row>
+                                            </mat-table>
+                                        </div>
+                                        <ng-template #divData>
+                                            <div class="conf-right-non-table-data shadow P5">
+                                                <div class="disp-flex jc-space-bw">
+                                                    <div class="flex-2 FS12 PL-REM1">
+                                                        <mat-label class="FS12">Profile Type:</mat-label>
+                                                        <span class="S bold-header-color">
+                                                            {{kpi?.dfnCategory == 'U' ? 'UserDefined' : 'PreDefined'}}
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex-3 PL-REM2">
+                                                        <mat-label class="FS12">Values:</mat-label>
+                                                        <span class="S bold-header-color">
+                                                            {{kpi?.fieldOptions ? kpi?.fieldOptions : 'N/A'}}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </div>
+                                </mat-expansion-panel>
+                            </mat-accordion>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

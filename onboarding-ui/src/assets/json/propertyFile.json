@@ -1,0 +1,8 @@
+{
+	"readFromProperty": true,
+	"numberFormat": "1.2-2",
+	"locale":"en",
+	"dateFomrat":"MM/dd/yyyy",
+	"dateTimeFormat":"MM/dd/yyyy HH:mm:ss",
+	"productIdentifier":"pm"
+}

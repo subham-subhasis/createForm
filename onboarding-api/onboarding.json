@@ -1,0 +1,694 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "OnBoarding",
+        "version": "1.0.0",
+        "description": "API definition for a MicroService. The API is consumed by both\n    SpringBootWeb and Angular UI applications. This example provides a\n    definition maintenance service which is used for configuring KPI definitions and user defined field to be appeared on the self registration screen  . Using this API you can\n    add, delete, modify Definitions  and view list of definitions in the system.",
+        "contact": {
+            "name": "Subex Ltd.",
+            "url": "https://subex.com",
+            "email": "info@subex.com"
+        },
+        "license": {
+            "name": "Proprietary"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://definition-service.subex.com/api",
+            "description": ""
+        }
+    ],
+    "paths": {
+        "/fieldgroups": {
+            "summary": "Lists all the Field Groups available",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/FieldGroupModel"
+                                    }
+                                }
+                            }
+                        },
+                        "description": "List of Field Groups"
+                    }
+                },
+                "operationId": "listFieldGroups",
+                "summary": "Returns all the field group",
+                "description": "Lists all the field groups created in system"
+            },
+            "put": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FieldGroupModel"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Response"
+                                }
+                            }
+                        },
+                        "description": "Updated successfully"
+                    }
+                },
+                "operationId": "updateFieldGroup",
+                "summary": "update field group",
+                "description": "Update Field Group"
+            },
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FieldGroupEntry"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Response"
+                                }
+                            }
+                        },
+                        "description": "Created Successfully"
+                    }
+                },
+                "operationId": "createFieldGroup"
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "name": "fieldGrpId",
+                        "description": "Field Group ID",
+                        "schema": {
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Response"
+                                }
+                            }
+                        },
+                        "description": "Deleted successfully"
+                    }
+                },
+                "operationId": "deleteFieldGroup",
+                "summary": "Delete a field Group"
+            }
+        },
+        "/profileinfos": {
+            "summary": "Path used to manage the list of profileinfos.",
+            "description": "The REST endpoint/path used to list and create zero or more `ProfileInfo` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.",
+            "get": {
+                "parameters": [
+                    {
+                        "name": "profileName",
+                        "description": "Extentions to filters",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ProfileInfo"
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns an array of `ProfileInfo` entities."
+                    }
+                },
+                "operationId": "getprofileinfos",
+                "summary": "List All profileinfos",
+                "description": "Gets a list of all `ProfileInfo` entities."
+            },
+            "put": {
+                "requestBody": {
+                    "description": "Updated `ProfileInfo` information.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProfileInfo"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Response"
+                                }
+                            }
+                        },
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "updateProfileInfo",
+                "summary": "update ProfileInfo",
+                "description": "Updates an existing `ProfileInfo`."
+            },
+            "post": {
+                "requestBody": {
+                    "description": "A new `ProfileInfo` to be created.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProfileInfo"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Response"
+                                }
+                            }
+                        },
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "createProfileInfo",
+                "summary": "Create a ProfileInfo",
+                "description": "Creates a new instance of a `ProfileInfo`."
+            }
+        },
+        "/partnerinfos": {
+            "summary": "creates a PartnerInfo",
+            "description": "The REST endpoint/path used to list and create zero or more `partnerInfoEntity` entities.  This path contains a  `POST` operation to perform the list and create tasks, respectively.",
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartnerInfo"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Response"
+                                }
+                            }
+                        },
+                        "description": "returns success on creation"
+                    }
+                },
+                "operationId": "createpartnerInfoEntity",
+                "summary": "Create a partnerInfoEntity",
+                "description": "Creates a new instance of a `partnerInfoEntity`."
+            }
+        },
+        "/profiles": {
+            "summary": "Path used t.o manage the list of profiles",
+            "description": "The REST endpoint/path used to list and create zero or more `Profile` entities.  This path contains a `GET` operation to perform the list and create tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Profile"
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns an array of `Profile` entities."
+                    }
+                },
+                "operationId": "getprofiles",
+                "summary": "List All profiles",
+                "description": "Gets a list of all `Profile` entities."
+            }
+        },
+        "/partnerinfos/savepassword": {
+            "summary": "create password for the user",
+            "description": "create password for the user",
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PasswordModel"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Response"
+                                }
+                            }
+                        },
+                        "description": "Password saved successfully."
+                    }
+                },
+                "operationId": "savePassword",
+                "summary": "set the password in ROC table",
+                "description": "set the password in ROC table"
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Definition": {
+                "description": "New Defintion Model.",
+                "required": [
+                    "dfnName"
+                ],
+                "type": "object",
+                "properties": {
+                    "dfnName": {
+                        "description": "Name of the definition.",
+                        "type": "string"
+                    },
+                    "dfnId": {
+                        "format": "int32",
+                        "description": "Id of the definition",
+                        "type": "integer"
+                    },
+                    "dfnCategory": {
+                        "description": "Category which the definition belong to. Predefined or User defined.",
+                        "type": "string"
+                    },
+                    "fieldGrpId": {
+                        "format": "int32",
+                        "description": "Group of the form field.",
+                        "type": "integer"
+                    },
+                    "isMandatory": {
+                        "description": "Boolean which tells if the field on registration form is mandatory to be filled by partner or not.",
+                        "type": "boolean"
+                    },
+                    "mandatoryMsg": {
+                        "description": "Error message if the value is not selected for the definition on registration",
+                        "type": "string"
+                    },
+                    "action": {
+                        "description": "Publish - P ( only appears in the registration form)\nScore - S ( only used for scoring purpose)\nPublish/Score - PS( appears in the registration form also to be used for scoring)",
+                        "type": "string"
+                    },
+                    "maxWeightage": {
+                        "format": "int32",
+                        "description": "Max scale for the KPI",
+                        "type": "integer"
+                    },
+                    "dfnOrder": {
+                        "format": "int32",
+                        "description": "Order in which fields should be appeared on the screen within the group",
+                        "type": "integer"
+                    },
+                    "fieldType": {
+                        "description": "Type of the user deifnined field appeared in the registration form like Select box,Input field,Date field/File upload field etc. In case of scoreable field there would be weightage field as well.",
+                        "type": "string"
+                    },
+                    "fieldOptions": {
+                        "description": "Options for select box",
+                        "type": "string"
+                    },
+                    "isWebScrap": {
+                        "description": "Should this definition value to be retrived from the social websites by AI",
+                        "type": "boolean"
+                    },
+                    "weightages": {
+                        "description": "Array of Weightage object",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Weightage"
+                        }
+                    },
+                    "profileName": {
+                        "description": "Type of business",
+                        "type": "string"
+                    },
+                    "validations": {
+                        "description": "array of validation objects",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Validation"
+                        }
+                    },
+                    "panelOpenState": {
+                        "description": "always false in resposne",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "FieldGroupModel": {
+                "description": "This is to create/list new group. This Group will be used in configuration screen of form fields to group in such that it will appear in different field set of registration screen.\nEg: Address Details group will have Address1,Address2,Street,City etc fields/definitions.",
+                "required": [
+                    "fieldGrpId",
+                    "fieldGrpName"
+                ],
+                "type": "object",
+                "properties": {
+                    "fieldGrpId": {
+                        "format": "int32",
+                        "description": "Primary key of the field group table",
+                        "type": "integer"
+                    },
+                    "fieldGrpName": {
+                        "description": "Name of field group",
+                        "type": "string"
+                    }
+                }
+            },
+            "FieldGroupEntry": {
+                "description": "This is being for create api of field group",
+                "required": [
+                    "fieldGrpName"
+                ],
+                "type": "object",
+                "properties": {
+                    "fieldGrpName": {
+                        "description": "Name of field Group",
+                        "type": "string"
+                    }
+                }
+            },
+            "Weightage": {
+                "description": "Weightage for KPI definitions",
+                "required": [
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "description": "different value of the KPI deinition.\nEg: if Geography is the KPI, then type will be diffrent countries.",
+                        "type": "string"
+                    },
+                    "weightageVal": {
+                        "format": "double",
+                        "description": "Value or weightage for the  type.",
+                        "type": "number"
+                    },
+                    "id": {
+                        "format": "int32",
+                        "description": "Primary key of Weightage Table",
+                        "type": "integer"
+                    }
+                }
+            },
+            "FormFieldGroup": {
+                "description": "It is the Group of the deinfitions",
+                "type": "object",
+                "properties": {
+                    "fieldGroup": {
+                        "$ref": "#/components/schemas/FieldGroupModel",
+                        "description": "Field Group"
+                    },
+                    "groupOrder": {
+                        "format": "int32",
+                        "description": "Order in which the Form Field set to be appeared in the Registartion form.",
+                        "type": "integer"
+                    },
+                    "definitions": {
+                        "description": "List of the Definition object",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Definition"
+                        }
+                    },
+                    "collapse": {
+                        "description": "always false in respoonse",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "ProfileInfo": {
+                "description": "Contains the all the form fields for specific type of business or profile",
+                "type": "object",
+                "properties": {
+                    "profileName": {
+                        "description": "Name of profile or type of Business",
+                        "type": "string"
+                    },
+                    "profileData": {
+                        "description": "It has the list  Definitons in groups",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FormFieldGroup"
+                        }
+                    },
+                    "isStub": {
+                        "description": "getting booealn value in response",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "Response": {
+                "description": "Response Packet",
+                "type": "object",
+                "properties": {
+                    "Status": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "StatusCode": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "Profile": {
+                "description": "Type Of business model. ",
+                "type": "object",
+                "properties": {
+                    "profileName": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "Validation": {
+                "description": "Definitions validations",
+                "required": [],
+                "type": "object",
+                "properties": {
+                    "validationName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "valId": {
+                        "format": "int32",
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "validationMsg": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "PartnerInfo": {
+                "description": "Store Partner Detials",
+                "type": "object",
+                "properties": {
+                    "createdDate": {
+                        "description": "Date when partner registered",
+                        "type": "string"
+                    },
+                    "infoData": {
+                        "description": "",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/InfoData"
+                        }
+                    },
+                    "partnerId": {
+                        "format": "int32",
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "profileName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "blockChainStatus": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "originalCmpName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "postOnBoardScore": {
+                        "format": "double",
+                        "description": "",
+                        "type": "number"
+                    },
+                    "preOnBoardScore": {
+                        "format": "double",
+                        "description": "",
+                        "type": "number"
+                    },
+                    "workStepTeam": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "statusInWorkStepTeam": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "InfoData": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "dfnId": {
+                        "format": "int32",
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "dfnName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "dfnVal": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "webScrap": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "score": {
+                        "format": "double",
+                        "description": "",
+                        "type": "number"
+                    }
+                }
+            },
+            "EmailData": {
+                "description": "set the email propertes",
+                "type": "object",
+                "properties": {
+                    "from": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tolist": {
+                        "description": "",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "bcclist": {
+                        "description": "",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "cclist": {
+                        "description": "",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "emailBase64Text": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "emailText": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "attachments": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "format": "int32",
+                        "description": "",
+                        "type": "integer"
+                    }
+                }
+            },
+            "PasswordModel": {
+                "description": "Password type",
+                "required": [
+                    "userName",
+                    "password"
+                ],
+                "type": "object",
+                "properties": {
+                    "userName": {
+                        "description": "userName to set User Name",
+                        "type": "string"
+                    },
+                    "password": {
+                        "description": "password to save User details",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

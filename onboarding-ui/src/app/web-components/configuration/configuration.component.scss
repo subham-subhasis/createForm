@@ -1,0 +1,460 @@
+//flex-wrap
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .wrap-conf {
+        flex-direction: column !important;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+.wrap-conf {
+    flex-direction: column !important;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .wrap-conf {
+        flex-direction: row !important;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .wrap-conf {
+        flex-direction: row !important;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .wrap-conf {
+        flex-direction: row !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .mat-form-field {
+        width: 100% !important;
+    };
+    .conf-left-predefined-error-message {
+        width: 80% !important;
+    }
+}
+
+@media (min-width:601px) and (max-width:960px) {
+    .mat-form-field {
+        width: 100% !important;
+    };
+    .conf-left-predefined-error-message {
+        width: 90% !important;
+    }
+}
+@media (min-width:961px) and (max-width:1280px) {
+    .mat-form-field {
+        width: 90% !important;
+    };
+    .conf-left-predefined-error-message {
+        width: 70% !important;
+    }
+}
+@media (min-width:1281px) and (max-width:1920px) {
+    .mat-form-field {
+        width: 100% !important;
+    };
+    .conf-left-predefined-error-message {
+        width: 90% !important;
+    }
+}
+
+@media (min-width:1921px) {
+    .mat-form-field {
+        width: 100% !important;
+    }; 
+    .conf-left-predefined-error-message {
+        width: 60% !important;
+    }
+}
+
+//CSS for page
+
+.form-control-disabled-manual {
+    pointer-events: none;
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+.disabledOnEdit {
+    pointer-events: none;
+    cursor: not-allowed !important;
+}
+
+.grabbing {
+  cursor: -webkit-grabbing !important;
+  cursor: -moz-grabbing !important;
+  cursor: grab !important;
+}
+.padding-top-5 {
+    padding-top: 5px !important;
+}
+
+.is-invalid {
+    border-bottom: 1px solid rgb(244, 67, 54) !important;
+    //background-color: rgb(255, 221, 221);
+}
+.is-invalid::placeholder {
+    color: rgb(244, 67, 54) !important;
+}
+
+.conf-left-area {
+    height: calc( 100vh - 53px);
+    max-height: calc( 100vh - 53px);
+    overflow-y: auto;
+    background-color: rgb(239, 242, 251);
+}
+
+.conf-right-area {
+    height: calc( 100vh - 53px);
+    max-height: calc( 100vh - 53px);
+    overflow-y: auto;
+}
+
+.conf-left-area .mat-card {
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.078) !important;
+}
+
+.conf-left-card-header {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: rgb(77, 79, 92);
+}
+
+.wid-60 {
+    width: 50% !important;
+}
+
+.blue-header-color {
+    color: rgb(59, 134, 255) !important;
+}
+
+.blue-header-color:hover {
+    color: rgb(41, 118, 241) !important;
+}
+
+.light-grey-header-color {
+    color: rgb(164, 175, 183);
+}
+
+.light-grey-header-color:hover {
+    color: rgb(77, 79, 92);
+}
+
+.normal-header-color {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: rgb(77, 79, 92);
+}
+
+.light-header-color {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: rgb(77, 79, 92);
+}
+
+.conft-grp-btn {
+    color : #ffffff !important;
+    background-color: rgb(59, 134, 255) !important;
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+    width: 120px !important;
+    height: 30px !important ;   
+    border-radius: 5px !important;
+    line-height: normal !important;
+}
+
+.conft-grp-transparent-btn {
+    color : rgb(59, 134, 255) !important;
+    background-color: #ffffff !important;
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+    width: 120px !important;
+    height: 30px !important ;   
+    border-radius: 5px !important;
+    line-height: normal !important;
+    margin-right: 10px !important;
+}
+
+.conft-grp-secondary-btn {
+    color : #979797 !important;
+    background-color: #EEEEEE !important;
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+    width: 120px !important;
+    height: 30px !important ;   
+    border-radius: 5px !important;
+    line-height: normal !important;
+    margin-right: 10px !important;
+}
+
+.conf-left-userdefined-form-multiselect {
+    margin-left: 30px !important;
+}
+
+.left-mat-card-header-title {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.switch-small {
+    width: 30px !important;
+    height: 1.5rem !important;
+}
+
+.switch-small small {
+    width: 1.5rem !important;
+    height: 1.4rem !important;
+}
+
+ui-switch .checked {
+    background-color: rgb(23, 71, 107) !important;
+}
+
+.conf-left-third-card .mat-card-header-text {
+    display: none !important;
+}
+
+.conf-left-first-cb {
+    color: rgba(0, 0, 0, 0.54);
+    background-color: #ffffff;
+    //border: 1px solid #ffffff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 35px;
+    border-radius: 5px;
+    padding: 16px;
+    padding-bottom: 0px;
+    padding-top: 10px;
+    border-radius: 10px !important;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.078) !important;
+}
+
+.add-padding-top {
+    padding-top: 16px !important;
+}
+
+.add-padding-bottom {
+    padding-bottom: 16px !important;
+}
+
+.conf-left-first-cb:focus {
+   outline: none;
+}
+
+.conf-left-first-cb .mat-select-placeholder {
+    font-size: 1.3rem !important;
+}
+
+// .conf-left-first-cb .mat-select-value-text {
+//     font-size: 1.3rem !important;
+// }
+
+// .conf-left-first-cb .mat-form-field-wrapper {
+//     padding-bottom: 0.3em !important;
+// }
+
+//  .conf-left-first-cb .mat-form-field-infix {
+//      border-top: 0.7em solid transparent !important;
+//  }
+
+// .conf-left-first-cb .mat-form-field-underline {
+//     height: 0px !important;
+// }
+.conf-left-card-text {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.conf-left-mat-table {
+    border: 1px solid rgba(176, 176, 176, 0.388);
+    border-bottom: 0px;
+    border-radius: 10px 10px 0 0 !important;
+    background: transparent !important;
+    max-height: 220px;
+    overflow: auto;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.conf-left-mat-table-form {
+    border: 1px solid rgba(176, 176, 176, 0.388);
+    border-top: 0px !important;
+    padding: 5px 0px !important;
+    //box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.conf-right-mat-table {
+    border: 1px solid rgba(176, 176, 176, 0.388);
+    border-radius: 10px 10px 0 0 !important;
+    background: transparent !important;
+    max-height: 150px;
+    overflow: auto;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.conf-right-mat-table .mat-header-row {
+    height: 30px !important;
+    min-height: 30px !important;
+}
+
+.conf-right-non-table-data {
+    border: 1px solid rgba(176, 176, 176, 0.388) !important;
+}
+
+.conf-right-mat-table .mat-row {
+    height: 30px !important;
+    min-height: 30px !important;
+ }
+
+.conf-left-table-add-text {
+    color: #3B86FF !important;
+    font-weight: bold;
+    height: 37px !important;
+    min-height: 37px !important;
+    border: none;
+    background: white;
+}
+
+.conf-left-table-input-field {
+    border-width: 0px;
+    height: 30px !important;
+    font-size: 1.3rem !important;
+    font-weight:600 !important;
+    width: 90% !important;
+}
+
+.conf-left-table-input-field::placeholder {
+    color: rgb(77, 79, 92);
+}
+
+.conf-left-table-no-data-div {
+    border-top: 2px solid rgba(0, 0, 0, 0.08);
+    color: rgb(77, 79, 92);
+    font-size: 1.4rem;
+    height: 65px;
+}
+
+// .conf-left-table-input-field-div:active,  .conf-left-table-input-field-div:focus, .conf-left-table-input-field-div:hover {
+//     //border: 1px solid greenyellow;
+//     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+// }
+
+.conf-right-mat-cards {
+    border: 1px solid rgb(128, 132, 149) !important;
+    border-radius: 10px !important;
+    padding: 3px !important;
+}
+
+.conf-right-mat-cards .mat-card-header {
+    padding: .3rem 0rem !important;
+    border-bottom: 1px solid rgb(128, 132, 149)!important;
+    background-color: rgb(239, 242, 251);
+}
+
+.conf-right-mat-cards .mat-expansion-panel-header {
+    padding: .5rem 0rem !important;
+    height: 25px !important;
+}
+
+.conf-right-mat-cards .conf-right-mat-expansion-panel {
+    border-bottom: 1px solid rgb(229, 224, 224) !important;
+}
+
+.conf-right-mat-cards .conf-right-mat-expansion-panel:last-child {
+    border-bottom: none !important;
+}
+
+
+.conf-right-mat-cards .mat-expansion-panel-body {
+    padding: .5rem 1rem !important;
+}
+
+.conf-right-mat-cards .mat-accordion .mat-expansion-panel {
+    //border: none !important;
+    box-shadow: none !important;
+}
+
+.conf-right-mat-cards .mat-expansion-panel-spacing {
+    margin: 5px 0 !important
+}
+
+//materila override
+
+.mat-card-header-text {
+    margin: 0px !important;
+}
+
+.mat-card {
+    border-radius:10px !important;
+}
+
+.mat-form-field-label {
+    color: #4D4F5C !important;
+    font-size: 1.4rem !important;
+    font-weight: 500;
+}
+
+.mat-input-element::placeholder {
+    font-size: 1.2rem !important;
+}
+
+.mat-header-row {
+    z-index: 0 !important;
+    height: 35px !important;
+    min-height: 35px !important;
+}
+
+.mat-row {
+    height: 35px !important;
+    min-height: 35px !important;
+ }
+
+ .mat-cell input {
+    font-style: oblique;
+ }
+
+ .mat-header-cell {
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+ }
+
+ .conf-left-first-cb .mat-select-placeholder {
+     color: rgb(77, 79, 92)!important;
+ }
+
+ .mat-slide-toggle.mat-disabled {
+    opacity: 0.88 !important;
+    cursor: not-allowed !important;
+ }
+
+ .mat-disabled .mat-slide-toggle-bar {
+    cursor: not-allowed !important;
+ }
+
+ .conf-left-area .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: rgb(23, 71, 107) !important;
+ }
+
+ .conf-left-area .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: rgb(23, 71, 107, 0.4) !important;
+ }
+ .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: rgb(23, 71, 107) !important;
+}
+
+
+//drag dopo
+.cdk-drag-placeholder {
+    opacity: 0;
+}

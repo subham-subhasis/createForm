@@ -1,0 +1,4 @@
+new com.subex.ngp.commonservices.model.PrivilegeModel().name("{{id}}"){{^application_id}}.description("{{name}}"){{/application_id}}{{#application_id}}.applicationId("{{application_id}}"){{/application_id}}
+{{^application_id}}{{#children}}
+.addChildrenItem({{ >ngp-privilege }})
+{{/children}}{{/application_id}}

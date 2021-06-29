@@ -1,0 +1,22 @@
+<style>
+    .dialog-conetent .mat-dialog-content {
+         max-height: 100vh !important;
+    }
+    .dialog-conetent .mat-dialog-container { 
+        padding: 5px !important;
+    }
+    .right-10 {
+        right: 20px;
+    }
+    .close-btn-dialog {
+        background-color: rgba(199, 190, 190, 0.2);
+        border-radius: 50%;
+        top: 13px;
+    }
+</style>
+<section class="dialog-conetent">
+    <div (click)="onNoClick()" class="close-btn-dialog pointer pos-abs right-10"><mat-icon class="red">close</mat-icon></div>
+    <div mat-dialog-content>
+        <app-registration></app-registration>
+    </div>
+</section>

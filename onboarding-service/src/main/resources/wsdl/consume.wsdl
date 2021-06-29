@@ -1,0 +1,1676 @@
+<wsdl:definitions
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:ns="http://service.server.app.web.spark.subex.com"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:ns1="http://org.apache.axis2/xsd"
+	xmlns:ax217="http://models.detail.framework.client.app.web.spark.subex.com/xsd"
+	xmlns:ax239="http://propertygrid.customcomponents.framework.client.app.web.spark.subex.com/xsd"
+	xmlns:ax248="http://rauser.usertbl.security.module.client.app.web.spark.subex.com/xsd"
+	xmlns:ax226="http://dimuser.usertbl.security.module.client.app.web.spark.subex.com/xsd"
+	xmlns:ax27="http://util.java/xsd"
+	xmlns:ax243="http://psuser.usertbl.security.module.client.app.web.spark.subex.com/xsd"
+	xmlns:ax24="http://models.framework.client.app.web.spark.subex.com/xsd"
+	xmlns:ax222="http://chartproperties.properties.propertygrid.customcomponents.framework.client.app.web.spark.subex.com/xsd"
+	xmlns:ax23="http://usertbl.security.module.client.app.web.spark.subex.com/xsd"
+	xmlns:ax26="http://datamodel.gwt.subex.com/xsd"
+	xmlns:ax25="http://lib.client.rocforms.subex.com/xsd"
+	xmlns:ax21="http://service.server.app.web.spark.subex.com/xsd"
+	xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:ax215="http://auditing.fs.subex.com/xsd"
+	xmlns:ax212="http://audittrail.common.framework.client.app.web.spark.subex.com/xsd"
+	xmlns:ax235="http://fmsuser.usertbl.security.module.client.app.web.spark.subex.com/xsd"
+	xmlns:ax230="http://fmuser.usertbl.security.module.client.app.web.spark.subex.com/xsd"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	targetNamespace="http://service.server.app.web.spark.subex.com">
+	<wsdl:types>
+		<xs:schema
+			xmlns:ax223="http://models.framework.client.app.web.spark.subex.com/xsd"
+			xmlns:ax224="http://auditing.fs.subex.com/xsd"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://chartproperties.properties.propertygrid.customcomponents.framework.client.app.web.spark.subex.com/xsd">
+			<xs:import
+				namespace="http://models.framework.client.app.web.spark.subex.com/xsd" />
+			<xs:import namespace="http://auditing.fs.subex.com/xsd" />
+			<xs:complexType name="ChartPropertiesModel">
+				<xs:complexContent>
+					<xs:extension base="ax223:AbstractFSModel">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="auditingInfo"
+								nillable="true" type="ax215:AuditingMap" />
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="cache" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="hasModified"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="hasUserProps"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="jsModuleName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="propertyInstGroups"
+								nillable="true" type="xs:anyType" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema
+			xmlns:ax249="http://models.framework.client.app.web.spark.subex.com/xsd"
+			xmlns:ax250="http://auditing.fs.subex.com/xsd"
+			xmlns:ax251="http://usertbl.security.module.client.app.web.spark.subex.com/xsd"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://rauser.usertbl.security.module.client.app.web.spark.subex.com/xsd">
+			<xs:import
+				namespace="http://models.framework.client.app.web.spark.subex.com/xsd" />
+			<xs:import namespace="http://auditing.fs.subex.com/xsd" />
+			<xs:import
+				namespace="http://usertbl.security.module.client.app.web.spark.subex.com/xsd" />
+			<xs:complexType name="RAUserTblModel">
+				<xs:complexContent>
+					<xs:extension base="ax249:AbstractFSModel">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="allModelObjects"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="allowAccessEditor"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="allowRolAccessEditor"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="applicationUsers"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="auditingInfo"
+								nillable="true" type="ax215:AuditingMap" />
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="cache" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="jsModuleName"
+								nillable="true" type="xs:string" />
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="loggedInUsrPtns" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="raptName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="startupScreenEditor"
+								nillable="true" type="ax23:ToolbarItemModel" />
+							<xs:element minOccurs="0"
+								name="tempUserRolePartitions" nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="userPartition"
+								nillable="true" type="ax248:PartitionTblModel" />
+							<xs:element minOccurs="0" name="userPartitions"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="userRolePartitions"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="usrCellNo"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrContactAddress"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrDescription"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrEmailAddress"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrForename"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrPassword"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrSurname"
+								nillable="true" type="xs:string" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="PartitionTblModel">
+				<xs:complexContent>
+					<xs:extension base="ax249:AbstractFSModel">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="allModelObjects"
+								nillable="true" type="xs:anyType" />
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="cache" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="ptnName"
+								nillable="true" type="xs:string" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema xmlns:ax29="http://datamodel.gwt.subex.com/xsd"
+			xmlns:ax210="http://util.java/xsd" attributeFormDefault="qualified"
+			elementFormDefault="qualified"
+			targetNamespace="http://lib.client.rocforms.subex.com/xsd">
+			<xs:import namespace="http://datamodel.gwt.subex.com/xsd" />
+			<xs:import namespace="http://util.java/xsd" />
+			<xs:complexType name="AbstractEventModel">
+				<xs:complexContent>
+					<xs:extension base="ax29:DataModel">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="id" type="xs:int" />
+							<xs:element minOccurs="0"
+								name="parentPropertyChangeListner" nillable="true"
+								type="ax25:FSPropertyChangeListener" />
+							<xs:element minOccurs="0" name="silent"
+								type="xs:boolean" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="FSPropertyChangeListener">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="property"
+						nillable="true" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="FSModel">
+				<xs:complexContent>
+					<xs:extension base="ax25:AbstractEventModel">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="cache" nillable="true"
+								type="ax27:Map" />
+							<xs:element minOccurs="0" name="displayString"
+								nillable="true" type="xs:string" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema
+			xmlns:ax236="http://models.framework.client.app.web.spark.subex.com/xsd"
+			xmlns:ax237="http://auditing.fs.subex.com/xsd"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://fmsuser.usertbl.security.module.client.app.web.spark.subex.com/xsd">
+			<xs:import
+				namespace="http://models.framework.client.app.web.spark.subex.com/xsd" />
+			<xs:import namespace="http://auditing.fs.subex.com/xsd" />
+			<xs:complexType name="FMSUserTblModel">
+				<xs:complexContent>
+					<xs:extension base="ax236:AbstractFSModel">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="allModelObjects"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0"
+								name="allowNetworkAccessEditor" nillable="true"
+								type="xs:boolean" />
+							<xs:element minOccurs="0" name="allowRolAccessEditor"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="auditingInfo"
+								nillable="true" type="ax215:AuditingMap" />
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="cache" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="fmsNetworksGridModels"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="fmsRolesGridModels"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="jsModuleName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrCellNo"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrContactAddress"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrDescription"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrEmailAddress"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrName"
+								nillable="true" type="xs:string" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema
+			xmlns:ax213="http://lib.client.rocforms.subex.com/xsd"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://audittrail.common.framework.client.app.web.spark.subex.com/xsd">
+			<xs:import
+				namespace="http://lib.client.rocforms.subex.com/xsd" />
+			<xs:complexType name="AuditTrailEventModel">
+				<xs:complexContent>
+					<xs:extension base="ax213:FSModel">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="actionName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="entityServerComponent"
+								nillable="true" type="xs:string" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema
+			xmlns:ax253="http://usertbl.security.module.client.app.web.spark.subex.com/xsd"
+			xmlns:ax22="http://service.server.app.web.spark.subex.com/xsd"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://service.server.app.web.spark.subex.com">
+			<xs:import
+				namespace="http://service.server.app.web.spark.subex.com/xsd" />
+			<xs:import
+				namespace="http://usertbl.security.module.client.app.web.spark.subex.com/xsd" />
+			<xs:element name="decryptPassword">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="password"
+							nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="decryptPasswordResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="return" nillable="true"
+							type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="setPassword">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="usrName"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="password"
+							nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="setPasswordResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="return" nillable="true"
+							type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="createUser">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0"
+							name="data" nillable="true" type="ax22:WebServiceParameter" />
+						<xs:element minOccurs="0" name="loggedInUserName"
+							nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="createUserResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="return" nillable="true"
+							type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="validateNewUser">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0"
+							name="data" nillable="true" type="ax22:WebServiceParameter" />
+						<xs:element minOccurs="0" name="loggedInUserName"
+							nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="validateNewUserResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="return" nillable="true"
+							type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="addUserDetails">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="userDetails"
+							nillable="true" type="ax22:WebServiceList" />
+						<xs:element minOccurs="0" name="userModel"
+							nillable="true" type="ax23:UserTblModel" />
+						<xs:element minOccurs="0" name="loggedInUserName"
+							nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="deleteUser">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0"
+							name="usrNames" nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="loggedInUserName"
+							nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="deleteUserResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="return" nillable="true"
+							type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getFilteredUser">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0"
+							name="usrFilters" nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="loggedInUserName"
+							nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getFilteredUserResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0"
+							name="return" nillable="true" type="ax22:WebServiceParameter" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="undeleteUser">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0"
+							name="usrNames" nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="loggedInUserName"
+							nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="undeleteUserResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="return" nillable="true"
+							type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getAllUsers">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="loggedInUserName"
+							nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getAllUsersResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0"
+							name="return" nillable="true" type="ax22:WebServiceList" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getToolbarItems">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0"
+							name="raRoles" nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getToolbarItemsResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0"
+							name="return" nillable="true" type="ax22:WebServiceParameter" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="setAdditionalGrids">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0"
+							name="data" nillable="true" type="ax22:WebServiceParameter" />
+						<xs:element minOccurs="0" name="userName"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="loggedInUserName"
+							nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="deleteUserValidation">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0"
+							name="usrNames" nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="loggedInUserName"
+							nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="deleteUserValidationResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="return" nillable="true"
+							type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="enableDisableUsers">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="enable"
+							type="xs:boolean" />
+						<xs:element maxOccurs="unbounded" minOccurs="0"
+							name="usrNames" nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="loggedInUserName"
+							nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+		<xs:schema
+			xmlns:ax238="http://fmsuser.usertbl.security.module.client.app.web.spark.subex.com/xsd"
+			xmlns:ax225="http://chartproperties.properties.propertygrid.customcomponents.framework.client.app.web.spark.subex.com/xsd"
+			xmlns:ax247="http://psuser.usertbl.security.module.client.app.web.spark.subex.com/xsd"
+			xmlns:ax221="http://auditing.fs.subex.com/xsd"
+			xmlns:ax220="http://models.framework.client.app.web.spark.subex.com/xsd"
+			xmlns:ax242="http://propertygrid.customcomponents.framework.client.app.web.spark.subex.com/xsd"
+			xmlns:ax229="http://dimuser.usertbl.security.module.client.app.web.spark.subex.com/xsd"
+			xmlns:ax234="http://fmuser.usertbl.security.module.client.app.web.spark.subex.com/xsd"
+			xmlns:ax252="http://rauser.usertbl.security.module.client.app.web.spark.subex.com/xsd"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://usertbl.security.module.client.app.web.spark.subex.com/xsd">
+			<xs:import
+				namespace="http://models.framework.client.app.web.spark.subex.com/xsd" />
+			<xs:import namespace="http://auditing.fs.subex.com/xsd" />
+			<xs:import
+				namespace="http://chartproperties.properties.propertygrid.customcomponents.framework.client.app.web.spark.subex.com/xsd" />
+			<xs:import
+				namespace="http://dimuser.usertbl.security.module.client.app.web.spark.subex.com/xsd" />
+			<xs:import
+				namespace="http://fmuser.usertbl.security.module.client.app.web.spark.subex.com/xsd" />
+			<xs:import
+				namespace="http://fmsuser.usertbl.security.module.client.app.web.spark.subex.com/xsd" />
+			<xs:import
+				namespace="http://propertygrid.customcomponents.framework.client.app.web.spark.subex.com/xsd" />
+			<xs:import
+				namespace="http://psuser.usertbl.security.module.client.app.web.spark.subex.com/xsd" />
+			<xs:import
+				namespace="http://rauser.usertbl.security.module.client.app.web.spark.subex.com/xsd" />
+			<xs:complexType name="UserTblModel">
+				<xs:complexContent>
+					<xs:extension base="ax24:AbstractFSModel">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="allowAccessEditor"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0"
+								name="allowRolPtnAccessEditor" nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="applicationUsers"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="apuAccessEditor"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="auditingInfo"
+								nillable="true" type="ax221:AuditingMap" />
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="cache" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="chartPropertiesModel"
+								nillable="true" type="ax225:ChartPropertiesModel" />
+							<xs:element minOccurs="0" name="databaseLoginFlag"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="defaultLaunchEditor"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="diceGroup"
+								nillable="true" type="ax23:DiceGroupModel" />
+							<xs:element minOccurs="0" name="diceGroups"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="dimUserModel"
+								nillable="true" type="ax226:DimUserTblModel" />
+							<xs:element minOccurs="0" name="fmUserTblModel"
+								nillable="true" type="ax234:FMUserTblModel" />
+							<xs:element minOccurs="0" name="fmsUserTblModel"
+								nillable="true" type="ax238:FMSUserTblModel" />
+							<xs:element minOccurs="0" name="isRoleConfigChanged"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="isViewFl"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="jsModuleName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="landingDashboardsMsg"
+								nillable="true" type="xs:string" />
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="loggedInUsrPtns" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="propertyInstGroup"
+								nillable="true" type="ax239:PropertyInstGroupModel" />
+							<xs:element minOccurs="0" name="psUserModel"
+								nillable="true" type="ax247:PSUserTblModel" />
+							<xs:element minOccurs="0" name="raUserModel"
+								nillable="true" type="ax248:RAUserTblModel" />
+							<xs:element minOccurs="0" name="startupScreenEditor"
+								nillable="true" type="ax23:ToolbarItemModel" />
+							<xs:element minOccurs="0"
+								name="startupScreenEditorModels" nillable="true"
+								type="xs:anyType" />
+							<xs:element minOccurs="0" name="tempUserDashboards"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0"
+								name="tempUserRolePartitions" nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="tempUserWorkFLows"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="userCredentials"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="userDashboards"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="userDetails"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0"
+								name="userPasswordValidation" nillable="true"
+								type="ax23:UserPasswordValidationModel" />
+							<xs:element minOccurs="0"
+								name="userPasswordValidations" nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="userProducts"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="userRolePartitions"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="userWorkFlows"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="usrAllowedMachines"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrCellNo"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrContactAddress"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrDescription"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrDisplayName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrEmailAddress"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrExpiryDttm"
+								nillable="true" type="xs:date" />
+							<xs:element minOccurs="0" name="usrForename"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrPassword"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrSkipComLandPageFl"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="usrSurname"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="workFlowTabsMsg"
+								nillable="true" type="xs:string" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="DiceGroupModel">
+				<xs:complexContent>
+					<xs:extension base="ax24:AbstractFSModel">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="cache" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="displayString"
+								nillable="true" type="xs:string" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="ToolbarItemModel">
+				<xs:complexContent>
+					<xs:extension base="ax24:AbstractFSModel">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="cache" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tbiName"
+								nillable="true" type="xs:string" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="UserPasswordValidationModel">
+				<xs:complexContent>
+					<xs:extension base="ax24:AbstractFSModel">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="cache" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="displayString"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="upvName"
+								nillable="true" type="xs:string" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema
+			xmlns:ax227="http://models.framework.client.app.web.spark.subex.com/xsd"
+			xmlns:ax228="http://auditing.fs.subex.com/xsd"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://dimuser.usertbl.security.module.client.app.web.spark.subex.com/xsd">
+			<xs:import
+				namespace="http://models.framework.client.app.web.spark.subex.com/xsd" />
+			<xs:import namespace="http://auditing.fs.subex.com/xsd" />
+			<xs:complexType name="DimUserTblModel">
+				<xs:complexContent>
+					<xs:extension base="ax227:AbstractFSModel">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="allModelObjects"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="allowGrpAccessEditor"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="auditingInfo"
+								nillable="true" type="ax228:AuditingMap" />
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="cache" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="department"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="dimGrpGridModels"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="groupLabel"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="jsModuleName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="profile"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="raptName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="role" nillable="true"
+								type="xs:string" />
+							<xs:element minOccurs="0" name="title" nillable="true"
+								type="xs:string" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema xmlns:ax232="http://auditing.fs.subex.com/xsd"
+			xmlns:ax233="http://usertbl.security.module.client.app.web.spark.subex.com/xsd"
+			xmlns:ax231="http://models.framework.client.app.web.spark.subex.com/xsd"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://fmuser.usertbl.security.module.client.app.web.spark.subex.com/xsd">
+			<xs:import
+				namespace="http://models.framework.client.app.web.spark.subex.com/xsd" />
+			<xs:import namespace="http://auditing.fs.subex.com/xsd" />
+			<xs:import
+				namespace="http://usertbl.security.module.client.app.web.spark.subex.com/xsd" />
+			<xs:complexType name="FMUserTblModel">
+				<xs:complexContent>
+					<xs:extension base="ax24:AbstractFSModel">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="allModelObjects"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="allowAccessEditor"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0"
+								name="allowNetworkAccessEditor" nillable="true"
+								type="xs:boolean" />
+							<xs:element minOccurs="0" name="allowRolAccessEditor"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="applicationUsers"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="auditingInfo"
+								nillable="true" type="ax215:AuditingMap" />
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="cache" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0"
+								name="fmDiceDashboardGridModels" nillable="true"
+								type="xs:anyType" />
+							<xs:element minOccurs="0" name="fmNetworksGridModels"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="jsModuleName"
+								nillable="true" type="xs:string" />
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="loggedInUsrPtns" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="raptName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="startupScreenEditor"
+								nillable="true" type="ax23:ToolbarItemModel" />
+							<xs:element minOccurs="0"
+								name="tempUserRolePartitions" nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="userPartitions"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="userRolePartitions"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="usrCellNo"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrContactAddress"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrDescription"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrEmailAddress"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrForename"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrPassword"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrSurname"
+								nillable="true" type="xs:string" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			
+		</xs:schema>
+		<xs:schema attributeFormDefault="qualified"
+			elementFormDefault="qualified"
+			targetNamespace="http://auditing.fs.subex.com/xsd">
+			<xs:complexType name="AuditingMap">
+				<xs:sequence />
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema attributeFormDefault="qualified"
+			elementFormDefault="qualified"
+			targetNamespace="http://service.server.app.web.spark.subex.com/xsd">
+			<xs:complexType name="WebServiceParameter">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="comboData"
+						nillable="true" type="ax21:ComboBoxData" />
+					<xs:element minOccurs="0" name="gridData"
+						nillable="true" type="ax21:GridData" />
+					<xs:element minOccurs="0" name="id" nillable="true"
+						type="xs:string" />
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="map" nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="value" nillable="true"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ComboBoxData">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="id" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="listValue"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="selectedValue"
+						nillable="true" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="GridData">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="id" nillable="true"
+						type="xs:string" />
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="rows" nillable="true" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="WebServiceList">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="id" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="values" nillable="true"
+						type="xs:anyType" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema xmlns:ax245="http://auditing.fs.subex.com/xsd"
+			xmlns:ax246="http://usertbl.security.module.client.app.web.spark.subex.com/xsd"
+			xmlns:ax244="http://models.framework.client.app.web.spark.subex.com/xsd"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://psuser.usertbl.security.module.client.app.web.spark.subex.com/xsd">
+			<xs:import
+				namespace="http://models.framework.client.app.web.spark.subex.com/xsd" />
+			<xs:import namespace="http://auditing.fs.subex.com/xsd" />
+			<xs:import
+				namespace="http://usertbl.security.module.client.app.web.spark.subex.com/xsd" />
+			<xs:complexType name="PSUserTblModel">
+				<xs:complexContent>
+					<xs:extension base="ax24:AbstractFSModel">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="allModelObjects"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="allowAccessEditor"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="allowRolAccessEditor"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="applicationUsers"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="auditingInfo"
+								nillable="true" type="ax215:AuditingMap" />
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="cache" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="jsModuleName"
+								nillable="true" type="xs:string" />
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="loggedInUsrPtns" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="raptName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="startupScreenEditor"
+								nillable="true" type="ax246:ToolbarItemModel" />
+							<xs:element minOccurs="0"
+								name="tempUserRolePartitions" nillable="true" type="xs:anyType" />
+							
+							<xs:element minOccurs="0" name="userPartitions"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="userRolePartitions"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="usrCellNo"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrContactAddress"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrDescription"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrEmailAddress"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrForename"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrPassword"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="usrSurname"
+								nillable="true" type="xs:string" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema xmlns:ax28="http://util.java/xsd"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://datamodel.gwt.subex.com/xsd">
+			<xs:import namespace="http://util.java/xsd" />
+			<xs:complexType name="Data">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="allowNestedValues"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="properties"
+						nillable="true" type="ax28:Map" />
+					<xs:element minOccurs="0" name="propertyNames"
+						nillable="true" type="ax28:Collection" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="DataModel">
+				<xs:complexContent>
+					<xs:extension base="ax26:Data">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="id" type="xs:int" />
+							<xs:element minOccurs="0" name="idLong" type="xs:long" />
+							<xs:element minOccurs="0"
+								name="reDrawOnSelectionChange" type="xs:boolean" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema
+			xmlns:ax218="http://models.framework.client.app.web.spark.subex.com/xsd"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://models.detail.framework.client.app.web.spark.subex.com/xsd">
+			<xs:import
+				namespace="http://models.framework.client.app.web.spark.subex.com/xsd" />
+			<xs:complexType name="ExtraArgDfnModelList">
+				<xs:complexContent>
+					<xs:extension base="ax218:AbstractFSModel">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="complexDTTypeEntityMap" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="extraArgDfnModelList"
+								nillable="true" type="xs:anyType" />
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="nameValueMap" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="parameterDfnModel"
+								nillable="true" type="xs:anyType" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema
+			xmlns:ax219="http://models.detail.framework.client.app.web.spark.subex.com/xsd"
+			xmlns:ax216="http://auditing.fs.subex.com/xsd"
+			xmlns:ax214="http://audittrail.common.framework.client.app.web.spark.subex.com/xsd"
+			xmlns:ax211="http://lib.client.rocforms.subex.com/xsd"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://models.framework.client.app.web.spark.subex.com/xsd">
+			<xs:import
+				namespace="http://lib.client.rocforms.subex.com/xsd" />
+			<xs:import
+				namespace="http://audittrail.common.framework.client.app.web.spark.subex.com/xsd" />
+			<xs:import namespace="http://auditing.fs.subex.com/xsd" />
+			<xs:import
+				namespace="http://models.detail.framework.client.app.web.spark.subex.com/xsd" />
+			<xs:complexType name="AbstractFSModel">
+				<xs:complexContent>
+					<xs:extension base="ax211:FSModel">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="abstractEntityTbl"
+								nillable="true" type="ax24:EntityTblForAbstractFSModel" />
+							<xs:element minOccurs="0" name="auditInfo"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="auditTrailEventModel"
+								nillable="true" type="ax214:AuditTrailEventModel" />
+							<xs:element minOccurs="0" name="auditingDisplayString"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="auditingInfo"
+								nillable="true" type="ax216:AuditingMap" />
+							<xs:element minOccurs="0" name="deleteFl"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="entityCopiedModelId"
+								nillable="true" type="xs:int" />
+							<xs:element minOccurs="0" name="entityCopy"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="extraArgDfnModelList"
+								nillable="true" type="ax219:ExtraArgDfnModelList" />
+							<xs:element minOccurs="0" name="extraArgDfnModels"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="fromNewEntityAction"
+								type="xs:boolean" />
+							<xs:element minOccurs="0" name="isEntityCopyModel"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="isNew"
+								type="xs:boolean" />
+							<xs:element minOccurs="0" name="jsModuleName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="new" type="xs:boolean" />
+							<xs:element minOccurs="0" name="partitionId"
+								nillable="true" type="xs:int" />
+							<xs:element minOccurs="0" name="rowId" nillable="true"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="systemGeneratedFl"
+								nillable="true" type="xs:boolean" />
+							<xs:element minOccurs="0" name="treeFolderEntId"
+								nillable="true" type="xs:int" />
+							<xs:element minOccurs="0" name="treeFolderId"
+								nillable="true" type="xs:int" />
+							<xs:element minOccurs="0" name="versionId"
+								type="xs:int" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="EntityTblForAbstractFSModel">
+				<xs:complexContent>
+					<xs:extension base="ax211:FSModel">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="displayString"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="entDisplay"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="entEntity"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="id" type="xs:int" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema xmlns:ax241="http://auditing.fs.subex.com/xsd"
+			xmlns:ax240="http://models.framework.client.app.web.spark.subex.com/xsd"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://propertygrid.customcomponents.framework.client.app.web.spark.subex.com/xsd">
+			<xs:import
+				namespace="http://models.framework.client.app.web.spark.subex.com/xsd" />
+			<xs:import namespace="http://auditing.fs.subex.com/xsd" />
+			<xs:complexType name="PropertyInstGroupModel">
+				<xs:complexContent>
+					<xs:extension base="ax24:AbstractFSModel">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="adtConfiguredValueLbl"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="adtRunningValueLbl"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="auditingInfo"
+								nillable="true" type="ax215:AuditingMap" />
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="cache" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="jsModuleName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="pigName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="propertyDfnGroup"
+								nillable="true" type="ax239:PropertyDfnGroupModel" />
+							<xs:element minOccurs="0" name="propertyInsts"
+								nillable="true" type="xs:anyType" />
+							<xs:element minOccurs="0" name="runningPIGModel"
+								nillable="true" type="ax239:PropertyInstGroupModel" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="PropertyDfnGroupModel">
+				<xs:complexContent>
+					<xs:extension base="ax24:AbstractFSModel">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="cache" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0"
+								name="dependencyTypePropertyDfnGroup" nillable="true"
+								type="ax239:PropertyDfnGroupModel" />
+							<xs:element minOccurs="0"
+								name="parentPropertyDfnGroup" nillable="true"
+								type="ax239:PropertyDfnGroupModel" />
+							<xs:element minOccurs="0" name="pdgKey"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="pdgName"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0"
+								name="pdgSystemServerPackage" nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="propertyDfns"
+								nillable="true" type="xs:anyType" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema attributeFormDefault="qualified"
+			elementFormDefault="qualified" targetNamespace="http://util.java/xsd">
+			<xs:complexType name="Map">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="empty" type="xs:boolean" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Collection">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="empty" type="xs:boolean" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="getAllUsersRequest">
+		<wsdl:part name="parameters" element="ns:getAllUsers" />
+	</wsdl:message>
+	<wsdl:message name="getAllUsersResponse">
+		<wsdl:part name="parameters"
+			element="ns:getAllUsersResponse" />
+	</wsdl:message>
+	<wsdl:message name="setPasswordRequest">
+		<wsdl:part name="parameters" element="ns:setPassword" />
+	</wsdl:message>
+	<wsdl:message name="setPasswordResponse">
+		<wsdl:part name="parameters"
+			element="ns:setPasswordResponse" />
+	</wsdl:message>
+	<wsdl:message name="getUserPropertiesRequest" />
+	<wsdl:message name="getUserPropertiesResponse" />
+	<wsdl:message name="undeleteUserRequest">
+		<wsdl:part name="parameters" element="ns:undeleteUser" />
+	</wsdl:message>
+	<wsdl:message name="undeleteUserResponse">
+		<wsdl:part name="parameters"
+			element="ns:undeleteUserResponse" />
+	</wsdl:message>
+	<wsdl:message name="enableDisableUsersRequest">
+		<wsdl:part name="parameters" element="ns:enableDisableUsers" />
+	</wsdl:message>
+	<wsdl:message name="enableDisableUsersResponse" />
+	<wsdl:message name="validateNewUserRequest">
+		<wsdl:part name="parameters" element="ns:validateNewUser" />
+	</wsdl:message>
+	<wsdl:message name="validateNewUserResponse">
+		<wsdl:part name="parameters"
+			element="ns:validateNewUserResponse" />
+	</wsdl:message>
+	<wsdl:message name="decryptPasswordRequest">
+		<wsdl:part name="parameters" element="ns:decryptPassword" />
+	</wsdl:message>
+	<wsdl:message name="decryptPasswordResponse">
+		<wsdl:part name="parameters"
+			element="ns:decryptPasswordResponse" />
+	</wsdl:message>
+	<wsdl:message name="addUserDetailsRequest">
+		<wsdl:part name="parameters" element="ns:addUserDetails" />
+	</wsdl:message>
+	<wsdl:message name="deleteUserRequest">
+		<wsdl:part name="parameters" element="ns:deleteUser" />
+	</wsdl:message>
+	<wsdl:message name="deleteUserResponse">
+		<wsdl:part name="parameters" element="ns:deleteUserResponse" />
+	</wsdl:message>
+	<wsdl:message name="setAdditionalGridsRequest">
+		<wsdl:part name="parameters" element="ns:setAdditionalGrids" />
+	</wsdl:message>
+	<wsdl:message name="createUserRequest">
+		<wsdl:part name="parameters" element="ns:createUser" />
+	</wsdl:message>
+	<wsdl:message name="createUserResponse">
+		<wsdl:part name="parameters" element="ns:createUserResponse" />
+	</wsdl:message>
+	<wsdl:message name="getFilteredUserRequest">
+		<wsdl:part name="parameters" element="ns:getFilteredUser" />
+	</wsdl:message>
+	<wsdl:message name="getFilteredUserResponse">
+		<wsdl:part name="parameters"
+			element="ns:getFilteredUserResponse" />
+	</wsdl:message>
+	<wsdl:message name="deleteUserValidationRequest">
+		<wsdl:part name="parameters"
+			element="ns:deleteUserValidation" />
+	</wsdl:message>
+	<wsdl:message name="deleteUserValidationResponse">
+		<wsdl:part name="parameters"
+			element="ns:deleteUserValidationResponse" />
+	</wsdl:message>
+	<wsdl:message name="setAllPrivilegesRequest" />
+	<wsdl:message name="setAllPrivilegesResponse" />
+	<wsdl:message name="getToolbarItemsRequest">
+		<wsdl:part name="parameters" element="ns:getToolbarItems" />
+	</wsdl:message>
+	<wsdl:message name="getToolbarItemsResponse">
+		<wsdl:part name="parameters"
+			element="ns:getToolbarItemsResponse" />
+	</wsdl:message>
+	<wsdl:portType name="SparkUserWebServicePortType">
+		<wsdl:operation name="getAllUsers">
+			<wsdl:input message="ns:getAllUsersRequest"
+				wsaw:Action="urn:getAllUsers" />
+			<wsdl:output message="ns:getAllUsersResponse"
+				wsaw:Action="urn:getAllUsersResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="setPassword">
+			<wsdl:input message="ns:setPasswordRequest"
+				wsaw:Action="urn:setPassword" />
+			<wsdl:output message="ns:setPasswordResponse"
+				wsaw:Action="urn:setPasswordResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getUserProperties">
+			<wsdl:input message="ns:getUserPropertiesRequest"
+				wsaw:Action="urn:getUserProperties" />
+			<wsdl:output message="ns:getUserPropertiesResponse"
+				wsaw:Action="urn:getUserPropertiesResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="undeleteUser">
+			<wsdl:input message="ns:undeleteUserRequest"
+				wsaw:Action="urn:undeleteUser" />
+			<wsdl:output message="ns:undeleteUserResponse"
+				wsaw:Action="urn:undeleteUserResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="enableDisableUsers">
+			<wsdl:input message="ns:enableDisableUsersRequest"
+				wsaw:Action="urn:enableDisableUsers" />
+			<wsdl:output message="ns:enableDisableUsersResponse"
+				wsaw:Action="urn:enableDisableUsersResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="validateNewUser">
+			<wsdl:input message="ns:validateNewUserRequest"
+				wsaw:Action="urn:validateNewUser" />
+			<wsdl:output message="ns:validateNewUserResponse"
+				wsaw:Action="urn:validateNewUserResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="decryptPassword">
+			<wsdl:input message="ns:decryptPasswordRequest"
+				wsaw:Action="urn:decryptPassword" />
+			<wsdl:output message="ns:decryptPasswordResponse"
+				wsaw:Action="urn:decryptPasswordResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="addUserDetails">
+			<wsdl:input message="ns:addUserDetailsRequest"
+				wsaw:Action="urn:addUserDetails" />
+		</wsdl:operation>
+		<wsdl:operation name="deleteUser">
+			<wsdl:input message="ns:deleteUserRequest"
+				wsaw:Action="urn:deleteUser" />
+			<wsdl:output message="ns:deleteUserResponse"
+				wsaw:Action="urn:deleteUserResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="setAdditionalGrids">
+			<wsdl:input message="ns:setAdditionalGridsRequest"
+				wsaw:Action="urn:setAdditionalGrids" />
+		</wsdl:operation>
+		<wsdl:operation name="createUser">
+			<wsdl:input message="ns:createUserRequest"
+				wsaw:Action="urn:createUser" />
+			<wsdl:output message="ns:createUserResponse"
+				wsaw:Action="urn:createUserResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getFilteredUser">
+			<wsdl:input message="ns:getFilteredUserRequest"
+				wsaw:Action="urn:getFilteredUser" />
+			<wsdl:output message="ns:getFilteredUserResponse"
+				wsaw:Action="urn:getFilteredUserResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="deleteUserValidation">
+			<wsdl:input message="ns:deleteUserValidationRequest"
+				wsaw:Action="urn:deleteUserValidation" />
+			<wsdl:output message="ns:deleteUserValidationResponse"
+				wsaw:Action="urn:deleteUserValidationResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="setAllPrivileges">
+			<wsdl:input message="ns:setAllPrivilegesRequest"
+				wsaw:Action="urn:setAllPrivileges" />
+			<wsdl:output message="ns:setAllPrivilegesResponse"
+				wsaw:Action="urn:setAllPrivilegesResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getToolbarItems">
+			<wsdl:input message="ns:getToolbarItemsRequest"
+				wsaw:Action="urn:getToolbarItems" />
+			<wsdl:output message="ns:getToolbarItemsResponse"
+				wsaw:Action="urn:getToolbarItemsResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="SparkUserWebServiceSoap11Binding"
+		type="ns:SparkUserWebServicePortType">
+		<soap:binding
+			transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<wsdl:operation name="getAllUsers">
+			<soap:operation soapAction="urn:getAllUsers"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="setPassword">
+			<soap:operation soapAction="urn:setPassword"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getUserProperties">
+			<soap:operation soapAction="urn:getUserProperties"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="undeleteUser">
+			<soap:operation soapAction="urn:undeleteUser"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="enableDisableUsers">
+			<soap:operation soapAction="urn:enableDisableUsers"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="validateNewUser">
+			<soap:operation soapAction="urn:validateNewUser"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="decryptPassword">
+			<soap:operation soapAction="urn:decryptPassword"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="addUserDetails">
+			<soap:operation soapAction="urn:addUserDetails"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+		</wsdl:operation>
+		<wsdl:operation name="deleteUser">
+			<soap:operation soapAction="urn:deleteUser"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="setAdditionalGrids">
+			<soap:operation soapAction="urn:setAdditionalGrids"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+		</wsdl:operation>
+		<wsdl:operation name="createUser">
+			<soap:operation soapAction="urn:createUser"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getFilteredUser">
+			<soap:operation soapAction="urn:getFilteredUser"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="deleteUserValidation">
+			<soap:operation soapAction="urn:deleteUserValidation"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="setAllPrivileges">
+			<soap:operation soapAction="urn:setAllPrivileges"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getToolbarItems">
+			<soap:operation soapAction="urn:getToolbarItems"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="SparkUserWebServiceSoap12Binding"
+		type="ns:SparkUserWebServicePortType">
+		<soap12:binding
+			transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<wsdl:operation name="getAllUsers">
+			<soap12:operation soapAction="urn:getAllUsers"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="setPassword">
+			<soap12:operation soapAction="urn:setPassword"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getUserProperties">
+			<soap12:operation soapAction="urn:getUserProperties"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="undeleteUser">
+			<soap12:operation soapAction="urn:undeleteUser"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="enableDisableUsers">
+			<soap12:operation
+				soapAction="urn:enableDisableUsers" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="validateNewUser">
+			<soap12:operation soapAction="urn:validateNewUser"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="decryptPassword">
+			<soap12:operation soapAction="urn:decryptPassword"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="addUserDetails">
+			<soap12:operation soapAction="urn:addUserDetails"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+		</wsdl:operation>
+		<wsdl:operation name="deleteUser">
+			<soap12:operation soapAction="urn:deleteUser"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="setAdditionalGrids">
+			<soap12:operation
+				soapAction="urn:setAdditionalGrids" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+		</wsdl:operation>
+		<wsdl:operation name="createUser">
+			<soap12:operation soapAction="urn:createUser"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getFilteredUser">
+			<soap12:operation soapAction="urn:getFilteredUser"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="deleteUserValidation">
+			<soap12:operation
+				soapAction="urn:deleteUserValidation" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="setAllPrivileges">
+			<soap12:operation soapAction="urn:setAllPrivileges"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getToolbarItems">
+			<soap12:operation soapAction="urn:getToolbarItems"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="SparkUserWebServiceHttpBinding"
+		type="ns:SparkUserWebServicePortType">
+		<http:binding verb="POST" />
+		<wsdl:operation name="getAllUsers">
+			<http:operation location="getAllUsers" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="setPassword">
+			<http:operation location="setPassword" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getUserProperties">
+			<http:operation location="getUserProperties" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="undeleteUser">
+			<http:operation location="undeleteUser" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="enableDisableUsers">
+			<http:operation location="enableDisableUsers" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="validateNewUser">
+			<http:operation location="validateNewUser" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="decryptPassword">
+			<http:operation location="decryptPassword" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="addUserDetails">
+			<http:operation location="addUserDetails" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+		</wsdl:operation>
+		<wsdl:operation name="deleteUser">
+			<http:operation location="deleteUser" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="setAdditionalGrids">
+			<http:operation location="setAdditionalGrids" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+		</wsdl:operation>
+		<wsdl:operation name="createUser">
+			<http:operation location="createUser" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getFilteredUser">
+			<http:operation location="getFilteredUser" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="deleteUserValidation">
+			<http:operation location="deleteUserValidation" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="setAllPrivileges">
+			<http:operation location="setAllPrivileges" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getToolbarItems">
+			<http:operation location="getToolbarItems" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="SparkUserWebService">
+		<wsdl:port name="SparkUserWebServiceHttpSoap11Endpoint"
+			binding="ns:SparkUserWebServiceSoap11Binding">
+			<soap:address
+				location="http://10.113.112.120:8080/entrypoint-3.7.12.1-SNAPSHOT/services/SparkUserWebService.SparkUserWebServiceHttpSoap11Endpoint/" />
+		</wsdl:port>
+		<wsdl:port name="SparkUserWebServiceHttpSoap12Endpoint"
+			binding="ns:SparkUserWebServiceSoap12Binding">
+			<soap12:address
+				location="http://10.113.112.120:8080/entrypoint-3.7.12.1-SNAPSHOT/services/SparkUserWebService.SparkUserWebServiceHttpSoap12Endpoint/" />
+		</wsdl:port>
+		<wsdl:port name="SparkUserWebServiceHttpEndpoint"
+			binding="ns:SparkUserWebServiceHttpBinding">
+			<http:address
+				location="http://10.113.112.120:8080/entrypoint-3.7.12.1-SNAPSHOT/services/SparkUserWebService.SparkUserWebServiceHttpEndpoint/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

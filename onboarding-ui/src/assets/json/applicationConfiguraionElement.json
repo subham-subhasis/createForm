@@ -1,0 +1,18 @@
+{
+    "dev": {
+        "onBoarding": { 
+            "configureApiUrl": "http://localhost:8083/api"
+        },
+        "panelData": {
+            "panelDataUrl": "http://127.0.0.1:8050"
+        }
+    },
+    "prod": {
+        "onBoarding": { 
+            "configureApiUrl": "http://localhost:8083/api"
+        },
+        "panelData": {
+            "panelDataUrl": "http://10.113.49.90:8050"
+        }
+    }
+}

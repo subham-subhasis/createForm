@@ -1,0 +1,226 @@
+## Naming Conventions
+
+Naming database objects are important for setting the context of an application.
+
+- _Names are long lived_
+
+Just like data structures in application last longer than application, database object names last longer the life time of a code. A well named database structure outlives the code. It's not uncommon to see an application completely rewritten without any changes done to its database schema.
+
+- _Names are contracts_
+
+Database objects are referenced by their names, thus object names are part of the contract for an object. In a way database tables and column names are API contracts for your data model.
+
+Once they are set, changing them may break dependent applications. This is all the more reason to name things properly before the first use.
+
+- _Developer Context Switching_
+
+Having consistent naming conventions across data model means that developers will need to spend less time looking up the names of tables, views, and columns. Writing and debugging SQL is easier when you know that `person_id` must be a foreign key to the `id` field of the person table.
+
+### Avoid quotes
+
+Avoid using quotes in identifier names. This includes usage of whitespace in identifier names.
+
+Ex: Avoid using names like `FirstName` or `All Employees`.
+
+### Use Lower case
+
+Identifiers should be written entirely in lower case. This includes tables, views, column, and everything else too. Mixed case identifier names means that every usage of the identifier will need to be quoted in double quotes (_which we already said are not allowed_).
+
+Ex: Use `first_name`, not `First_Name`.
+
+### Avoid using data types as names (Data types are not names)
+
+Database object names, particularly column names, should be a noun describing the field or object.
+
+Avoid using words that are just data types such as `text` or `timestamp`. This is particularly bad as it provides zero context.
+
+### Use underscore(\_) as word seperators
+
+Object name that are comprised of multiple words should be separated by underscores (ie. `snake_case`).
+
+Ex: Use `word_count` or `team_member`, not `wordcount` or `wordCount`.
+
+### Use full words. Avoid abbrevations
+
+Object names should be full English words. In general avoid abbreviations(except for cases like `id` - Exceptions check the next rule).
+
+Most SQL databases support at least 30-character names which should be more than enough for a couple English words.
+
+Ex: Use `middle_name`, not `mid_nm`. Use `repeat_count` rather than `rpt_cnt`.
+
+### Use common abbrevations
+
+For a few long words the abbreviation is both more common than the word itself. `Internationalization`, `localization` and `identifier` are the few that come up most often as `i18n` , `l10n` and `id` respectively. In these cases use the abbreviation.
+
+If you're in doubt, use the full English word.
+
+### Avoid reserved words
+
+Avoid using common reserved words that are present in RDBMs systems. There are not much such words, so alternatives to such words should be possible to be used.
+
+### Prefixes or Suffixes are **bad**
+
+#### Avoid relational prefix or suffix
+
+Some (older) guidelines suggest naming tables with a `TB_` prefix, views with a `VW_` prefix, or stored procedures with a `SP_` prefix. The rationale being that a programmer reading through some unknown SQL would immediately recognize this and know the object type based on the name. This is a bad idea.
+
+Object names should not include the object type in them. That way you can change it later. A view that is replaced with a table maintains the original contract of a view (ex: you can `SELECT` from it). A dependent system would not need to be updated after such a change.
+
+There can be cases where at some point a view will become a table. Then you'll end up with code issuing `INSERT` statements into `vw_foobar`.
+
+Adding object type prefixes adds extra typing now and extra confusion down the road.
+
+#### Avoid application name prefixes
+
+Another (older) suggestion is to have a common prefix for all your database objects. For example, our app `Foobar` would have tables name `Foobar_Users`, `Foobar_Teams`, etc. Again, this is a bad idea.
+
+All modern databases support some form of namespacing. For example, in PostgreSQL you can create _schemas_ to group database objects. If you have multiple applications sharing the same database and want to prevent them from clobbering each other, use schemas instead.
+
+#### Avoid data type suffixes(or prefixes for that matter)
+
+Some guides (again generally older ones), suggest suffixing your column names with the data type of the field. For example, a text field for a name would be `name_tx`. There will even be extensive lists to translate from data types to suffixes, `text -> tx`, `date -> dt`, etc.
+
+**_This is a bad idea!_**
+
+Field data types can change. A date field could become a timestamp, an int could become a bigint or numeric.
+
+### Use explicit names for database objects(avoid autogenerated random names)
+
+Some database commands that create database objects do not require you specify a name. An object name will be generated either randomly (ex: `fk239nxvknvsdvi`) or via a formula (ex: `foobar_ix_1`). Unless you know exactly how a name will be generated and you are happy with it, you should be explicitly specifying names.
+
+This also includes names generated by _ORMs_. Many ORMs default to creating indexes and constraints with long gibberish generated names. The couple minutes of time savings in the short run are not worth the head ache in remembering what `fkas9dfnksdfnks` refers to in the long run.
+
+#### Indexes
+
+Indexes should be explicitly named and include both the table name and the column name(s) indexed. Including the column names make it much easier to read through SQL explain plans.
+
+If an index is named `foobar_ix1` then you would need to look up what columns that index covers to understand if it is being used correctly.
+
+```sql
+CREATE TABLE person (
+id          bigserial PRIMARY KEY,
+email       text NOT NULL,
+first_name  text NOT NULL,
+last_name   text NOT NULL,
+CONSTRAINT person_ck_email_lower_case CHECK (email = LOWER(email)));
+
+CREATE INDEX person_ix_first_name_last_name ON person (first_name, last_name);
+```
+
+Explain plans will now be easy to understand. We can clearly see that the index on first name and last name, ie. `person_ix_first_name_last_name`, is being used:
+
+```sql
+=# EXPLAIN SELECT * FROM person WHERE first_name = 'alice' AND last_name = 'smith';
+
+                                        QUERY PLAN
+----------------------------------------------------------------------------------------------
+Index Scan using person_ix_first_name_last_name on person  (cost=0.15..8.17 rows=1 width=72)
+  Index Cond: ((first_name = 'alice'::text) AND (last_name = 'smith'::text))
+(2 rows)
+```
+
+#### Constraints
+
+Similar to indexes, constraints should given descriptive names.
+
+This is especially true for check constraints. It's much easier to diagnose an errant insert if the check constraint that was violated lets you know the cause.
+
+```sql
+CREATE TABLE team (
+id          bigserial PRIMARY KEY,
+name        text NOT NULL);
+
+CREATE TABLE team_member (
+team_id     bigint REFERENCES team(id),
+person_id   bigint REFERENCES person(id),
+CONSTRAINT team_member_pkey PRIMARY KEY (team_id, person_id));
+```
+
+Sample from the way PostgreSQL provides descriptive names
+
+```sql
+=# \d team_member
+  Table "public.team_member"
+Column   |  Type  | Modifiers
+-----------+--------+-----------
+team_id   | bigint | not null
+person_id | bigint | not null
+Indexes:
+  "team_member_pkey" PRIMARY KEY, btree (team_id, person_id)
+Foreign-key constraints:
+  "team_member_person_id_fkey" FOREIGN KEY (person_id) REFERENCES person(id)
+  "team_member_team_id_fkey" FOREIGN KEY (team_id) REFERENCES team(id)
+```
+
+If we try inserting a row that violates one of these constraints we immediately know the cause just based on the constraint name:
+
+```sql
+=> INSERT INTO team_member(team_id, person_id) VALUES (1234, 5678);
+ERROR:  insert or update on table "team_member" violates foreign key constraint "team_member_team_id_fkey"
+DETAIL:  Key (team_id)=(1234) is not present in table "team".
+```
+
+Similarly, if we try inserting an email address that is not lower case into the `person` table created above, we'll get a constraint violation error that tells us exactly what is wrong:
+
+```sql
+- This insert will work:
+=> INSERT INTO person (email, first_name, last_name) VALUES ('alice@example.com', 'Alice', 'Anderson');
+INSERT 0 1
+
+-- This insert will not work:
+=> INSERT INTO person (email, first_name, last_name) VALUES ('bob@EXAMPLE.com', 'Bob', 'Barker');
+ERROR:  new row for relation "person" violates check constraint "person_ck_email_lower_case"
+DETAIL:  Failing row contains (2, bob@EXAMPLE.com, Bob, Barker).
+```
+
+### Key Fields
+
+#### Primary Keys
+
+**_Use `id` as primary key for single column primary keys_**
+
+It's short, simple, and unambiguous. This means that when you're writing SQL you don't have to remember the names of the fields to join on.
+
+```sql
+CREATE TABLE person (
+  id            bigint PRIMARY KEY,
+  full_name     text NOT NULL,
+  birth_date    date NOT NULL);
+```
+
+Some guides suggest prefixing the table name in the primary key field name, ie. `person_id` vs `id`. The extra prefix is redundant.
+
+All field names in non-trivial SQL statements (_i.e. those with more than one table_) should be explicitly qualified and prefixing as a form of namespacing field names is a bad idea.
+
+Use **_long/bigint for primary keys_** and use sequence generation for the generation of the primary keys.
+
+#### Foreign keys
+
+**_Foreign key fields should be a combination of the name of the referenced table and the name of the referenced fields_**
+
+For single column foreign keys (by far the most common case) this will be something like `foo_id` where `foo` is the referenced foreign table.
+
+```sql
+CREATE TABLE team_member (
+  team_id       bigint NOT NULL REFERENCES team(id),
+  person_id     bigint NOT NULL REFERENCES person(id),
+  CONSTRAINT team_member_pkey PRIMARY KEY (team_id, person_id));
+```
+
+### Mandatory Columns
+
+#### Created timestamp
+
+For every top level entity(top level configuration table), have mandatory column which denotes the configuration create timestamp.
+
+#### Modified timestamp
+
+For every top level entity(top level configuration table), have mandatory column which denotes the last updated configuration timestamp.
+
+#### Created by user
+
+For every top level entity(top level configuration table), have mandatory column which denotes the user who created the configuration.
+
+## References
+
+- https://launchbylunch.com/posts/2014/Feb/16/sql-naming-conventions/

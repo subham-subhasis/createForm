@@ -1,0 +1,100 @@
+<app-element-confirmdialog *ngIf="formData.confirmDialog" [showButton]="false" [message]="formData.message" (fireModalEvent)="onModalClick($event)"></app-element-confirmdialog>
+<div id="cover-spin" *ngIf="showSpinner"></div>
+<section class="registration-container">
+    <div class="disp-flex registration-page HT-PC100">
+        <section class="disp-flex flex-2 flex-col front-select-business-type" [ngClass]="{'md-flex-center jc-center':!selectedProfile}">
+            <div class="disp-flex HT-P56">
+                <section class="disp-flex WD-PC100" *ngIf="selectedProfile">
+                    <div class="WD-PC100 disp-flex jc-space-bw">
+                        <div class="disp-flex md-flex-end">
+                            <div class="selected-label ML25 FS16 M">
+                                <div class="FS10 prof-label">{{'REGISTERATION.PROFILE_TYPE' | translate}}</div>
+                                <div>{{selectedProfile}}</div>
+                            </div>
+                            <div *ngIf="isSwitchProfileRequired()" class="ML25 FS13 PB2 pointer"
+                                style="color: #008dbc;text-decoration: underline;" (click)="selectedProfile=''">
+                                {{'REGISTERATION.SWITCH_PROFILE' | translate}}</div>
+                        </div>
+                        <div class="disp-flex md-flex-center MR10 MT16" *ngIf="!isPreView && profileData && profileData.length">
+                            <button color="primary" class="global-transparent-btn MR16" (click)="onReset()">
+                                <mat-icon class="va-middle">refresh</mat-icon>
+                                {{'REGISTERATION.RESET' | translate}}</button>
+                            <button color="primary" class="global-opaque-btn" (click)="onSave()">
+                                <img class="MR5 va-middle" alt="register" height="15" src="./assets/images/correct.svg" title="register" width="15">
+                                {{'REGISTERATION.REGISTER' | translate}}</button>
+                        </div>
+                    </div>
+                </section>
+                <section class="flex-1" *ngIf="selectedProfile">
+                </section>
+            </div>
+            <!-- Profile DropDown -->
+            <form class="profile-type WD-PC60 disp-flex jc-space-bw flex-col " *ngIf="!selectedProfile"
+                style="margin-bottom: 10rem;">
+                <div class="FS18 M color-333">{{'REGISTERATION.PARTNER_REGISTRATION' | translate}}</div>
+                <mat-form-field class="FS13 profile_type ">
+                    <mat-label>{{'REGISTERATION.PROFILE_TYPE' | translate}}</mat-label>
+                    <mat-select [disableOptionCentering]="true" [(ngModel)]="selectedProfile" name="prof" (selectionChange)="onProfileSelection()">
+                        <mat-option *ngFor="let prof of profiles" [value]="prof.profileName">
+                            {{prof.profileName}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </form>
+
+            <!-- KPI Form -->
+            <div class="HT-PC100" *ngIf="selectedProfile && formGrpMapKeys && formGrpMapKeys.length">
+                <div class="form-container-pm WD-PC100">
+                    <ng-container *ngFor="let groupKey of formGrpMapKeys">
+                        <div class="P-REM1 FS15 S ML15 form-header-pm color-333"
+                            *ngIf="formGrpMap && formGrpMap[groupKey] && formGrpMap[groupKey].config && formGrpMap[groupKey].config.length">
+                            {{groupKey}}
+                        </div>
+                        <div>
+                            <div class="ML25 MB10 dynamic-form-box"
+                                *ngIf="formGrpMap && formGrpMap[groupKey] && formGrpMap[groupKey].config && formGrpMap[groupKey].config.length">
+                                <dynamic-form [fields]="formGrpMap[groupKey].config"
+                                    [formGrp]="formGrpMap[groupKey].controls" (planData)="changedPlanData($event)"
+                                    [fromComponent]="'registration'">
+                                </dynamic-form>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="flex-1">
+            <div class="disp-flex flex-col HT-PC100"
+                style="background: url('assets/images/greyBack.svg');background-size: cover;background-repeat: no-repeat;">
+                <div class="flex-3 disp-flex jc-center flex-col M80 MR20">
+                    <div class="FS26 PB30 color-202020" style="line-height: 28px;margin-top: 10px;">
+                        {{'REGISTERATION.WELCOME' | translate}}&nbsp;{{'REGISTERATION.TO' | translate}} <br><span class="S color-00A1D7 second-text">{{'REGISTERATION.HOME_OPERATOR' | translate}}!!</span>
+                    </div>
+                    <div class="FS12 S color-6B6B6B wrap-text" style="line-height: 22px;">
+                        <b>{{'REGISTERATION.ENABLING_DIG_TRUST_IN_PARTNER' | translate}}</b>
+                        <ul class="PT10 ul-text" style="padding-left: 0px !important">
+                            <li class="li-text flex-row">
+                                <div class="flex-1 P5 align-self-center"><img class="img-responsive" alt="dummy"
+                                        [src]="img1" /></div>
+                                <div class="flex-3 align-self-center">{{'REGISTERATION.SELF_REG_QUICK_ONBOARD' | translate}}</div>
+                            </li>
+                            <li class="li-text flex-row">
+                                <div class="flex-1 P5 align-self-center"><img class="img-responsive" alt="dummy"
+                                        [src]="img2" /></div>
+                                <div class="flex-3 align-self-center">{{'REGISTERATION.CLEAR_VISIB_BUSINESS_CRIT_DATA' | translate}}</div>
+                            </li>
+                            <li class="li-text flex-row">
+                                <div class="flex-1 P5 align-self-center"><img class="img-responsive" alt="dummy"
+                                        [src]="img3" /></div>
+                                <div class="flex-3 align-self-center">{{'REGISTERATION.ENSURING_PART_ASSURANCE' | translate}}</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+</section>

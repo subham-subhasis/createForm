@@ -1,0 +1,14 @@
+.gradle/
+build/
+.classpath
+.settings/
+.project
+bin/
+.openapi-generator/
+src/main/java/com/subex/onboarding/api/*
+src/main/java/com/subex/onboarding/model/*
+src/main/java/org/
+openapi-generator/
+common-services-client/
+out
+.idea
